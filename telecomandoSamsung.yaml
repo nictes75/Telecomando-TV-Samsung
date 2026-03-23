@@ -1,0 +1,1464 @@
+type: custom:mod-card
+variables:
+  remote: remote.broadlink_remote         # SOSTITUIRE QUI CON LA VOSTRA ENTITA' BROADLINK
+  media: media_player.tv_salotto          # SOSTITUIRE INDICANDO IL MEDIA_PLAYER DA COMANDARE
+card:
+  type: horizontal-stack
+  cards:
+  - type: custom:button-card
+    styles:
+      card:
+        - background-color: rgba(0,0,0,0.0)
+        - border-width: 0px
+        - height: 825px
+        - width: 240px
+        - padding: 0px
+        - border-radius: 0px
+      custom_fields:
+        power:
+          - position: absolute
+          - left: 23px
+          - top: 42px
+        source:
+          - position: absolute
+          - left: 168px
+          - top: 46px
+        num_1:
+          - position: absolute
+          - left: 23px
+          - top: 104px
+        num_2:
+          - position: absolute
+          - left: 96px
+          - top: 104px
+        num_3:
+          - position: absolute
+          - left: 168px
+          - top: 104px
+        num_4:
+          - position: absolute
+          - left: 23px
+          - top: 150px
+        num_5:
+          - position: absolute
+          - left: 96px
+          - top: 150px
+        num_6:
+          - position: absolute
+          - left: 168px
+          - top: 150px
+        num_7:
+          - position: absolute
+          - left: 23px
+          - top: 195px
+        num_8:
+          - position: absolute
+          - left: 96px
+          - top: 195px
+        num_9:
+          - position: absolute
+          - left: 168px
+          - top: 195px
+        ttx:
+          - position: absolute
+          - left: 23px
+          - top: 241px
+        num_0:
+          - position: absolute
+          - left: 96px
+          - top: 241px
+        pre:
+          - position: absolute
+          - left: 168px
+          - top: 241px
+        volume_up:
+          - position: absolute
+          - left: 23px
+          - top: 293px
+        volume_down:
+          - position: absolute
+          - left: 23px
+          - top: 355px
+        mute:
+          - position: absolute
+          - left: 96px
+          - top: 298px
+        ch_list:
+          - position: absolute
+          - left: 96px
+          - top: 357px
+        program_up:
+          - position: absolute
+          - left: 163px
+          - top: 293px
+        program_down:
+          - position: absolute
+          - left: 163px
+          - top: 355px
+        menu:
+          - position: absolute
+          - left: 23px
+          - top: 431px
+        smart_hub:
+          - position: absolute
+          - left: 94px
+          - top: 420px
+        guide:
+          - position: absolute
+          - left: 163px
+          - top: 431px
+        tools:
+          - position: absolute
+          - left: 23px
+          - top: 483px        
+        freccia_up:
+          - position: absolute
+          - left: 102px
+          - top: 478px
+        info:
+          - position: absolute
+          - left: 163px
+          - top: 483px                                          
+        freccia_left:
+          - position: absolute
+          - left: 23px
+          - top: 540px           
+        enter:
+          - position: absolute
+          - left: 94px
+          - top: 540px           
+        freccia_right:
+          - position: absolute
+          - left: 163px
+          - top: 540px        
+        return:
+          - position: absolute
+          - left: 23px
+          - top: 599px        
+        freccia_down:
+          - position: absolute
+          - left: 102px
+          - top: 588px        
+        exit:
+          - position: absolute
+          - left: 163px
+          - top: 599px        
+        btn_a:
+          - position: absolute
+          - left: 21px
+          - top: 650px        
+        btn_b:
+          - position: absolute
+          - left: 74px
+          - top: 650px        
+        btn_c:
+          - position: absolute
+          - left: 128px
+          - top: 650px        
+        btn_d:
+          - position: absolute
+          - left: 181px
+          - top: 650px                                                  
+        e-manual:
+          - position: absolute
+          - left: 21px
+          - top: 690px        
+        sports:
+          - position: absolute
+          - left: 74px
+          - top: 690px        
+        ad_subt:
+          - position: absolute
+          - left: 128px
+          - top: 690px        
+        stop:
+          - position: absolute
+          - left: 181px
+          - top: 690px                
+        rewind:
+          - position: absolute
+          - left: 21px
+          - top: 730px        
+        play:
+          - position: absolute
+          - left: 74px
+          - top: 730px        
+        pause:
+          - position: absolute
+          - left: 128px
+          - top: 730px        
+        forward:
+          - position: absolute
+          - left: 181px
+          - top: 730px                              
+        
+    custom_fields:
+      power:
+        card:
+          type: custom:button-card
+          icon: mdi:blank
+          styles:
+            card:
+              - width: 47px
+              - height: 47px
+              - background-color: rgba(0,0,0,0.0)
+              - border-width: 0px
+              - border-radius: 0px
+          tap_action:
+            action: call-service
+            service: remote.send_command
+            service_data:
+              entity_id: '[[[ return variables.remote ]]]'
+              device: '[[[ return variables.media ]]]'
+              command: >-
+                b64:JgAwAoyTEjgROBI4ERQRFBIUERQRFBE5ETgSOBEUEhQRFBEUERQSFBE4EhMSFBEUERQRFBIUETgSFBE4ETkRORE4ETkROBIABf6QlBE5ETgSOBEUERQSFBEUERQSOBE4EjgRFBITEhQRFBEUERQSOBEUEhQRFBEUERQSExI4ERQSOBE5ETgSOBE5ETgRAAX/kJQSNxI4ETkRFBEUERQSExIUETgSOBE5ERQRFBEUEhQRFBEUETkRFBEUERQSFBEUERQROREUETkROBI4ETgSOBE5EQAF/pCUEjgROBI4ERQSFBEUERQRFBI4ETgSOBEUEhQRFBEUERQSFBE4EhMSFBEUERQRFBIUETgSFBE4ETkROBI4ETkROBIABf6QlBI3ETkROBIUERQRFBEUEhQROBE5ETgSFBEUERQRFBIUERQROREUERQRFBITEhQRFBE5ERQROBI4ETkROBI4ETkRAAX+kJQSOBE4EjgRFBEUEhQRFBEUETkROBI4ERQRFBIUERQRFBEUEjgRFBITEhQRFBEUERQSOBEUEjgRORE4ETkROBI4EQAF/pGTEjgRORE4EhMSFBEUERQRFBI4ETkROBIUERQRFBEUEhMSFBE4EhQRFBEUERQSFBEUETgSFBE4EjgRORE4ETkROBIABf6QlBI3EjgROREUERQRFBIUERQROBI4ETkRFBEUERQSFBEUERQROREUERQRFBIUERQRFBE5ERQRORE4EjgROBI4ETkRAA0FAAAAAAAA
+
+      source:
+        card:
+          type: custom:button-card
+          icon: mdi:blank
+          styles:
+            card:
+              - width: 49px
+              - height: 40px
+              - background-color: rgba(0,0,0,0.0)
+              - border-width: 0px
+              - border-radius: 0px
+          tap_action:
+            action: call-service
+            service: remote.send_command
+            service_data:
+              entity_id: '[[[ return variables.remote ]]]'
+              device: '[[[ return variables.media ]]]'
+              command: >-
+                b64:JgCkAZCTEzcTNxM3ExITERMSExITEhM3EzcTNxMSExETEhMSExITNxMSExITEhMSExITERMSExITNxM3EzcTNhM3EzcTNxMABgaWkxM3EzcTNxMSExEUERMSExITNxM3EzcTEhMRFBETEhMSEzcTEhMSExITEhMSExITEhMREzcTNxM3EzcTNhQ2EzcTAAYHlZMUNhM3EzcTEhMSExITEhMREzcTNxM3ExITEhMSExITEhM2ExITEhMSExITEhMSExITEhM2FDYTNxM3EzcTNxM2EwAGB5WUEzcTNxM2ExITEhMSExITEhM3EzcTNhQRExITEhMSExITNxMSExITEhMSExISEhMSExITNxM3EzcTNxM2EzcTNxMABgiUkxM3EzcTNxMSExITEhgNEhITNxM3EzcTEhMSExITEhMSEjcTEhMSExITEhMSExITEhMSEzYTNxM3EzcTNxM3EzYTAAYHlZQTNxI3EzcTEhMSExITEhMSEzcSNxM3ExITEhMSExITEhM3EhMSEhMSExITEhMSExITEhM3EzcSNxM3EzcTNxM3EwANBQAA
+
+
+      num_1:
+        card:
+          type: custom:button-card
+          icon: mdi:blank
+          styles:
+            card:
+              - width: 49px
+              - height: 33px
+              - background-color: rgba(0,0,0,0.0)
+              - border-width: 0px
+              - border-radius: 0px
+          tap_action:
+            action: call-service
+            service: remote.send_command
+            service_data:
+              entity_id: '[[[ return variables.remote ]]]'
+              device: '[[[ return variables.media ]]]'
+              command: >-
+                b64:JgDSAI+VEjgRORE5ERQRFBEUEBUQFBE5ETkROREUERQRFBEUEBQRFBEUETkRFBEUERQRFBEUETgROREUETkRORE5ETgROREABgqSlRI4ETkROREUERQRFBEUEBQRORE5ETkRFBEUERQRFBEUEBQRFBE5ERQRFBEUERQRFBE5EDkRFBE5ETkRORE5EDkRAAYKkpYQOhA5ETkRFBEUERQRFBAUETkRORE5ERQYDREUERQQFRAUERQROREUERQRFBEUERQRORA5FBERORE5ETkROBE5EQANBQAAAAA=
+
+
+      num_2:
+        card:
+          type: custom:button-card
+          icon: mdi:blank
+          styles:
+            card:
+              - width: 49px
+              - height: 33px
+              - background-color: rgba(0,0,0,0.0)
+              - border-width: 0px
+              - border-radius: 0px
+          tap_action:
+            action: call-service
+            service: remote.send_command
+            service_data:
+              entity_id: '[[[ return variables.remote ]]]'
+              device: '[[[ return variables.media ]]]'
+              command: >-
+                b64:JgDSAJCUEzcTNhM3ExITEhMSExITEhM2FDYTNxMSExITEhMSExITNxMREzcTEhMSExITEhMSExITNhQSEjcTNxM3EzcTNxMABgaVlBM3EzYTNxMSExITEhMSExITNxM2EzcTEhMSExITEhoLEzcTEhM2ExITEhMSExITEhMSEzcTEhM2EzcTNxM3EzcTAAYHlJQTNxM3EzYTEhMSExITEhMSEzcTNxM2ExITEhMSExITEhM3ExITNhQRExITEhMSExITEhM3ExITNxM2EzcTNxM3EwANBQAAAAA=
+
+
+      num_3:
+        card:
+          type: custom:button-card
+          icon: mdi:blank
+          styles:
+            card:
+              - width: 49px
+              - height: 33px
+              - background-color: rgba(0,0,0,0.0)
+              - border-width: 0px
+              - border-radius: 0px
+        tap_action:
+          action: call-service
+          service: remote.send_command
+          service_data:
+            entity_id: '[[[ return variables.remote ]]]'
+            device: '[[[ return variables.media ]]]'
+            command: >-
+              b64:JgDSAI+VEjgRORE5ERQQFBEUERQRFBE5ETkRORAUERQRFBEUERQRFBE5ETkSExAUExIRFBEUETkTEhMSEzcSNxM3EzcTNxMABgaTlhE5ETgROREUERQRFBEUERQRORE4ETkRFBEUERQRFBEUERQRORE4ERQRFBEUERQRFBE5ERQRFBI3EzcTNxE5EzcSAAYHk5YRORE5ETkRFBAVEBQRFBEUETkRORE5ERQRFBAVEBQRFBEUETkROREUERQRFBEUEBUQOREUERQRORE5ETkQORE5EQANBQAAAAA=
+
+      num_4:
+        card:
+          type: custom:button-card
+          icon: mdi:blank
+          styles:
+            card:
+              - width: 49px
+              - height: 33px
+              - background-color: rgba(0,0,0,0.0)
+              - border-width: 0px
+              - border-radius: 0px
+          tap_action:
+            action: call-service
+            service: remote.send_command
+            service_data:
+              entity_id: '[[[ return variables.remote ]]]'
+              device: '[[[ return variables.media ]]]'
+              command: >-
+                b64:JgAYAZCUEzcSNxM4EhITEhMSExITEhM2EzcTNxMSExITEhMSExITEhITEhITNxMSExITEhMSEzcTNxI3ExITNxM3EzcTNxIABgeVlBI3EzcTNxMSExITEhMSEhMSNxM3EzcTEhMSExITEhITExETEhMSEzcTEhMSExITEhM3EjcTNxMSEzcTNxM3EzYTAAYHlZQTNxI3EzcTEhMSExITEhMSEzcTNhM3ExITEhMSExITEhMSExITEhM2ExITEhMSExITNxM3EzYTEhM3EzcTNxM3EwAGBpWUEzcTNxM2ExITEhMSExITEhM3EzcTNxITEhITEhMSExITEhMSExITNxMSExISExISEzcTNxM3ExITNxM2EzcTNxMADQUAAAAAAAAAAAAAAAAAAA==    
+
+      num_5:
+        card:
+          type: custom:button-card
+          icon: mdi:blank
+          styles:
+            card:
+              - width: 49px
+              - height: 33px
+              - background-color: rgba(0,0,0,0.0)
+              - border-width: 0px
+              - border-radius: 0px
+          tap_action:
+            action: call-service
+            service: remote.send_command
+            service_data:
+              entity_id: '[[[ return variables.remote ]]]'
+              device: '[[[ return variables.media ]]]'
+              command: >-
+                b64:JgAYAZGUEzcTNhM3ExITEhMSExITEhM3EzYUNhMSExITEhMSExITNxMSExITNhMSExITEhMSExITNxM3ExEUNhM3EzcTNxMABgaVlBM3EzcTNhMSExITEhMSExITNxM3EzcTERMSExITEhMSEzcTEhMSEzcTEhMRExITEhMSEzcTNxMSEzcTNhM3EzcTAAYGlpMTNxM3EzcTEhMSExITERMSEzcTNxM3ExITEhMSExISEhM3ExITEhM3ExITEhMSExITEhI3EzcTEhM3EzcTNxM2EwAGB5WUEzcTNxI3ExITExISExITEhM3EzYTNxMSExITEhMSExITNxMSExMSNhMSExITEhMSExITNxM3ExITNhM3EzcTNxMADQUAAAAAAAAAAAAAAAAAAA==
+        
+
+      num_6:
+        card:
+          type: custom:button-card
+          icon: mdi:blank
+          styles:
+            card:
+              - width: 49px
+              - height: 33px
+              - background-color: rgba(0,0,0,0.0)
+              - border-width: 0px
+              - border-radius: 0px
+          tap_action:
+            action: call-service
+            service: remote.send_command
+            service_data:
+              entity_id: '[[[ return variables.remote ]]]'
+              device: '[[[ return variables.media ]]]'
+              command: >-
+                b64:JgAYAZCUEjcTNxM3ExITEhMSExITEhI3EzcTNxMSExITEhMSExISExI3ExITNxMSExITEhMSEzYTEhM3ExITNxM3EzcSNxMABgeVkxM3EzcTNxMSExITEhITEhITNxM3EzcTEhMSExISExITEhITNxMSEzcTEhMSExITEhI3ExITNxMSEzcTNxM3EjcTAAYHlZQTNxI3EzcTEhMSExITEhMSEzcSNxM3ExITEhMSExITEhMSEjcTEhM3ExITEhMSExITNxITEjcTEhM3EzcTNxM3EgAGCpKUEzcSNxM3ExITEhMSExITEhM3EjcTNxMSExITEhMSExITEhM2ExITNxMSExITEhMSEzcTEhI3ExITNxM3EzcTNxMADQUAAAAAAAAAAAAAAAAAAA==
+        
+
+      num_7:
+        card:
+          type: custom:button-card
+          icon: mdi:blank
+          styles:
+            card:
+              - width: 49px
+              - height: 33px
+              - background-color: rgba(0,0,0,0.0)
+              - border-width: 0px
+              - border-radius: 0px
+          tap_action:
+            action: call-service
+            service: remote.send_command
+            service_data:
+              entity_id: '[[[ return variables.remote ]]]'
+              device: '[[[ return variables.media ]]]'
+              command: >-
+                b64:JgAYAZGUEzcTNhM3ExITEhMSExITEhM2FDYTNxMSExITEhMSExITEhMSEzYTNxMSExITEhMSEzcTNhQRExITNxM3EzcTNxMABgaVlBM3EzYTNxMSExITEhMSExITNxM2EzcTEhMSExITEhMSExITEhM2EzcTEhMSExITEhM3EzcTEhITEjcTNxM3EzcTAAYGlZIVNxM3EzYTEhMSExITEhMSEzcTNxM2ExITEhMSExITEhMSExITNxM2ExITEhMSExITNxM3ExITEhM2EzcTNxM3EwAGB5SUEzcTNxI3ExITEhMSExITEhM3EzcSNxMSExITEhMSExITEhMSEzcTNhMSExITEhMUGS8TNxMSExITNxI3EzcTNxMADQUAAAAAAAAAAAAAAAAAAA==
+
+      num_8:
+        card:
+          type: custom:button-card
+          icon: mdi:blank
+          styles:
+            card:
+              - width: 49px
+              - height: 33px
+              - background-color: rgba(0,0,0,0.0)
+              - border-width: 0px
+              - border-radius: 0px
+          tap_action:
+            action: call-service
+            service: remote.send_command
+            service_data:
+              entity_id: '[[[ return variables.remote ]]]'
+              device: '[[[ return variables.media ]]]'
+              command: >-
+                b64:JgAYAZCUEzcTNxM2ExITEhMSExITEhM3EzcSNxMSExITEhMSExITNxMSEzYTNxMSExITEhMSExITNxITEhITNxM3EzcTNxIABgeVkxM3EzcTNxMSExISExITEhITNxM3EzcTEhMSExISExISEzcTEhM3EzcTEhMSEhMSExISEzcTEhMSEzcTNxI3EzcTAAYIk5QTNxM3EzcTEhMSEhMSEhMSEzcTNxM3ExISExITEhITEhM3ExITNxM3ExISExITEhITEhM3ExITEhM3EzcSNxM3EwAGC5CUEzcTNxM3ExITEhISExITEhM3EzcTNxMSExISEhMSExITNxMSEzcTNxITEhITEhMSExITNxMSExITNxI3EzcTNxMADQUAAAAAAAAAAAAAAAAAAA==
+
+
+      num_9:
+        card:
+          type: custom:button-card
+          icon: mdi:blank
+          styles:
+            card:
+              - width: 49px
+              - height: 33px
+              - background-color: rgba(0,0,0,0.0)
+              - border-width: 0px
+              - border-radius: 0px
+          tap_action:
+            action: call-service
+            service: remote.send_command
+            service_data:
+              entity_id: '[[[ return variables.remote ]]]'
+              device: '[[[ return variables.media ]]]'
+              command: >-
+                b64:JgAYAZCUEzcTNxM2ExITEhMSExITEhM3EzcTNhMSExITEhMSExITEhM3EzcSOBISExITEhMSEzcTEhMSExISNxM3EzcTNxMABgaVlBM3EzYTNxMSExITEhMSExITNxM2EzcTEhMSExITEhMSExITNxI3EzcTEhMSExITEhM3ExITEhISEzcTNxM3EzcTAAYGlZQTNxM2EzcTEhMSExITEhMSEzcTNhM3ExITEhMSExITEhMSEzYTNxM3ExITEhMSExITNxMSEhITEhM3EzcTNxM3EwAGBpWUEzYTNxM3ExITEhMSExITEhM3EzYTNxMSExITEhMSExITEhM2EzcTNxMSExITEhMSEzcTEhISExITNxM3EzcTNxMADQUAAAAAAAAAAAAAAAAAAA==
+
+
+      ttx:
+        card:
+          type: custom:button-card
+          icon: mdi:blank
+          styles:
+            card:
+              - width: 49px
+              - height: 33px
+              - background-color: rgba(0,0,0,0.0)
+              - border-width: 0px
+              - border-radius: 0px
+          tap_action:
+            action: call-service
+            service: remote.send_command
+            service_data:
+              entity_id: '[[[ return variables.remote ]]]'
+              device: '[[[ return variables.media ]]]'
+              command: >-
+                b64:JgDSAJCUEzcTNxI3ExITEhMSExITEhM3EzcSNxMSExITEhMSExITEhMSEzcSNxMSEzcTEhMSEzcTNxITEhITNxMSEzcTNxMABgeUlBM3EjcTNxMSExITEhMSExITNxI4EjcTEhMSExITEhMSExITEhM3EjcTEhM3ExITEhM3EzYTExISEzcTEhM3EzcTAAYIk5QTNxM2EzcTEhMSExITEhMSEzcTNhM3ExITEhMSExITEhMSExITNhM3ExITNxMSExITNxM2ExITEhM3ExITNxM3EwANBQAAAAA=
+
+
+      num_0:
+        card:
+          type: custom:button-card
+          icon: mdi:blank
+          styles:
+            card:
+              - width: 49px
+              - height: 33px
+              - background-color: rgba(0,0,0,0.0)
+              - border-width: 0px
+              - border-radius: 0px
+          tap_action:
+            action: call-service
+            service: remote.send_command
+            service_data:
+              entity_id: '[[[ return variables.remote ]]]'
+              device: '[[[ return variables.media ]]]'
+              command: >-
+                b64:JgAYAY6WFDYRORE5ERMRFBEUERQRFBE5ETkROREUEBUQFBEUERQROREUExITEhM3EhMTEhMRExITNxM3EzcTEhM3EjcTNxMABgeTlRE5ETkROREUERQRFBAVERMRORE5ETkRFBEUERQRFBAUETkRFBEUERQROREUERQRFBEUEDkRORE5ERQRORE5EDkRAAYJk5USOBE5ETkRFBEUERQRFBEUETgRORE5ERQRFBEUERQRFBE5EBUQFBEUETkRFBEUERQRFBE5ETgROREUETkRORE5EQAGCJWUEzcTNxM2ExITEhMSExITEhM3EzcTNxMRExITEhMSExITNxMSExITEhM2ExITEhMSExITNxM3EzcTEhM2EzcTNxMADQUAAAAAAAAAAAAAAAAAAA==
+
+      pre:
+        card:
+          type: custom:button-card
+          icon: mdi:blank
+          styles:
+            card:
+              - width: 49px
+              - height: 33px
+              - background-color: rgba(0,0,0,0.0)
+              - border-width: 0px
+              - border-radius: 0px
+          tap_action:
+            action: call-service
+            service: remote.send_command
+            service_data:
+              entity_id: '[[[ return variables.remote ]]]'
+              device: '[[[ return variables.media ]]]'
+              command: >-
+                b64:JgAYAZCUFDYTNxI3ExITEhMSExITEhM3EzcSNxMSExITEhMSExITNxI4ERQSExA5ERQTEhEUERQRFBE5ETkQFRA5ETkROREABgiVlBM3EjgSNxMTEhITEhMSExITNxM3EjgSExISExITEhMSEzcTNxMSEhMSNxMSExIUERMSExITNxM3EhITNxM3EzcTAAYHkpYRORE5ETgRFRAUERQRFBEUETkRORA5ERQRFBEUERQRFBE5ETkRFBAUETkRFBEUERQRFBEUETkRORAUETkRORE5EQAGCZKWEjgRORE4ERQRFRAUERQRFBE5ETkROBEUERQRFBEUERQRORE5ERQQFBE5ExITEhMSExITEhM3EzYTEhM3EzcTNxMADQUAAAAAAAAAAAAAAAAAAA==
+
+      volume_up:
+        card:
+          type: custom:button-card
+          icon: mdi:blank
+          styles:
+            card:
+              - width: 54px
+              - height: 61px
+              - background-color: rgba(0,0,0,0.0)
+              - border-width: 0px
+              - border-radius: 0px
+          tap_action:
+            action: call-service
+            service: remote.send_command
+            service_data:
+              entity_id: '[[[ return variables.remote ]]]'
+              device: '[[[ return variables.media ]]]'
+              command: >-
+                b64:JgDSAJGTFDYTNxM3ExITEhMSExITERM3EzcTNxMSExITEhMSEhITNxM3EzcTEhMSExITERMSExITEhMSEzcTNxM2FDcSNxMABgaVlBM3EzcTNhQRExITEhMSExITNxM3EzYTEhMSExITEhMSEzcTNxM2ExITEhMSExITEhMSExITEhM3EzYTNxM3EzcTAAYGlZQTNxM3EzcTERMSExITEhMSEzcTNxM2FBETEhMSExITEhM3EzcTNhQRFBETEhMSExITEhMSExITNxM2FDYTNxM3EwANBQAAAAA=
+
+      volume_down:
+        card:
+          type: custom:button-card
+          icon: mdi:blank
+          styles:
+            card:
+              - width: 54px
+              - height: 61px
+              - background-color: rgba(0,0,0,0.0)
+              - border-width: 0px
+              - border-radius: 0px
+          tap_action:
+            action: call-service
+            service: remote.send_command
+            service_data:
+              entity_id: '[[[ return variables.remote ]]]'
+              device: '[[[ return variables.media ]]]'
+              command: >-
+                b64:JgAYAY+VETkRORE5ERQRFBEUEhMRExI4EjgSOBITExITEhITEhITNxM3ExITNxMSExITERMSExITEhM3ExITNxM3EzYTNxMABgaVlBM3EzcTNxMRExITEhMSExITNxM3EzYUERMSExITEhMSEzcTNxMSEzYTEhMSExITEhMSExITNxMSEjcSOBM3EjgSAAYHlZQTNxM3EzYTEhMSExITEhMSEzcTNxM2ExITEhMSExITEhM3EzcTEhM2ExITEhMSExITEhMSEzcTEhM2EzcTNxM3EwAGBpWUEzcTNhQ2ExITEhMSExITEhM3EzYUNhMSExITEhMSExITNxM2FBETNxMSExITEhMSExITEhM3ExISNxM3EzcTNxMADQUAAAAAAAAAAAAAAAAAAA==
+
+
+      mute:
+        card:
+          type: custom:button-card
+          icon: mdi:blank
+          styles:
+            card:
+              - width: 49px
+              - height: 47px
+              - background-color: rgba(0,0,0,0.0)
+              - border-width: 0px
+              - border-radius: 0px
+          tap_action:
+            action: call-service
+            service: remote.send_command
+            service_data:
+              entity_id: '[[[ return variables.remote ]]]'
+              device: '[[[ return variables.media ]]]'
+              command: >-
+                b64:JgDSAJGTEzcTNxM3ExITEhMSEhITEhM3EzcTNxMSExITEhISExITNxM3EzcTNhMSExITEhMSExITEhMSExITNxM3EjcTNxMABgaVlBM3EzcTNxMSEhITEhMSExITNxM3EzcTEhISExITEhMSEzcTNxM3EzYTEhMSExITEhMSExITEhMSEzYTNxM3EzcTAAYHlJQTNxM3EjcTEhMTEhITEhMSEzcTNxI3ExITEhMSExITEhM3EzcSNxM3ExITEhMSExITEhMSEhITEhM3EzcTNxM3EgANBQAAAAA=
+
+      ch_list:
+        card:
+          type: custom:button-card
+          icon: mdi:blank
+          styles:
+            card:
+              - width: 49px
+              - height: 47px
+              - background-color: rgba(0,0,0,0.0)
+              - border-width: 0px
+              - border-radius: 0px
+          tap_action:
+            action: call-service
+            service: remote.send_command
+            service_data:
+              entity_id: '[[[ return variables.remote ]]]'
+              device: '[[[ return variables.media ]]]'
+              command: >-
+                b64:JgAYAZGTEzcTNxM3ExITEhISExITEhM3EzcTNxMSExISEhMSExITNxM3ExITNxISEzcTNxMSExITEhM3ExISNxMSExITNxMABgaVlBM3EzcTNxMSEhITEhMSExITNxM3EzcTEhISExITEhMSEzcTNxMSEzYUERM3EzcTEhMSExITNxMSEjcTEhMSEzcTAAYGlZQTNxM3EzYTEhMSExITEhMSEzcTNxM2ExITEhMSExITEhM3EzcTEhM2ExITNxM3ExITEhMSEzYTEhM3ExITEhM3EwAGB5SUEzoYLhM3ExITEhMSExITEhM3EzYUNhMSExITEhMSExITNxM2FBETNxMSEzcTNxMSExITEhI3ExITNxMSExITNxMADQUAAAAAAAAAAAAAAAAAAA==
+
+
+      program_up:
+        card:
+          type: custom:button-card
+          icon: mdi:blank
+          styles:
+            card:
+              - width: 54px
+              - height: 61px
+              - background-color: rgba(0,0,0,0.0)
+              - border-width: 0px
+              - border-radius: 0px
+          tap_action:
+            action: call-service
+            service: remote.send_command
+            service_data:
+              entity_id: '[[[ return variables.remote ]]]'
+              device: '[[[ return variables.media ]]]'
+              command: >-
+                b64:JgDSAJCTEzYTNxM2ExITEhMRExITEhM2EzYTNxMSExETEhMSExISEhM3ExETEhM2ExITEhMSEzYTEhM2EzcTERM3EzYTNxIABf6UkxM3EzYTNhMSExITEhMRExITNhM3EzYTEhMSExETEhMSExETNxMSExETNxMRExITEhM2ExITNhM3ExITNhM2EzcTAAX9lJMTNxM2EzcSEhMSExITERMSEzcTNhM2ExITEhMSEhITEhMSEzYTEhMSEjcTEhMRExITNhMSEzcTNhMSEzYTNxI3EwANBQAAAAA=
+
+
+
+      program_down:
+        card:
+          type: custom:button-card
+          icon: mdi:blank
+          styles:
+            card:
+              - width: 54px
+              - height: 61px
+              - background-color: rgba(0,0,0,0.0)
+              - border-width: 0px
+              - border-radius: 0px
+          tap_action:
+            action: call-service
+            service: remote.send_command
+            service_data:
+              entity_id: '[[[ return variables.remote ]]]'
+              device: '[[[ return variables.media ]]]'
+              command: >-
+                b64:JgAYAY+TEzYTNxI3ExITERMSExITEhI3EzYTNxMSEhITEhMSExETEhMSExISEhM3ExETEhMSEzYTNxI3EzYTEhM3EjcTNhMABf6UkxM3EjcTNhMSExITEhISExITNhM3EzYTEhMSEhITEhMSExETEhMSExISNxMSExISEhM3EjcTNhM3ExISNxM2EzcTAAX+lJMTNhM3EzYTEhMSEhITEhMSEzYTNhM3ExISEhMSExITEhISExITEhISEzcTEhISExITNhM3EzYTNxISEzcTNhM3EgAF/pSTEzcTNhM3EhITEhMSExETEhM3EjcTNhMSExITEhITEhITEhISExITEhM2ExITEhITEjgSNhM3EjcTEhM2EzcSNxMADQUAAAAAAAAAAAAAAAAAAA==         
+
+
+      menu:
+        card:
+          type: custom:button-card
+          icon: mdi:blank
+          styles:
+            card:
+              - width: 53px
+              - height: 37px
+              - background-color: rgba(0,0,0,0.0)
+              - border-width: 0px
+              - border-radius: 0px
+          tap_action:
+            action: call-service
+            service: remote.send_command
+            service_data:
+              entity_id: '[[[ return variables.remote ]]]'
+              device: '[[[ return variables.media ]]]'
+              command: >-
+                b64:JgDSAI6WETkRORE5EBUQFBEUERQRFBE5ETkRORAVEBQRFBEUERQRFBE5ERQRORA5ERQRFBEUETkRFBE5ERQRFBA5ETkROREABgmSlhI4ETkQOREUERQRFBEUERQRORE5EDkRFBEUERQRFBEUERQROREUEDkROREUERQRFBE5ERQROBEUERQRORE5ETkRAAYIk5YROBE5ETkRFBEUERQTEhEUETkQORE5ERQRFBEUERQRFBEUETgRFBE5ETkRFBEUERQRORAUETkRFBEUETkRORE5EAANBQAAAAA=
+
+
+      smart_hub:
+        card:
+          type: custom:button-card
+          icon: mdi:blank
+          styles:
+            card:
+              - width: 52px
+              - height: 48px
+              - background-color: rgba(0,0,0,0.0)
+              - border-width: 0px
+              - border-radius: 0px
+          tap_action:
+            action: call-service
+            service: remote.send_command
+            service_data:
+              entity_id: '[[[ return variables.remote ]]]'
+              device: '[[[ return variables.media ]]]'
+              command: >-
+                b64:JgAYAZCUEzcTNxM2ExITEhMSExITEhM3EzYTNxMSExITEhMSExITNxMSExISNxM3EzcTNxMSExITNhM3ExITEhMSExITNxMABgaVkhU2EzcTNxMSExITEhMSExITNhM3EzcTEhMSExITEhMSEzYTEhMSEzcTNxM3EzYTEhMSEzcTNxMSExITEhMSEzYTAAYHlZQTNhM3EzcTEhMSExITEhMSEzYTNxM3ExITEhMSExITEhM2FBETEhM3EzcTNxM3ExITERM3EzcTEhMSExITEhM3EwAGBpWTFDYTNxM3ExITEhMSExITEhM2EzcTNxMSExITEhMSExITNhMSExITNxM3EzcTNhMSExITNxM3ExITEhMSExITNhMADQUAAAAAAAAAAAAAAAAAAA==
+
+
+
+      guide:
+        card:
+          type: custom:button-card
+          icon: mdi:blank
+          styles:
+            card:
+              - width: 53px
+              - height: 37px
+              - background-color: rgba(0,0,0,0.0)
+              - border-width: 0px
+              - border-radius: 0px
+          tap_action:
+            action: call-service
+            service: remote.send_command
+            service_data:
+              entity_id: '[[[ return variables.remote ]]]'
+              device: '[[[ return variables.media ]]]'
+              command: >-
+                b64:JgBeAZGTEzcTNxM3ExITEhMSExISEhM3EzcTNxMSExITEhMSEhMSNxM3EzcTNxMSExISNxMSExITEhMSExITNxM2ExITNxMABgaVlBM3EzcTNxMSExITEhITEhQRNxM3EzcTEhMSEhMSEhMSEzcTNxM3EzcTEhITEjcTEhMSExITEhMSEzcTNhMSEzcTAAYGlZQTNxM3EzcTEhMSEhMSEhMSEzcTNxM3ExITEhITEhITEhM3EzcTNxM3EhMSEhM3ExITEhMSExITEhM3EjcTEhM3EwAGBpWUEzcTNxM2ExITEhMSExITEhM3EzcTNhMSExITEhMSExITNxM3EzYTNxMSExITNxMSExITEhMSEhMSOw83ExITNxMABgaVlBM3EjcTNxMSExITEhMSExITNxI3EzcTEhMSExITEhMSEzcSNxM3EzcTEhMSEzcSExISExITEhMSEzcTNxMSEzcSAA0FAAAAAAAAAAA=
+
+      tools:
+        card:
+          type: custom:button-card
+          icon: mdi:blank
+          styles:
+            card:
+              - width: 53px
+              - height: 37px
+              - background-color: rgba(0,0,0,0.0)
+              - border-width: 0px
+              - border-radius: 0px
+          tap_action:
+            action: call-service
+            service: remote.send_command
+            service_data:
+              entity_id: '[[[ return variables.remote ]]]'
+              device: '[[[ return variables.media ]]]'
+              command: >-
+                b64:JgAYAZGTEzcTNxM3ExITEhITEhITEhM3EzcTNxMSEhMSEhMSExITNxM3ExITNxITEhITNxUQExITEhM3ExISNxM3ExITNxMABgaVlBM3EjcTNxMSExITEhMSExITNxI3EzcTEhMSExITEhMSEzcSNxMSEzcTEhMSEzcTEhITEhMSNxMSEzcTNxMSEzcSAAYGlZQTNxM3EzcTEhMSEhITEhMSEzcTNxM3ExISEhMSExITEhM3EzcTEhM3EhITEhM3ExITEhMSEzcTEhM2EzcTEhM3EwAGBpWUEzcTNxI3ExITEhMSExITEhM3EzYTNxMSExITEhMSExITNxM3EhITNxMSExITNxMSExITEhI3ExITNxM3ExITNxMADQUAAAAAAAAAAAAAAAAAAA==
+
+      freccia_up:
+        card:
+          type: custom:button-card
+          icon: mdi:blank
+          styles:
+            card:
+              - width: 37px
+              - height: 52px
+              - background-color: rgba(0,0,0,0.0)
+              - border-width: 0px
+              - border-radius: 0px
+          tap_action:
+            action: call-service
+            service: remote.send_command
+            service_data:
+              entity_id: '[[[ return variables.remote ]]]'
+              device: '[[[ return variables.media ]]]'
+              command: >-
+                b64:JgBGAJGWEDwNOw88DxQQFg8WDxYPFg86ETkROw8VEBYPFQ8XEBUOFhEVDhYPFhEVDzoROBEVDzsQOw86EDkROhAWDhYPPA4ADQUAAA==
+
+      info:
+        card:
+          type: custom:button-card
+          icon: mdi:blank
+          styles:
+            card:
+              - width: 53px
+              - height: 37px
+              - background-color: rgba(0,0,0,0.0)
+              - border-width: 0px
+              - border-radius: 0px
+          tap_action:
+            action: call-service
+            service: remote.send_command
+            service_data:
+              entity_id: '[[[ return variables.remote ]]]'
+              device: '[[[ return variables.media ]]]'
+              command: >-
+                b64:JgBeAZGTEzcTNxM3ExITEhMSEhMSEhM3EzcTNxMSExITEhITEhITNxM3EzcTNxM2ExITEhMSExITEhMSExITEhM3EzYTNxMABgaWkxM3EzcTNxMSExITEhISExITNxM3EzcTEhMSExITEhISEzcTNxM3EzcTNxMSEhITEhMSExITEhMSExITNxM3EzYTAAYHlZQTNxI3EzcTEhMSExITEhMSEzYTNxM3ExITEhMSExITEhM2EzcTNxM3EzcTEhMSEhMSEhMSExMSEhMSEzcTNxM3EgAGCZOUEzcTNxM3EhITEhMSExITEhM3EzcTNxITEhITEhMSExITNxM3EzcTNhM3ExITEhMSExITEhMSExITEhI4EjcTNxMABgeVkxM3EzcTNhQSExITEhITEhITNxM3EzcTEhMSExITEhITEjcTNxM3EzcTNxISExITEhMSExITEhMSExITNxM2EzcTAA0FAAAAAAAAAAA=
+
+
+      freccia_left:
+        card:
+          type: custom:button-card
+          icon: mdi:blank
+          styles:
+            card:
+              - width: 52px
+              - height: 37px
+              - background-color: rgba(0,0,0,0.0)
+              - border-width: 0px
+              - border-radius: 0px
+          tap_action:
+            action: call-service
+            service: remote.send_command
+            service_data:
+              entity_id: '[[[ return variables.remote ]]]'
+              device: '[[[ return variables.media ]]]'
+              command: >-
+                b64:JgCMAJiTFTUUNhQ2FBEUERQRFBEVEBU1FTYVNRQRFBEUERQRFBEUNhQRFTUVEBURFDYUNhQRFBEUNhQRFDYUNhMSExITNxMABg2VlRM3EzcTOBITEhMSExITEhMSOBI4EjgTEhMSExITEhMTEjgSExI4EhMSExI4EjgSExMSEzcTEhM4EjgSExITEjgSAA0FAAAAAAAAAAAAAAAA
+
+      enter:
+        card:
+          type: custom:button-card
+          icon: mdi:blank
+          styles:
+            card:
+              - width: 52px
+              - height: 37px
+              - background-color: rgba(0,0,0,0.0)
+              - border-width: 0px
+              - border-radius: 0px
+          tap_action:
+            action: call-service
+            service: remote.send_command
+            service_data:
+              entity_id: '[[[ return variables.remote ]]]'
+              device: '[[[ return variables.media ]]]'
+              command: >-
+                b64:JgDSAJGUEzYTNxM3ExITEhMSExITEhI3EzcTNxMSExITEhMSExISEhMSExITNxMSEzcTNxMSEjcTNxM3ExITNxMSExISNxMABgeUlBM3EzcTNxISExITEhMSExITNxM3EzYTEhMSExITEhMSExITEhMSEzcTEhI3EzcTEhM3EzcTNhMSEzcTEhMSEzcTAAYGlZQTNxM3EzYTEhMSExITEhMSEzcTNxM2ExITEhMSExITEhMSExITEhM3EhMSNxM3ExITNxM3EzYTEhM3ExITEhM3EwANBQAAAAA=
+
+      freccia_right:
+        card:
+          type: custom:button-card
+          icon: mdi:blank
+          styles:
+            card:
+              - width: 52px
+              - height: 37px
+              - background-color: rgba(0,0,0,0.0)
+              - border-width: 0px
+              - border-radius: 0px
+          tap_action:
+            action: call-service
+            service: remote.send_command
+            service_data:
+              entity_id: '[[[ return variables.remote ]]]'
+              device: '[[[ return variables.media ]]]'
+              command: >-
+                b64:JgDSAJaUEzcUNhQ2FBEUEhMSExITEhI4EjgSOBITEhMSExITExITEhM4EhMSExITEjgSOBITEjgSExI4EzcTNxMTEhMSOBIABg2VlRM4EjgSOBITEhMSExITEhMSOBM3EzgSExITEhMSExQREhMSOBITEhMUERQ2FDYUEhM3EhMUNhQ2FDYUERQRFDYUAAYMlZUSOBI4EzcTExITEhMSExITEjgSOBI4EhMSExITExITEhMSEzgSExITEhMSOBI4EhMSOBITEzcTOBI4EhMSExI4EgANBQAAAAAAAA==
+
+
+      return:
+        card:
+          type: custom:button-card
+          icon: mdi:blank
+          styles:
+            card:
+              - width: 53px
+              - height: 37px
+              - background-color: rgba(0,0,0,0.0)
+              - border-width: 0px
+              - border-radius: 0px
+          tap_action:
+            action: call-service
+            service: remote.send_command
+            service_data:
+              entity_id: '[[[ return variables.remote ]]]'
+              device: '[[[ return variables.media ]]]'
+              command: >-
+                b64:JgAYAZGTEzcTNxM3ExITEhMSExISEhM3EzcTNxMSExITEhMSEhITEhMSExITNxM3ExITNxISEzcTNxM3ExITEhM3EhITNxMABgaWlBI3EzcTNxMSExISExISExITNxM3EzcTEhMSExISEhMSExITEhMSEzcTNxMSEzYTEhM3EzcTNxMSExITNhMSEzcTAAYGlpMTNxM3EzcTEhMSExISEhMSEzcTNxM3ExITEhMSEhITEhMSExITEhM3EzcTEhM2ExITNxM3EzcTEhMSEzYTExM2EwAGCZOTEzcTNxM3ExITEhMSExISEhM3EzcTNxMSExITEhMSExISEhMSExITNxM3ExITNxMSEjcTNxM3ExITEhM3ExISNxMADQUAAAAAAAAAAAAAAAAAAA==
+
+
+      freccia_down:
+        card:
+          type: custom:button-card
+          icon: mdi:blank
+          styles:
+            card:
+              - width: 37px
+              - height: 52px
+              - background-color: rgba(0,0,0,0.0)
+              - border-width: 0px
+              - border-radius: 0px
+          tap_action:
+            action: call-service
+            service: remote.send_command
+            service_data:
+              entity_id: '[[[ return variables.remote ]]]'
+              device: '[[[ return variables.media ]]]'
+              command: >-
+                b64:JgCMAJWWEjgSOBI4EhMSExITEhMSExI4EzcTOBITEhMSExITEhMSOBITEhMSExITEzcTNxMTEhMSOBI4EjgSOBITEhMTNxMABg2VlRM3EzgSOBITEhMSExITEhMSOBI4EzcTEhMTEhMSExITEjgSExITEhMSExI4EjgTEhMSEzgSOBM3EjgSExITEjgSAA0FAAAAAAAAAAAAAAAA
+
+
+      exit:
+        card:
+          type: custom:button-card
+          icon: mdi:blank
+          styles:
+            card:
+              - width: 53px
+              - height: 37px
+              - background-color: rgba(0,0,0,0.0)
+              - border-width: 0px
+              - border-radius: 0px
+          tap_action:
+            action: call-service
+            service: remote.send_command
+            service_data:
+              entity_id: '[[[ return variables.remote ]]]'
+              device: '[[[ return variables.media ]]]'
+              command: >-
+                b64:JgAYAZGUEzcTNxI4EhITEhMSExITEhM3EzcSNxMSExITEhMSExITNxMSEzcSNxMSEzcTEhMSExITNxITEhMSNxMSEzcTNxMABgaVlBM3EzcTNxISExITEhMSExITNxM3EzYTEhMSExITEhMSEzcTEhM3EzYTEhM3ExITEhMSEzcTEhITEjcTEhM3EzcTAAYGlZQTNxI4EjcTEhMSExITEhMSEzcTNxI3ExITEhMSExITEhM3ExITNxI3ExITNxMSExITEhM3EhMSExI3ExITNxM3EwAGBpWUEzcTNhM3ExITEhMSExITEhM3EzYTNxMSExITEhMSExITNxITEjcTNxMSEzcTEhMSExITNxISExITNxMSEzcTNxMADQUAAAAAAAAAAAAAAAAAAA==
+
+      btn_a:
+        card:
+          type: custom:button-card
+          icon: mdi:blank
+          styles:
+            card:
+              - width: 35px
+              - height: 27px
+              - background-color: rgba(0,0,0,0.0)
+              - border-width: 0px
+              - border-radius: 0px
+          tap_action:
+            action: call-service
+            service: remote.send_command
+            service_data:
+              entity_id: '[[[ return variables.remote ]]]'
+              device: '[[[ return variables.media ]]]'
+              command: >-
+                b64:JgAYAZCSFTcTNxM3ExISExISExITEhM3EzcTNxMSEhMSEhMSExITEhMSEzcTNxMSEjcTNxMSEzcTNxMSExISNxMSExITNxMABgeUlBM3EzcTNxMSExISExISExITNxM3EzcTEhMSEhMSEhMSExITEhM3EzcTEhM3EjcTEhM3EzcTEhMSEzcSEhMSEzcTAAYHlZMTNxM3EzcTEhITEhMSEhMSEzcTNxM3ExISExISExITEhMSExITNxM3ExITNxI3ExITNxM3ExITEhM3EhMSEhM3EwAGCJSTEzcTNxM3ExITEhMSExISExI3EzcTNxMSExITEhMSEhMSEhMSEzcTNxMSEzcTNhMSEzcTNxMSExITNxMSEhMSNxMADQUAAAAAAAAAAAAAAAAAAA==
+
+      btn_b:
+        card:
+          type: custom:button-card
+          icon: mdi:blank
+          styles:
+            card:
+              - width: 35px
+              - height: 27px
+              - background-color: rgba(0,0,0,0.0)
+              - border-width: 0px
+              - border-radius: 0px
+          tap_action:
+            action: call-service
+            service: remote.send_command
+            service_data:
+              entity_id: '[[[ return variables.remote ]]]'
+              device: '[[[ return variables.media ]]]'
+              command: >-
+                b64:JgAYAZGTEzcTNxM3ExITEhMSEhMSEhM3EzcTNxMTEhITEhMSEhITEhMSEzcTEhM3ExITEhITEjcTNxMSEzcTEhM3EjcTNxMABgeVlBI3EzcTNxMSExITEhMSExISNxM3EzcTEhMSExITEhITEhMSExI3ExITNxMSExITEhM3EjcTEhM3ExITNxM3EzcSAAYHlZQTNxI3EzcTEhMSExITEhMSEzcSNxM3ExITEhMSExITEhMSExISNxMSEzcTEhMSExITNxM3EhITNxMSEzcTNxM3EgAGCJSUEzcSOBI3ExITEhMSExITEhM3EzcSNxMSExITEhMSExITEhMSEzcSExI3ExITEhMSEzcTNxMSEjgSEhM3EzcTNxMADQUAAAAAAAAAAAAAAAAAAA==
+
+      btn_c:
+        card:
+          type: custom:button-card
+          icon: mdi:blank
+          styles:
+            card:
+              - width: 35px
+              - height: 27px
+              - background-color: rgba(0,0,0,0.0)
+              - border-width: 0px
+              - border-radius: 0px
+          tap_action:
+            action: call-service
+            service: remote.send_command
+            service_data:
+              entity_id: '[[[ return variables.remote ]]]'
+              device: '[[[ return variables.media ]]]'
+              command: >-
+                b64:JgAYAZCUEzYUNxI3ExITEhMSExITEhM3EjcTNxMSExITEhMSExITNxMSEjcTEhM3ExITEhMSExITNhMSEzcTEhM3EzcTNxMABgaVlBM3EzcSNxMSExITEhMSExITNxM2EzcTEhMSExITEhMSEzcTEhI3ExITNxMSExITEhMSEzcSEhM3ExITNxM3EzcTAAYGlZQSNxM3EzcTEhQRExITEhMSEzcSNxM3ExITEhMSExITEhI3ExITNxMSEzcTEhMSEhMSEhM3ExITNxMSEzcTNxI3EwAGB5WTEzcTNxM3ExITEhMSExISEhM3EzcTNxMSExITEhMSEhITNxMSEzcTEhM3ExITEhMRExITNxMSEzcTEhM3EzYUNhMADQUAAAAAAAAAAAAAAAAAAA==
+
+      btn_d:
+        card:
+          type: custom:button-card
+          icon: mdi:blank
+          styles:
+            card:
+              - width: 35px
+              - height: 27px
+              - background-color: rgba(0,0,0,0.0)
+              - border-width: 0px
+              - border-radius: 0px
+          tap_action:
+            action: call-service
+            service: remote.send_command
+            service_data:
+              entity_id: '[[[ return variables.remote ]]]'
+              device: '[[[ return variables.media ]]]'
+              command: >-
+                b64:JgBeAY+WEDkRORE5ERQRFBEUERQQFRA5ETkROREUERQRFBEUEBUQFBE5ETkRFBE5ERQRFBAVEDkRFBEUETkRFBE5ETgSOBEABgyPlhE5ETkRORAUERQRFBEUERQRORE5ETgRFBEUERQRFBEUERQRORE5EBUQOREUERQRFBE5ERQRFBE5EBUQORE5ETkRAAYIk5YROBE5ETkRFBEUERQRFBEUETgRORE5ERQRFBEUERQRFBEUETgROREUETkRFBEUERQRORAVEBUQOREUETkRORE5EQAGCJOWETgRORE5ERQRFBEUERQRFBE4ETkROREUERQRFBEUERQRFBA5ETkRFBE5ERQRFBEUEDkTEhMSEzcTEhM3EzcSNxMABgaWkxM3EzcTNxMSExITEhMSEhMSNxM3EzcTEhMSExISExITEhMSNxM3ExITNxMSEhMSExI3ExITEhM3ExITNxM3EjcTAA0FAAAAAAAAAAA=
+
+
+      e_manual:
+        card:
+          type: custom:button-card
+          icon: mdi:blank
+          styles:
+            card:
+              - width: 35px
+              - height: 27px
+              - background-color: rgba(0,0,0,0.0)
+              - border-width: 0px
+              - border-radius: 0px
+          tap_action:
+            action: call-service
+            service: remote.send_command
+            service_data:
+              entity_id: '[[[ return variables.remote ]]]'
+              device: '[[[ return variables.media ]]]'
+              command: >-
+                b64:JgCkAZGTEzcTNxM3ExITEhMSEhMSEhM3EzcTNxMSExITEhITEhITNxM3EzcTNxM3EjcTEhMSExITEhMSExITEhMSEzcSNxMABgaWlBI3EzcTNxMSExITEhMSEhMSNxM3EzcTEhMSExITEhMSEjcTNxM3EzcTNxM2ExITEhMSExITEhMSExITEhM3EzYTAAYHlZQTNxI3EzcTEhMSExITEhMSEzcTNxI3ExITExISExITEhM3EzcSNxM3EzcTNxMSExITEhITEhMSEhMSExITNxM3EwAGBpWUEzcTNxM3EhMSEhMSExITEhM3EzcTNxITEhITEhMSExITNxM3EzcTNxI3EzcTEhMSExITEhMSExISExITEjcTNxMABgqRlBM3EzcTNxMSEhMSExISExITNxM3EzcTEhITEhMSEhMSEzcTNxM3EzcSOBI3ExITEhMSExITEhMSExITEhI3EzcTAAYGlZQTNxM3EzcTEhMSEhMSExISEzcTNxM3ExITEhMSEhMSExI3EzcTNxM3EzcSNxMSExITEhMSExITEhMSExITNxI3EwANBQAA
+
+      sports:
+        card:
+          type: custom:button-card
+          icon: mdi:blank
+          styles:
+            card:
+              - width: 35px
+              - height: 27px
+              - background-color: rgba(0,0,0,0.0)
+              - border-width: 0px
+              - border-radius: 0px
+          tap_action:
+            action: call-service
+            service: remote.send_command
+            service_data:
+              entity_id: '[[[ return variables.remote ]]]'
+              device: '[[[ return variables.media ]]]'
+              command: >-
+                b64:JgBeAY+TEzYTNxI3ExITERMSExITEhM2EzcSNxMSExISEhMSExITERMSExITNhM3EzYTEhM2EzcTNhM2ExITEhMSEzYTEhMABf2VkxI3EzYTNxMSEhITEhMSExEUNhM2EzcTERMSExITEhISExITEhMSEjcTNhM3ExISNxM2EzcTNhMSExITERM3ExISAAX+lJMTNxM2EzYUERMSExITERMSEzYTNxM2ExITEhMSEhITEhMSExETEhM3EjcTNhMSEzcSNxM2EzcTEhISExITNhMSEwAF/ZWTEzYTNxI3ExISEhMSExITEhI3EzYTNxMRExITEhMSEhITEhMSExETNxM2EzcTERM3EzYTNxI3ExITERMSEzcSEhMABf2VkxM2EzYTNxMSEhITEhMSExETNxM2EzcSEhMSExITEhISExITEhMREzcTNhM3EhITNxM2EzcSNxMSExETEhM3EhITAA0FAAAAAAAAAAA=
+
+
+      ad_subt:
+        card:
+          type: custom:button-card
+          icon: mdi:blank
+          styles:
+            card:
+              - width: 35px
+              - height: 27px
+              - background-color: rgba(0,0,0,0.0)
+              - border-width: 0px
+              - border-radius: 0px
+          tap_action:
+            action: call-service
+            service: remote.send_command
+            service_data:
+              entity_id: '[[[ return variables.remote ]]]'
+              device: '[[[ return variables.media ]]]'
+              command: >-
+                b64:JgAYAY6TEzcTNhM3EhITEhMSExISEhM3EjcTNhMSExITEhISExITNhMSEzcSEhMSEzYTEhMSExISNxMSEzYTNxISEzcTNhMABf6UkxM2EzcSNxMSEhMSEhMSExISNxM2EzcTEhISExITEhMSEjcTEhI3ExITEhI3ExISEhMSEzYTEhM3EjcTEhM2EzcSAAX/k5MTNxI3EzYTEhMSExISEhMSEzYTNxI3ExITEhISExITEhI3ExISNxMSExISNxMSEhITEhM2ExITNhM3ExISNxM2EwAF/pOTEzcTNhM3EhITEhMSEhITEhM2EzcTNhMSExISEhMSExISNxMSEzYTEhMSEjcTEhISExITNhMSEzcSNxMSEjcTNxIADQUAAAAAAAAAAAAAAAAAAA==
+
+
+      stop:
+        card:
+          type: custom:button-card
+          icon: mdi:blank
+          styles:
+            card:
+              - width: 35px
+              - height: 27px
+              - background-color: rgba(0,0,0,0.0)
+              - border-width: 0px
+              - border-radius: 0px
+          tap_action:
+            action: call-service
+            service: remote.send_command
+            service_data:
+              entity_id: '[[[ return variables.remote ]]]'
+              device: '[[[ return variables.media ]]]'
+              command: >-
+                b64:JgDSAI+TEzYTNxI3ExITERMSExITEhI3EzYTNxMSEhITEhMSExETEhM3EjcTEhMRExITNxISEzcTEhISEzcTNhM3EhITNxIABf6VkhM3EzYTNxMSEhITEhMSExETNxM2EzcTERMSExITEhISExITNhM3ExISEhMSEzcSEhM3EhITEhM3EjcTNhMSEzYTAAX+lJQSNxM2EzcSEhMSExITERMSEzcSNxM2ExITEhMSEhITEhMSEzYTNxISExITEhM2ExITNhMSExISNxM3EjcTEhI3EwANBQAAAAA=
+
+
+      rewind:
+        card:
+          type: custom:button-card
+          icon: mdi:blank
+          styles:
+            card:
+              - width: 35px
+              - height: 27px
+              - background-color: rgba(0,0,0,0.0)
+              - border-width: 0px
+              - border-radius: 0px
+          tap_action:
+            action: call-service
+            service: remote.send_command
+            service_data:
+              entity_id: '[[[ return variables.remote ]]]'
+              device: '[[[ return variables.media ]]]'
+              command: >-
+                b64:JgAYAY+TEzYTNxM2ExITEhMSEhITEhM2FDYTNhMSExITERMSExITNhMSEzYTEhMSExITNhMSExITNhMSEzYTNxM2ExITNhMABf6TlBM3EzYTNxISEhMSExISEhMSOBI3EjcTEhITEhMSEhITEjgRExI4EhISExITEjcSExITEjcTEhI3EzcTNhMSEzYTAAX+k5QTNxI3EzcSEhITEhMSEhITEjgSNxM2ExITEhMSEhITEhM3ExETNxMRExITEhM2ExITEhM2ExITNhM3EzYTEhM2EwAF/pSTEzcSNxM2ExISExMSEhISExI3EzcTNhMSEhMTERITEhMSNxITEjcTEhMSEhMSNxMSEhITNxMSEjcTNhM3ExISNxMADQUAAAAAAAAAAAAAAAAAAA==
+
+
+      play:
+        card:
+          type: custom:button-card
+          icon: mdi:blank
+          styles:
+            card:
+              - width: 35px
+              - height: 27px
+              - background-color: rgba(0,0,0,0.0)
+              - border-width: 0px
+              - border-radius: 0px
+          tap_action:
+            action: call-service
+            service: remote.send_command
+            service_data:
+              entity_id: '[[[ return variables.remote ]]]'
+              device: '[[[ return variables.media ]]]'
+              command: >-
+                b64:JgAYAZCTEzYTNxM2ExITERMSExITEhM2EzYTNxMSExETEhMSExISNxM2EzcTEhISExITNhMSExITEhISEzcTNhM2ExITNxIABf+UkxM2EzcSNxMSExISEhMSExITNhM3EjcTEhMSEhITEhMSEzYTNxM2ExITEhISEzcTEhISExITEhI3EzcSNxMbCjYTAAX/k5QSNxM2EzcTEhISExITEhISEzcTNhM3EhMSEhMSExISEhM3EzYTNxISExITEhM2ExITEhMSEhITNxI3EzcSEhM3EgAF/pSUEjcTNhM3ExISEhMSExISEhM3EzYTNxISExITEhMSEhITNxI3EzcSEhMSExISNxMSExISEhMSEzYTNxM2ExITNhMADQUAAAAAAAAAAAAAAAAAAA==
+
+
+      pause:
+        card:
+          type: custom:button-card
+          icon: mdi:blank
+          styles:
+            card:
+              - width: 35px
+              - height: 27px
+              - background-color: rgba(0,0,0,0.0)
+              - border-width: 0px
+              - border-radius: 0px
+          tap_action:
+            action: call-service
+            service: remote.send_command
+            service_data:
+              entity_id: '[[[ return variables.remote ]]]'
+              device: '[[[ return variables.media ]]]'
+              command: >-
+                b64:JgAYAZCTEzYTNxM2ExITERMSExITEhM2EzYTNxMSExETEhMSExITERM3ExETNxMSExETNxMREzcTEhM2ExITNhM3ExETNxMABf2VkxM2EzcTNhMSExITERMSExITNhM2FDYTEhMRExITEhMSExETNxMREzcTEhMREzcTERM3ExITNhMSEzYTNxMREzcTAAX9lZMTNhM2EzcTEhMRExITEhMSEzYTNhM3ExISEhMSExITERMSEzYUERM3ExETEhM3ExETNxMREzcTEhM2EzYTEhM3EwAF/ZWTEzYTNhM3ExITERMSExITEhI3EzcSNxMSExETEhMSExETEhM3ExETNxMRExITNxMREzcTEhI3ExITNhM2ExITNxMADQUAAAAAAAAAAAAAAAAAAA==
+
+
+      forward:
+        card:
+          type: custom:button-card
+          icon: mdi:blank
+          styles:
+            card:
+              - width: 35px
+              - height: 27px
+              - background-color: rgba(0,0,0,0.0)
+              - border-width: 0px
+              - border-radius: 0px
+          tap_action:
+            action: call-service
+            service: remote.send_command
+            service_data:
+              entity_id: '[[[ return variables.remote ]]]'
+              device: '[[[ return variables.media ]]]'
+              command: >-
+                b64:JgAYAY+TEzYTNxM2ExITEhMRExITEhM2EzcSNxMSExISEhMSExITEhISExITNhMSExITNhMSEzYTNxM2ExITNhM3ExISNxMABf2VkxM2EzcTNhMSExETEhMSExISNxM2EzcTEhISExITEhMRExITEhMSEjcTEhMREzcTEhI3EzYTNxMSEjcTNhMSEzcSAAX+lJQSNxM2EzcTERMSExITEhISEzcTNhM3EhITEhMSExETEhMSExISEhM3ExITERM3EhITNxM2EzYTEhM3EjcVEBM3EgAF/ZWTEzYTNxI3ExISEhMSExITEhI3EzYTNxMSEhITEhMSEhITEhMSExISNxMSEhITNxMSEjcTNhM3ExISNxM2ExITNhMADQUAAAAAAAAAAAAAAAAAAA==
+
+
+
+
+
+
+
+
+      image: >
+        <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="240px" height="825px" version="1.1" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd"
+        viewBox="0 0 827 2842.813"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        xmlns:xodm="http://www.corel.com/coreldraw/odm/2003">
+        <defs>
+          <linearGradient id="id0" gradientUnits="userSpaceOnUse" x1="-6.108" y1="281.7" x2="826.791" y2="281.7">
+            <stop offset="0" stop-opacity="1" stop-color="#1F1F1F"/>
+            <stop offset="0.470588" stop-opacity="1" stop-color="#373737"/>
+            <stop offset="1" stop-opacity="1" stop-color="#1E1E1E"/>
+          </linearGradient>
+          <mask id="id1">
+            <linearGradient id="id2" gradientUnits="userSpaceOnUse" x1="390.352" y1="135.417" x2="390.357" y2="57.261">
+              <stop offset="0" stop-opacity="0" stop-color="white"/>
+              <stop offset="1" stop-opacity="1" stop-color="white"/>
+            </linearGradient>
+            <rect fill="url(#id2)" x="-1.357" y="0.366" width="829.714" height="136.408"/>
+          </mask>
+          <linearGradient id="id3" gradientUnits="userSpaceOnUse" x1="390.079" y1="135.417" x2="390.079" y2="1.723">
+            <stop offset="0" stop-opacity="1" stop-color="#323232"/>
+            <stop offset="0.470588" stop-opacity="1" stop-color="#373737"/>
+            <stop offset="1" stop-opacity="1" stop-color="#1E1E1E"/>
+          </linearGradient>
+          <mask id="id4">
+            <linearGradient id="id5" gradientUnits="userSpaceOnUse" x1="736.661" y1="2757.015" x2="736.663" y2="2800.92">
+              <stop offset="0" stop-opacity="0" stop-color="white"/>
+              <stop offset="1" stop-opacity="1" stop-color="white"/>
+            </linearGradient>
+            <rect fill="url(#id5)" x="-1.358" y="2755.658" width="829.714" height="90.234"/>
+          </mask>
+          <linearGradient id="id6" gradientUnits="userSpaceOnUse" x1="436.919" y1="2757.015" x2="436.919" y2="2844.535">
+            <stop offset="0" stop-opacity="1" stop-color="#373737"/>
+            <stop offset="0.560784" stop-opacity="1" stop-color="#242424"/>
+            <stop offset="1" stop-opacity="1" stop-color="black"/>
+          </linearGradient>
+        </defs>
+        <g id="Livello_x0020_1">
+          <metadata id="CorelCorpID_0Corel-Layer"/>
+          <rect fill="url(#id0)" stroke="#2B2A29" stroke-width="1.034" stroke-miterlimit="22.9256" y="1.723" width="827" height="2842.813" rx="93.187" ry="85.421"/>
+          <path fill="url(#id3)" mask="url(#id1)" d="M93.187 1.723l640.626 0c51.254,0 93.187,41.933 93.187,93.187l0 40.507 -827 0 0 -40.507c0,-51.254 41.933,-93.187 93.187,-93.187z"/>
+          <path fill="url(#id6)" mask="url(#id4)" d="M733.812 2844.535l-640.627 0c-51.253,0 -93.186,-30.243 -93.186,-81.47l0 -6.05 827 0 0 6.05c0,51.252 -41.934,81.47 -93.187,81.47z"/>
+          <g id="_2394170322176">
+          <circle fill="#E31E24" stroke="#080808" stroke-width="4.07" stroke-miterlimit="22.9256" cx="162.152" cy="229.978" r="81.136"/>
+          <g>
+            <path fill="#C6C6C6" d="M161.863 274.977c25.004,0 44.936,-19.926 44.85,-44.729 -0.036,-10.652 -3.847,-19.843 -8.812,-26.436 -3.632,-4.822 -8.535,-9.342 -13.987,-12.297 -1.501,-0.814 -4.424,-2.411 -6.247,-2.807l0.006 12.299c3.312,1.118 9.178,6.687 11.373,9.805 0.937,1.331 1.846,2.706 2.719,4.363 5.609,10.664 4.669,23.255 -1.814,33.559 -5.656,8.987 -16.375,14.969 -28.088,14.969 -18.138,0 -33.074,-15.031 -32.992,-33.623 0.043,-9.43 4.494,-18.741 10.91,-24.271 0.565,-0.486 0.964,-0.885 1.524,-1.342 1.986,-1.619 4.756,-3.095 5.31,-3.532l0.016 -12.234c-1.499,0.264 -5.35,2.309 -6.711,3.085 -15.774,9 -25.138,27.598 -21.573,46.778 1.773,9.54 5.801,16.384 11.92,22.942 3.781,4.051 9.584,7.966 14.841,10.1 4.95,2.009 10.701,3.371 16.755,3.371zm-2.292 -105.571c-5.556,1.057 -4.848,5.813 -4.848,11.313 0,5.334 0,10.67 0,16.004 0,5.294 -0.123,10.735 0.003,16.01 0.141,5.873 5.999,6.685 10.268,5.807 5.618,-1.154 4.593,-7.081 4.593,-11.372 0,-5.334 0,-10.67 0,-16.004 0,-5.291 0.127,-10.741 -0.006,-16.013 -0.142,-5.695 -5.862,-6.533 -10.01,-5.745z"/>
+          </g>
+          </g>
+          <rect fill="#212121" stroke="#080808" stroke-width="4.07" stroke-miterlimit="22.9256" x="581.453" y="161.599" width="169.066" height="136.755" rx="19.535" ry="19.535"/>
+          <path fill="#C6C6C6" fill-rule="nonzero" d="M596.361 201.452l5.984 0 0 1.906c0,1.822 0.25,3.073 0.741,3.73 0.491,0.665 1.344,0.993 2.554,0.993 1.268,0 2.228,-0.296 2.89,-0.887 0.662,-0.592 0.989,-1.467 0.989,-2.619 0,-0.887 -0.228,-1.651 -0.689,-2.288 -0.457,-0.631 -1.452,-1.453 -2.983,-2.453l-3.061 -2.007c-2.647,-1.697 -4.326,-3.097 -5.045,-4.202 -0.719,-1.105 -1.075,-2.492 -1.075,-4.164 0,-2.492 0.798,-4.446 2.399,-5.859 1.601,-1.415 3.808,-2.119 6.611,-2.119 2.982,0 5.259,0.75 6.847,2.256 1.587,1.5 2.376,3.657 2.376,6.472 0,0.283 0,0.5 -0.008,0.652 -0.006,0.157 -0.02,0.288 -0.035,0.408l-5.679 0 0 -0.79c0,-1.611 -0.285,-2.762 -0.854,-3.459 -0.568,-0.691 -1.508,-1.039 -2.811,-1.039 -0.96,0 -1.707,0.263 -2.256,0.783 -0.547,0.519 -0.825,1.242 -0.825,2.169 0,1.251 1.232,2.632 3.686,4.151l0.065 0.033 3.295 2.064c2.348,1.441 3.936,2.796 4.767,4.078 0.833,1.277 1.252,2.901 1.252,4.88 0,2.697 -0.831,4.782 -2.504,6.242 -1.666,1.467 -4.049,2.198 -7.145,2.198 -3.224,0 -5.622,-0.771 -7.201,-2.309 -1.574,-1.54 -2.365,-3.894 -2.365,-7.051 0,-0.329 0.03,-0.881 0.08,-1.651l0 -0.118z"/>
+          <path id="_1" fill="#C6C6C6" fill-rule="nonzero" d="M625.823 197.038c0,4.888 0.307,7.959 0.925,9.222 0.62,1.269 1.767,1.901 3.431,1.901 1.636,0 2.761,-0.619 3.366,-1.861 0.605,-1.238 0.903,-4.328 0.903,-9.262 0,-4.933 -0.305,-8.023 -0.917,-9.286 -0.611,-1.256 -1.743,-1.889 -3.395,-1.889 -1.651,0 -2.783,0.633 -3.393,1.889 -0.613,1.263 -0.92,4.353 -0.92,9.286zm-6.106 -0.006c0,-3.144 0.157,-5.663 0.477,-7.544 0.321,-1.881 0.827,-3.295 1.502,-4.249 0.932,-1.348 2.043,-2.309 3.337,-2.888 1.288,-0.578 2.989,-0.868 5.103,-0.868 2.113,0 3.815,0.29 5.102,0.868 1.297,0.579 2.413,1.54 3.36,2.888 0.676,0.98 1.174,2.4 1.487,4.282 0.314,1.875 0.471,4.374 0.471,7.511 0,3.123 -0.157,5.624 -0.478,7.504 -0.32,1.882 -0.819,3.309 -1.48,4.288 -0.947,1.349 -2.063,2.309 -3.36,2.889 -1.287,0.577 -2.989,0.868 -5.102,0.868 -2.114,0 -3.815,-0.291 -5.103,-0.868 -1.294,-0.58 -2.405,-1.54 -3.337,-2.889 -0.675,-0.953 -1.181,-2.367 -1.502,-4.249 -0.32,-1.88 -0.477,-4.399 -0.477,-7.543z"/>
+          <path id="_2" fill="#C6C6C6" fill-rule="nonzero" d="M645.415 182.194l5.978 0 0 20.007c0,2.289 0.306,3.842 0.911,4.658 0.605,0.815 1.672,1.222 3.217,1.222 1.529,0 2.591,-0.414 3.181,-1.236 0.592,-0.822 0.889,-2.394 0.889,-4.722l0 -19.929 5.894 0 0 20.487c0,1.993 -0.122,3.448 -0.365,4.361 -0.241,0.921 -0.647,1.724 -1.223,2.421 -0.86,1.039 -2,1.815 -3.416,2.335 -1.417,0.52 -3.096,0.783 -5.039,0.783 -3.672,0 -6.255,-0.737 -7.764,-2.205 -1.508,-1.473 -2.263,-4.03 -2.263,-7.695l0 -20.487z"/>
+          <path id="_3" fill="#C6C6C6" fill-rule="nonzero" d="M676.679 194.742l3.436 0c1.745,0 2.948,-0.321 3.624,-0.965 0.675,-0.639 1.01,-1.79 1.01,-3.448 0,-1.48 -0.371,-2.512 -1.104,-3.104 -0.739,-0.591 -2.078,-0.888 -4.028,-0.888l-2.938 0 0 8.405zm-5.764 17.128l0 -29.676 10.709 0c3.238,0 5.58,0.605 7.004,1.822 1.43,1.217 2.142,3.196 2.142,5.946 0,1.926 -0.385,3.446 -1.153,4.558 -0.761,1.111 -1.894,1.762 -3.381,1.959 2.84,0.69 4.327,2.907 4.449,6.643 0,0.171 0,0.296 0,0.388l0.169 3.926c0.057,1.12 0.208,2.014 0.457,2.691 0.249,0.671 0.641,1.256 1.167,1.743l-7.103 0c-0.163,-0.499 -0.292,-1.085 -0.377,-1.762 -0.078,-0.679 -0.136,-1.632 -0.163,-2.861l-0.086 -3.106 0 -0.788c0,-1.717 -0.398,-2.9 -1.188,-3.546 -0.789,-0.638 -2.407,-0.959 -4.84,-0.959l-2.042 0 0 13.022 -5.764 0z"/>
+          <path id="_4" fill="#C6C6C6" fill-rule="nonzero" d="M708.326 201.294l5.807 0c0,0.124 0.006,0.316 0.021,0.565 0.015,0.25 0.023,0.448 0.023,0.592 0,3.427 -0.784,5.973 -2.349,7.636 -1.559,1.665 -3.949,2.494 -7.174,2.494 -1.53,0 -2.848,-0.185 -3.942,-0.547 -1.097,-0.368 -2.044,-0.94 -2.833,-1.709 -1.083,-1.027 -1.851,-2.441 -2.291,-4.237 -0.448,-1.802 -0.671,-4.933 -0.671,-9.404 0,-3.059 0.136,-5.486 0.401,-7.288 0.261,-1.808 0.668,-3.15 1.23,-4.039 0.862,-1.362 1.928,-2.348 3.21,-2.96 1.281,-0.612 2.91,-0.914 4.904,-0.914 3.252,0 5.622,0.783 7.102,2.348 1.479,1.572 2.226,4.092 2.241,7.558l-5.808 0 0 -0.711c0,-1.605 -0.283,-2.801 -0.846,-3.591 -0.562,-0.79 -1.416,-1.184 -2.568,-1.184 -1.438,0 -2.414,0.546 -2.933,1.639 -0.518,1.09 -0.783,4.11 -0.783,9.056 0,5.34 0.256,8.596 0.762,9.748 0.505,1.157 1.479,1.735 2.91,1.735 1.331,0 2.265,-0.453 2.796,-1.361 0.528,-0.901 0.791,-2.579 0.791,-5.018l0 -0.408z"/>
+          <polygon id="_5" fill="#C6C6C6" fill-rule="nonzero" points="718.951,211.87 718.951,182.194 735.441,182.194 735.441,187.126 724.887,187.126 724.887,193.994 734.709,193.994 734.709,198.689 724.887,198.689 724.887,206.859 735.691,206.859 735.691,211.87 "/>
+          <g id="_2394170321744">
+          <rect fill="none" stroke="#C6C6C6" stroke-width="2.713" stroke-miterlimit="22.9256" x="641.96" y="227.181" width="55.28" height="39.589"/>
+          <polygon fill="#C6C6C6" fill-rule="nonzero" points="623.186,252.124 654.541,252.124 654.541,257.268 674.177,246.975 654.541,236.683 654.541,241.827 623.186,241.827 "/>
+          </g>
+          <rect fill="#212121" stroke="#080808" stroke-width="4.07" stroke-miterlimit="22.9256" x="81.016" y="361.775" width="169.066" height="112.496" rx="19.535" ry="16.07"/>
+          <path fill="#C6C6C6" fill-rule="nonzero" d="M182.831 457.651l-15.08 0 0 -57.055c-5.504,5.173 -11.999,9.008 -19.484,11.484l0 -13.759c3.944,-1.285 8.219,-3.724 12.824,-7.338 4.624,-3.597 7.778,-7.798 9.504,-12.586l12.236 0 0 79.254z"/>
+          <rect fill="#212121" stroke="#080808" stroke-width="4.07" stroke-miterlimit="22.9256" x="331.234" y="361.775" width="169.066" height="112.496" rx="19.535" ry="16.07"/>
+          <path fill="#C6C6C6" fill-rule="nonzero" d="M442.24 443.671l0 13.98 -52.946 0c0.569,-5.32 2.294,-10.347 5.155,-15.099 2.862,-4.751 8.532,-11.062 16.97,-18.932 6.807,-6.347 10.971,-10.659 12.512,-12.916 2.073,-3.119 3.119,-6.201 3.119,-9.264 0,-3.376 -0.898,-5.963 -2.715,-7.779 -1.799,-1.817 -4.293,-2.715 -7.466,-2.715 -3.156,0 -5.651,0.954 -7.523,2.861 -1.853,1.89 -2.917,5.045 -3.21,9.467l-15.08 -1.505c0.898,-8.328 3.705,-14.309 8.438,-17.941 4.733,-3.614 10.642,-5.431 17.741,-5.431 7.779,0 13.888,2.11 18.345,6.311 4.441,4.202 6.66,9.43 6.66,15.686 0,3.559 -0.642,6.935 -1.907,10.163 -1.266,3.212 -3.285,6.568 -6.055,10.091 -1.816,2.348 -5.136,5.705 -9.906,10.091 -4.789,4.384 -7.816,7.282 -9.081,8.732 -1.285,1.43 -2.312,2.844 -3.102,4.2l30.051 0z"/>
+          <rect fill="#212121" stroke="#080808" stroke-width="4.07" stroke-miterlimit="22.9256" x="581.453" y="361.775" width="169.066" height="112.496" rx="19.535" ry="16.07"/>
+          <path fill="#C6C6C6" fill-rule="nonzero" d="M639.844 436.755l14.64 -1.78c0.459,3.743 1.706,6.606 3.742,8.587 2.038,1.982 4.496,2.972 7.376,2.972 3.1,0 5.706,-1.193 7.833,-3.56 2.11,-2.366 3.175,-5.558 3.175,-9.594 0,-3.797 -1.01,-6.825 -3.046,-9.045 -2.036,-2.219 -4.513,-3.338 -7.449,-3.338 -1.925,0 -4.219,0.385 -6.897,1.137l1.668 -12.255c4.073,0.11 7.174,-0.789 9.32,-2.679 2.147,-1.871 3.212,-4.385 3.212,-7.521 0,-2.661 -0.79,-4.77 -2.368,-6.367 -1.577,-1.578 -3.668,-2.366 -6.292,-2.366 -2.587,0 -4.789,0.898 -6.605,2.697 -1.834,1.798 -2.935,4.421 -3.339,7.87l-13.869 -2.366c0.972,-4.807 2.422,-8.642 4.385,-11.522 1.944,-2.862 4.678,-5.119 8.164,-6.77 3.485,-1.633 7.411,-2.458 11.74,-2.458 7.413,0 13.356,2.366 17.833,7.118 3.688,3.89 5.541,8.292 5.541,13.191 0,6.935 -3.78,12.493 -11.357,16.621 4.514,0.973 8.109,3.138 10.825,6.514 2.697,3.375 4.054,7.447 4.054,12.217 0,6.916 -2.532,12.825 -7.577,17.704 -5.046,4.88 -11.32,7.321 -18.841,7.321 -7.118,0 -13.026,-2.056 -17.704,-6.184 -4.697,-4.109 -7.411,-9.484 -8.164,-16.144z"/>
+          <rect fill="#212121" stroke="#080808" stroke-width="4.07" stroke-miterlimit="22.9256" x="81.016" y="518.905" width="169.066" height="112.496" rx="19.535" ry="16.07"/>
+          <path fill="#C6C6C6" fill-rule="nonzero" d="M169.401 614.781l0 -15.85 -32.142 0 0 -13.154 34.087 -50.14 12.695 0 0 50.084 9.797 0 0 13.21 -9.797 0 0 15.85 -14.64 0zm0 -29.06l0 -26.913 -18.016 26.913 18.016 0z"/>
+          <rect fill="#212121" stroke="#080808" stroke-width="4.07" stroke-miterlimit="22.9256" x="331.234" y="518.905" width="169.066" height="112.496" rx="19.535" ry="16.07"/>
+          <path fill="#C6C6C6" fill-rule="nonzero" d="M389.239 594.546l15.081 -1.56c0.441,3.413 1.706,6.128 3.816,8.127 2.128,2 4.568,2.992 7.338,2.992 3.155,0 5.835,-1.285 8.018,-3.872 2.182,-2.587 3.284,-6.477 3.284,-11.668 0,-4.88 -1.083,-8.531 -3.267,-10.97 -2.164,-2.441 -4.989,-3.652 -8.475,-3.652 -4.348,0 -8.256,1.909 -11.705,5.725l-12.219 -1.762 7.706 -40.947 39.958 0 0 14.089 -28.492 0 -2.385 13.411c3.358,-1.67 6.806,-2.514 10.329,-2.514 6.714,0 12.401,2.44 17.061,7.339 4.679,4.88 7.009,11.228 7.009,19.043 0,6.512 -1.89,12.31 -5.651,17.429 -5.137,6.97 -12.254,10.457 -21.354,10.457 -7.284,0 -13.227,-1.963 -17.814,-5.872 -4.605,-3.926 -7.338,-9.172 -8.238,-15.795z"/>
+          <rect fill="#212121" stroke="#080808" stroke-width="4.07" stroke-miterlimit="22.9256" x="581.453" y="518.905" width="169.066" height="112.496" rx="19.535" ry="16.07"/>
+          <path fill="#C6C6C6" fill-rule="nonzero" d="M690.862 555.268l-14.639 1.614c-0.349,-3.009 -1.285,-5.229 -2.789,-6.66 -1.503,-1.431 -3.449,-2.146 -5.851,-2.146 -3.192,0 -5.889,1.431 -8.091,4.292 -2.202,2.863 -3.578,8.825 -4.146,17.888 3.761,-4.439 8.421,-6.66 14.015,-6.66 6.294,0 11.705,2.404 16.2,7.21 4.494,4.826 6.733,11.026 6.733,18.64 0,8.072 -2.366,14.567 -7.1,19.446 -4.733,4.88 -10.805,7.321 -18.218,7.321 -7.943,0 -14.493,-3.102 -19.611,-9.301 -5.119,-6.202 -7.687,-16.348 -7.687,-30.473 0,-14.475 2.678,-24.914 8.017,-31.316 5.339,-6.404 12.273,-9.596 20.805,-9.596 5.98,0 10.934,1.688 14.859,5.063 3.926,3.358 6.422,8.257 7.503,14.678zm-34.233 32.986c0,4.916 1.139,8.714 3.395,11.392 2.256,2.679 4.825,4.018 7.742,4.018 2.788,0 5.118,-1.1 6.989,-3.285 1.853,-2.2 2.789,-5.796 2.789,-10.786 0,-5.138 -1.009,-8.898 -3.009,-11.302 -2.018,-2.385 -4.513,-3.578 -7.522,-3.578 -2.917,0 -5.356,1.139 -7.375,3.431 -1.999,2.275 -3.009,5.651 -3.009,10.11z"/>
+          <rect fill="#212121" stroke="#080808" stroke-width="4.07" stroke-miterlimit="22.9256" x="81.016" y="676.035" width="169.066" height="112.496" rx="19.535" ry="16.07"/>
+          <path fill="#C6C6C6" fill-rule="nonzero" d="M139.681 708.067l0 -13.978 51.735 0 0 11.007c-4.275,4.2 -8.604,10.218 -13.025,18.07 -4.404,7.853 -7.779,16.2 -10.091,25.042 -2.311,8.843 -3.448,16.751 -3.411,23.703l-14.531 0c0.257,-10.915 2.495,-22.052 6.733,-33.408 4.257,-11.337 9.907,-21.501 17.006,-30.436l-34.416 0z"/>
+          <rect fill="#212121" stroke="#080808" stroke-width="4.07" stroke-miterlimit="22.9256" x="331.234" y="676.035" width="169.066" height="112.496" rx="19.535" ry="16.07"/>
+          <path fill="#C6C6C6" fill-rule="nonzero" d="M403.035 729.294c-3.889,-1.651 -6.733,-3.908 -8.494,-6.806 -1.78,-2.881 -2.66,-6.054 -2.66,-9.485 0,-5.89 2.055,-10.75 6.145,-14.585 4.092,-3.834 9.925,-5.761 17.467,-5.761 7.484,0 13.281,1.927 17.409,5.761 4.129,3.835 6.202,8.695 6.202,14.585 0,3.65 -0.954,6.898 -2.863,9.759 -1.89,2.845 -4.568,5.028 -8.016,6.532 4.384,1.761 7.704,4.329 9.998,7.705 2.275,3.394 3.412,7.283 3.412,11.705 0,7.301 -2.312,13.227 -6.953,17.796 -4.623,4.568 -10.788,6.843 -18.493,6.843 -7.155,0 -13.098,-1.89 -17.868,-5.67 -5.614,-4.439 -8.421,-10.566 -8.421,-18.326 0,-4.275 1.064,-8.201 3.173,-11.779 2.11,-3.577 5.431,-6.33 9.962,-8.274zm3.155 -15.19c0,3.008 0.844,5.375 2.532,7.063 1.707,1.687 3.963,2.531 6.771,2.531 2.861,0 5.136,-0.861 6.843,-2.568 1.705,-1.706 2.568,-4.072 2.568,-7.081 0,-2.844 -0.844,-5.119 -2.532,-6.826 -1.706,-1.705 -3.945,-2.568 -6.715,-2.568 -2.898,0 -5.192,0.863 -6.897,2.587 -1.707,1.725 -2.57,4.017 -2.57,6.862zm-1.431 33.792c0,4.202 1.065,7.467 3.192,9.816 2.129,2.348 4.772,3.523 7.945,3.523 3.119,0 5.687,-1.138 7.723,-3.395 2.036,-2.257 3.046,-5.522 3.046,-9.778 0,-3.724 -1.027,-6.715 -3.1,-8.971 -2.073,-2.257 -4.697,-3.395 -7.871,-3.395 -3.688,0 -6.421,1.285 -8.238,3.853 -1.797,2.568 -2.697,5.338 -2.697,8.347z"/>
+          <rect fill="#212121" stroke="#080808" stroke-width="4.07" stroke-miterlimit="22.9256" x="581.453" y="676.035" width="169.066" height="112.496" rx="19.535" ry="16.07"/>
+          <path fill="#C6C6C6" fill-rule="nonzero" d="M641.331 753.602l14.639 -1.614c0.349,2.99 1.285,5.209 2.77,6.641 1.486,1.45 3.468,2.165 5.907,2.165 3.101,0 5.725,-1.449 7.889,-4.33 2.165,-2.881 3.541,-8.861 4.147,-17.905 -3.799,4.402 -8.532,6.604 -14.236,6.604 -6.184,0 -11.54,-2.385 -16.036,-7.173 -4.494,-4.789 -6.733,-11.007 -6.733,-18.676 0,-7.999 2.368,-14.439 7.118,-19.319 4.753,-4.897 10.807,-7.338 18.145,-7.338 7.98,0 14.549,3.1 19.667,9.284 5.119,6.199 7.687,16.382 7.687,30.582 0,14.42 -2.66,24.84 -7.981,31.224 -5.319,6.404 -12.254,9.596 -20.804,9.596 -6.145,0 -11.098,-1.651 -14.897,-4.953 -3.78,-3.285 -6.219,-8.22 -7.282,-14.788zm34.012 -33.059c0,-4.862 -1.118,-8.641 -3.357,-11.32 -2.22,-2.678 -4.806,-4.017 -7.742,-4.017 -2.789,0 -5.099,1.1 -6.935,3.302 -1.853,2.202 -2.77,5.797 -2.77,10.788 0,5.081 1.009,8.806 3.009,11.191 1.999,2.366 4.494,3.558 7.503,3.558 2.899,0 5.339,-1.137 7.321,-3.431 1.98,-2.292 2.971,-5.65 2.971,-10.071z"/>
+          <g id="_2394170315360">
+          <rect fill="#212121" stroke="#080808" stroke-width="4.07" stroke-miterlimit="22.9256" x="81.016" y="833.165" width="169.066" height="112.496" rx="19.535" ry="16.07"/>
+          </g>
+          <rect fill="#212121" stroke="#080808" stroke-width="4.07" stroke-miterlimit="22.9256" x="331.234" y="833.165" width="169.066" height="112.496" rx="19.535" ry="16.07"/>
+          <path fill="#C6C6C6" fill-rule="nonzero" d="M415.768 849.787c7.631,0 13.594,2.734 17.905,8.201 5.119,6.458 7.687,17.19 7.687,32.16 0,14.952 -2.586,25.703 -7.741,32.234 -4.275,5.394 -10.22,8.091 -17.851,8.091 -7.669,0 -13.851,-2.954 -18.548,-8.862 -4.696,-5.907 -7.044,-16.456 -7.044,-31.609 0,-14.88 2.587,-25.593 7.742,-32.124 4.275,-5.394 10.218,-8.091 17.85,-8.091zm0 12.549c-1.799,0 -3.413,0.587 -4.806,1.761 -1.414,1.156 -2.514,3.248 -3.285,6.274 -1.027,3.907 -1.541,10.513 -1.541,19.777 0,9.284 0.459,15.649 1.376,19.117 0.917,3.467 2.073,5.779 3.467,6.935 1.395,1.155 2.99,1.724 4.789,1.724 1.798,0 3.412,-0.588 4.824,-1.761 1.395,-1.156 2.495,-3.248 3.266,-6.274 1.028,-3.872 1.541,-10.457 1.541,-19.741 0,-9.264 -0.459,-15.631 -1.376,-19.098 -0.917,-3.468 -2.073,-5.797 -3.467,-6.953 -1.395,-1.174 -2.99,-1.761 -4.788,-1.761z"/>
+          <g id="_2394170314928">
+          <rect fill="#212121" stroke="#080808" stroke-width="4.07" stroke-miterlimit="22.9256" x="331.234" y="1029.526" width="169.066" height="163.99" rx="19.535" ry="23.426"/>
+          </g>
+          <g id="_2394170314304">
+          <rect fill="#212121" stroke="#080808" stroke-width="4.07" stroke-miterlimit="22.9256" x="331.234" y="1234.038" width="169.066" height="169.309" rx="19.535" ry="24.186"/>
+          </g>
+          <rect fill="#212121" stroke="#080808" stroke-width="4.07" stroke-miterlimit="22.9256" x="77.888" y="1014.206" width="186.234" height="419.662" rx="21.519" ry="59.949"/>
+          <g id="_2394170317040">
+          <rect fill="#212121" stroke="#080808" stroke-width="4.07" stroke-miterlimit="22.9256" x="564.285" y="1014.206" width="186.234" height="419.662" rx="21.519" ry="59.949"/>
+          </g>
+          <g id="_2394170314208">
+          <rect fill="#212121" stroke="#080808" stroke-width="4.07" stroke-miterlimit="22.9256" x="581.453" y="833.165" width="169.066" height="112.496" rx="19.535" ry="16.07"/>
+          </g>
+          <path fill="#C6C6C6" fill-rule="nonzero" d="M608.095 887.558l2.497 0c1.864,0 3.175,-0.335 3.928,-1.012 0.748,-0.671 1.124,-1.822 1.124,-3.454 0,-1.644 -0.34,-2.781 -1.032,-3.42 -0.689,-0.637 -1.998,-0.953 -3.934,-0.953l-2.583 0 0 8.839zm-5.771 16.694l0 -29.676 10.382 0c3.168,0 5.444,0.658 6.832,1.967 1.388,1.307 2.085,3.452 2.085,6.431 0,2.928 -0.739,5.111 -2.221,6.538 -1.48,1.434 -3.743,2.152 -6.782,2.152l-4.363 0 0 12.588 -5.933 0z"/>
+          <path id="_1_65" fill="#C6C6C6" fill-rule="nonzero" d="M631.359 887.124l3.437 0c1.744,0 2.948,-0.321 3.623,-0.966 0.677,-0.639 1.011,-1.789 1.011,-3.447 0,-1.48 -0.37,-2.512 -1.103,-3.104 -0.741,-0.591 -2.08,-0.888 -4.028,-0.888l-2.94 0 0 8.405zm-5.764 17.128l0 -29.676 10.711 0c3.238,0 5.578,0.605 7.003,1.822 1.429,1.216 2.142,3.196 2.142,5.946 0,1.926 -0.386,3.445 -1.153,4.558 -0.761,1.111 -1.894,1.762 -3.381,1.959 2.839,0.69 4.326,2.907 4.448,6.643 0,0.171 0,0.296 0,0.388l0.17 3.926c0.058,1.12 0.207,2.014 0.457,2.691 0.248,0.671 0.64,1.256 1.167,1.743l-7.104 0c-0.162,-0.499 -0.291,-1.086 -0.377,-1.762 -0.077,-0.679 -0.134,-1.632 -0.163,-2.862l-0.085 -3.105 0 -0.788c0,-1.718 -0.399,-2.901 -1.188,-3.546 -0.79,-0.638 -2.407,-0.959 -4.841,-0.959l-2.042 0 0 13.022 -5.764 0z"/>
+          <polygon id="_2_66" fill="#C6C6C6" fill-rule="nonzero" points="650.24,904.252 650.24,874.576 666.729,874.576 666.729,879.508 656.175,879.508 656.175,886.376 665.997,886.376 665.997,891.071 656.175,891.071 656.175,899.24 666.979,899.24 666.979,904.252 "/>
+          <polygon id="_3_67" fill="#C6C6C6" fill-rule="nonzero" points="670.573,895.412 670.573,890.795 680.734,890.795 680.734,895.412 "/>
+          <path id="_4_68" fill="#C6C6C6" fill-rule="nonzero" d="M698.952 893.676l5.808 0c0,0.124 0.007,0.316 0.021,0.565 0.015,0.25 0.022,0.448 0.022,0.592 0,3.427 -0.783,5.973 -2.348,7.636 -1.559,1.665 -3.951,2.494 -7.174,2.494 -1.53,0 -2.848,-0.185 -3.942,-0.547 -1.097,-0.368 -2.043,-0.94 -2.833,-1.709 -1.083,-1.027 -1.85,-2.441 -2.291,-4.237 -0.448,-1.802 -0.671,-4.933 -0.671,-9.404 0,-3.059 0.136,-5.487 0.399,-7.288 0.264,-1.808 0.67,-3.15 1.232,-4.039 0.86,-1.362 1.928,-2.348 3.21,-2.96 1.281,-0.612 2.91,-0.914 4.904,-0.914 3.251,0 5.622,0.782 7.102,2.348 1.479,1.572 2.226,4.092 2.241,7.558l-5.808 0 0 -0.711c0,-1.605 -0.284,-2.802 -0.846,-3.591 -0.562,-0.79 -1.416,-1.184 -2.569,-1.184 -1.437,0 -2.413,0.546 -2.932,1.638 -0.518,1.091 -0.783,4.111 -0.783,9.057 0,5.34 0.256,8.596 0.761,9.748 0.506,1.157 1.48,1.735 2.911,1.735 1.33,0 2.265,-0.453 2.796,-1.361 0.528,-0.901 0.79,-2.579 0.79,-5.018l0 -0.408z"/>
+          <polygon id="_5_69" fill="#C6C6C6" fill-rule="nonzero" points="709.578,904.252 709.578,874.576 715.514,874.576 715.514,886.217 723.712,886.217 723.712,874.576 729.648,874.576 729.648,904.252 723.712,904.252 723.712,890.795 715.514,890.795 715.514,904.252 "/>
+          <g id="_2394170314880">
+          <g>
+            <rect fill="#212121" stroke="#080808" stroke-width="4.07" stroke-miterlimit="22.9256" x="567.198" y="1487.778" width="180.407" height="128.271" rx="20.846" ry="18.324"/>
+          </g>
+          </g>
+          <g id="_2394170316224">
+          <g>
+            <rect fill="#212121" stroke="#080808" stroke-width="4.07" stroke-miterlimit="22.9256" x="77.888" y="1487.778" width="180.407" height="128.271" rx="20.846" ry="18.324"/>
+          </g>
+          </g>
+          <g id="_2394170311184">
+          <g>
+            <rect fill="#212121" stroke="#080808" stroke-width="4.07" stroke-miterlimit="22.9256" x="567.198" y="1669.028" width="180.407" height="128.271" rx="20.846" ry="18.324"/>
+          </g>
+          </g>
+          <g id="_2394170310992">
+          <g>
+            <rect fill="#212121" stroke="#080808" stroke-width="4.07" stroke-miterlimit="22.9256" x="77.888" y="1669.028" width="180.407" height="128.271" rx="20.846" ry="18.324"/>
+          </g>
+          </g>
+          <g id="_2394170313824">
+          <g>
+            <rect fill="#212121" stroke="#080808" stroke-width="4.07" stroke-miterlimit="22.9256" x="77.888" y="2067.367" width="180.407" height="128.271" rx="20.846" ry="18.324"/>
+          </g>
+          </g>
+          <g id="_2394170313296">
+          <g>
+            <rect fill="#212121" stroke="#080808" stroke-width="4.07" stroke-miterlimit="22.9256" x="322.542" y="1864.6" width="180.407" height="128.271" rx="20.846" ry="18.324"/>
+          </g>
+          </g>
+          <g id="_2394170313440">
+          <rect fill="#212121" stroke="#080808" stroke-width="4.07" stroke-miterlimit="22.9256" x="325.563" y="1450.344" width="180.407" height="165.705" rx="20.846" ry="23.671"/>
+          </g>
+          <path fill="#C6C6C6" fill-rule="nonzero" d="M335.227 1496.063l4.7 0 0 2.625c0,2.506 0.196,4.226 0.582,5.131 0.386,0.914 1.057,1.366 2.007,1.366 0.994,0 1.75,-0.407 2.269,-1.221 0.52,-0.816 0.778,-2.019 0.778,-3.602 0,-1.222 -0.179,-2.272 -0.543,-3.15 -0.357,-0.868 -1.139,-2 -2.343,-3.375l-2.402 -2.761c-2.08,-2.335 -3.4,-4.263 -3.964,-5.783 -0.565,-1.521 -0.844,-3.43 -0.844,-5.729 0,-3.43 0.625,-6.118 1.883,-8.064 1.259,-1.946 2.991,-2.914 5.193,-2.914 2.343,0 4.132,1.032 5.379,3.104 1.247,2.063 1.867,5.033 1.867,8.906 0,0.389 0,0.688 -0.006,0.895 -0.005,0.217 -0.017,0.399 -0.028,0.562l-4.461 0 0 -1.087c0,-2.216 -0.224,-3.801 -0.67,-4.76 -0.448,-0.95 -1.186,-1.43 -2.209,-1.43 -0.755,0 -1.341,0.362 -1.773,1.077 -0.43,0.715 -0.648,1.711 -0.648,2.987 0,1.719 0.967,3.62 2.896,5.71l0.05 0.047 2.589 2.84c1.845,1.982 3.092,3.846 3.746,5.611 0.653,1.757 0.983,3.992 0.983,6.716 0,3.711 -0.654,6.579 -1.967,8.588 -1.309,2.019 -3.181,3.023 -5.614,3.023 -2.531,0 -4.416,-1.058 -5.657,-3.176 -1.234,-2.118 -1.856,-5.357 -1.856,-9.702 0,-0.452 0.023,-1.213 0.063,-2.271l0 -0.163z"/>
+          <polygon id="_1_70" fill="#C6C6C6" fill-rule="nonzero" points="354.077,1510.398 354.077,1469.564 361.149,1469.564 364.609,1495.999 368.064,1469.564 375.141,1469.564 375.141,1510.398 370.647,1510.398 370.747,1474.179 366.051,1510.398 363.166,1510.398 358.459,1474.179 358.572,1510.398 "/>
+          <path id="_2_71" fill="#C6C6C6" fill-rule="nonzero" d="M384.327 1493.999l3.997 0 -2.014 -17.123 -1.983 17.123zm-6.742 16.399l5.68 -40.834 6.3 0 5.729 40.834 -5.059 0 -1.241 -10.263 -5.399 0 -1.215 10.263 -4.795 0z"/>
+          <path id="_3_72" fill="#C6C6C6" fill-rule="nonzero" d="M402.3 1486.831l2.701 0c1.369,0 2.313,-0.444 2.845,-1.33 0.53,-0.877 0.793,-2.462 0.793,-4.742 0,-2.037 -0.29,-3.457 -0.867,-4.272 -0.58,-0.814 -1.632,-1.221 -3.163,-1.221l-2.309 0 0 11.565zm-4.529 23.567l0 -40.834 8.414 0c2.544,0 4.383,0.831 5.501,2.507 1.123,1.674 1.682,4.398 1.682,8.18 0,2.653 -0.301,4.743 -0.904,6.272 -0.599,1.53 -1.489,2.426 -2.657,2.697 2.232,0.951 3.4,4.001 3.495,9.141 0,0.236 0,0.408 0,0.534l0.133 5.404c0.046,1.538 0.163,2.769 0.358,3.701 0.197,0.924 0.503,1.728 0.917,2.398l-5.578 0c-0.129,-0.688 -0.23,-1.493 -0.297,-2.425 -0.061,-0.932 -0.106,-2.244 -0.128,-3.937l-0.068 -4.272 0 -1.086c0,-2.362 -0.313,-3.991 -0.935,-4.878 -0.619,-0.878 -1.888,-1.321 -3.799,-1.321l-1.605 0 0 17.919 -4.529 0z"/>
+          <polygon id="_4_73" fill="#C6C6C6" fill-rule="nonzero" points="420.72,1510.398 420.72,1476.297 415.319,1476.297 415.319,1469.564 430.816,1469.564 430.816,1476.297 425.415,1476.297 425.415,1510.398 "/>
+          <polygon id="_5_74" fill="#C6C6C6" fill-rule="nonzero" points="441.684,1510.398 441.684,1469.564 446.345,1469.564 446.345,1485.583 452.787,1485.583 452.787,1469.564 457.448,1469.564 457.448,1510.398 452.787,1510.398 452.787,1491.882 446.345,1491.882 446.345,1510.398 "/>
+          <path id="_6" fill="#C6C6C6" fill-rule="nonzero" d="M461.748 1469.564l4.696 0 0 27.53c0,3.15 0.24,5.285 0.715,6.409 0.476,1.121 1.314,1.682 2.527,1.682 1.202,0 2.035,-0.57 2.499,-1.701 0.465,-1.132 0.7,-3.294 0.7,-6.499l0 -27.421 4.627 0 0 28.191c0,2.743 -0.095,4.742 -0.284,6 -0.19,1.267 -0.509,2.371 -0.961,3.33 -0.677,1.43 -1.572,2.499 -2.683,3.214 -1.114,0.715 -2.433,1.076 -3.959,1.076 -2.884,0 -4.915,-1.013 -6.099,-3.031 -1.185,-2.028 -1.778,-5.548 -1.778,-10.589l0 -28.191z"/>
+          <path id="_7" fill="#C6C6C6" fill-rule="nonzero" d="M486.34 1504.588l1.94 0c1.213,0 2.063,-0.479 2.555,-1.448 0.492,-0.959 0.739,-2.634 0.739,-5.014 0,-2.47 -0.27,-4.173 -0.806,-5.113 -0.536,-0.932 -1.538,-1.403 -3.013,-1.403l-1.415 0 0 12.978zm0 -18.462l1.578 0c1.179,0 1.994,-0.417 2.447,-1.25 0.448,-0.823 0.672,-2.352 0.672,-4.579 0,-2.001 -0.23,-3.367 -0.683,-4.099 -0.453,-0.734 -1.307,-1.096 -2.571,-1.096l-1.443 0 0 11.024zm-4.561 24.272l0 -40.834 7.552 0c2.159,0 3.768,0.814 4.819,2.443 1.057,1.62 1.582,4.127 1.582,7.502 0,2.697 -0.256,4.797 -0.776,6.281 -0.521,1.485 -1.298,2.381 -2.332,2.68 1.175,0.262 2.096,1.213 2.757,2.85 0.659,1.639 0.989,3.792 0.989,6.481 0,4.334 -0.559,7.511 -1.677,9.548 -1.118,2.036 -2.863,3.049 -5.233,3.049l-7.681 0z"/>
+          <polygon fill="#C6C6C6" fill-rule="nonzero" points="610.284,1721.911 610.284,1681.077 617.51,1681.077 617.51,1721.911 "/>
+          <polygon id="_1_75" fill="#C6C6C6" fill-rule="nonzero" points="624.115,1721.911 624.115,1681.077 631.555,1681.077 641.652,1709.63 641.454,1681.077 648.266,1681.077 648.266,1721.911 640.905,1721.911 630.729,1693.303 630.927,1721.911 "/>
+          <polygon id="_2_76" fill="#C6C6C6" fill-rule="nonzero" points="654.882,1721.911 654.882,1681.077 675.162,1681.077 675.162,1687.756 662.107,1687.756 662.107,1697.422 674.431,1697.422 674.431,1703.937 662.107,1703.937 662.107,1721.911 "/>
+          <path id="_3_77" fill="#C6C6C6" fill-rule="nonzero" d="M686.714 1701.504c0,6.723 0.37,10.95 1.118,12.687 0.75,1.747 2.134,2.615 4.147,2.615 1.978,0 3.336,-0.85 4.067,-2.56 0.731,-1.702 1.094,-5.955 1.094,-12.742 0,-6.789 -0.371,-11.042 -1.11,-12.78 -0.741,-1.728 -2.107,-2.598 -4.103,-2.598 -1.995,0 -3.364,0.87 -4.102,2.598 -0.741,1.738 -1.111,5.991 -1.111,12.78zm-7.379 -0.01c0,-4.326 0.189,-7.792 0.575,-10.381 0.387,-2.588 0.999,-4.534 1.816,-5.847 1.127,-1.854 2.469,-3.176 4.034,-3.972 1.556,-0.796 3.613,-1.195 6.167,-1.195 2.555,0 4.61,0.399 6.166,1.195 1.566,0.796 2.917,2.118 4.061,3.972 0.818,1.349 1.42,3.304 1.797,5.892 0.379,2.58 0.567,6.019 0.567,10.336 0,4.299 -0.188,7.738 -0.575,10.327 -0.388,2.588 -0.99,4.551 -1.789,5.9 -1.144,1.856 -2.495,3.177 -4.061,3.973 -1.556,0.797 -3.611,1.194 -6.166,1.194 -2.554,0 -4.611,-0.397 -6.167,-1.194 -1.565,-0.796 -2.907,-2.117 -4.034,-3.973 -0.817,-1.312 -1.429,-3.257 -1.816,-5.846 -0.386,-2.588 -0.575,-6.055 -0.575,-10.381z"/>
+          <g id="_2394170311760">
+          <g>
+            <rect fill="#212121" stroke="#080808" stroke-width="4.07" stroke-miterlimit="22.9256" x="567.198" y="2067.367" width="180.407" height="128.271" rx="20.846" ry="18.324"/>
+          </g>
+          </g>
+          <polygon fill="#C6C6C6" fill-rule="nonzero" points="613.045,2120.25 613.045,2079.415 632.974,2079.415 632.974,2086.202 620.217,2086.202 620.217,2095.651 632.088,2095.651 632.088,2102.113 620.217,2102.113 620.217,2113.354 633.275,2113.354 633.275,2120.25 "/>
+          <polygon id="_1_78" fill="#C6C6C6" fill-rule="nonzero" points="635.76,2120.25 645.249,2099.407 636.224,2079.415 644.361,2079.415 649.531,2092.275 654.795,2079.415 662.854,2079.415 653.505,2099.407 663.113,2120.25 654.942,2120.25 649.325,2106.62 643.604,2120.25 "/>
+          <polygon id="_2_79" fill="#C6C6C6" fill-rule="nonzero" points="666.87,2120.25 666.87,2079.415 674.096,2079.415 674.096,2120.25 "/>
+          <polygon id="_3_80" fill="#C6C6C6" fill-rule="nonzero" points="686.224,2120.25 686.224,2086.148 677.913,2086.148 677.913,2079.415 701.758,2079.415 701.758,2086.148 693.448,2086.148 693.448,2120.25 "/>
+          <path fill="#C6C6C6" fill-rule="nonzero" d="M611.136 1571.843l-0.606 -4.499c-0.832,1.955 -1.988,3.358 -3.457,4.21 -1.46,0.841 -3.467,1.265 -6.033,1.265 -4.631,0 -7.883,-1.619 -9.763,-4.85 -1.889,-3.231 -2.83,-9.168 -2.83,-17.793 0,-4.027 0.226,-7.258 0.677,-9.684 0.45,-2.433 1.154,-4.307 2.105,-5.638 1.145,-1.62 2.673,-2.823 4.564,-3.602 1.888,-0.778 4.249,-1.168 7.06,-1.168 4.738,0 8.234,1.033 10.486,3.104 2.243,2.073 3.369,5.286 3.369,9.658l0 1.031 -7.696 0 0 -0.424c0,-2.436 -0.49,-4.282 -1.479,-5.531 -0.98,-1.239 -2.447,-1.864 -4.397,-1.864 -2.398,0 -4.025,0.85 -4.905,2.543 -0.884,1.701 -1.323,6.2 -1.323,13.495 0,5.764 0.42,9.619 1.264,11.565 0.843,1.947 2.359,2.914 4.553,2.914 2.184,0 3.731,-0.688 4.66,-2.072 0.931,-1.375 1.392,-3.71 1.392,-7.005l0 -1.403 -5.699 0 0 -6.516 13.63 0 0 22.264 -5.572 0z"/>
+          <path id="_1_81" fill="#C6C6C6" fill-rule="nonzero" d="M623.926 1531.008l8.226 0 0 27.53c0,3.15 0.42,5.286 1.252,6.409 0.833,1.122 2.302,1.682 4.428,1.682 2.104,0 3.564,-0.57 4.376,-1.701 0.814,-1.132 1.225,-3.294 1.225,-6.498l0 -27.422 8.108 0 0 28.191c0,2.743 -0.166,4.743 -0.5,6 -0.333,1.267 -0.891,2.372 -1.683,3.331 -1.185,1.43 -2.753,2.499 -4.701,3.214 -1.949,0.715 -4.26,1.075 -6.934,1.075 -5.053,0 -8.607,-1.013 -10.683,-3.03 -2.076,-2.028 -3.114,-5.549 -3.114,-10.59l0 -28.191z"/>
+          <polygon id="_2_82" fill="#C6C6C6" fill-rule="nonzero" points="659.013,1571.843 659.013,1531.008 667.239,1531.008 667.239,1571.843 "/>
+          <path id="_3_83" fill="#C6C6C6" fill-rule="nonzero" d="M682.808 1565.815l3.644 0c1.861,0 3.162,-0.126 3.907,-0.372 0.745,-0.244 1.342,-0.668 1.783,-1.275 0.762,-1.059 1.312,-2.507 1.634,-4.353 0.323,-1.847 0.49,-4.805 0.49,-8.87 0,-3.954 -0.196,-6.832 -0.578,-8.633 -0.381,-1.81 -1.027,-3.168 -1.948,-4.083 -0.48,-0.461 -1.097,-0.786 -1.85,-0.968 -0.755,-0.19 -1.94,-0.28 -3.545,-0.28l-3.537 0 0 28.834zm-8.049 6.028l0 -40.835 13.221 0c2.693,0 4.836,0.208 6.442,0.634 1.597,0.424 2.91,1.112 3.937,2.071 1.558,1.395 2.644,3.16 3.291,5.286 0.637,2.136 0.961,5.44 0.961,9.937 0,5.793 -0.216,9.893 -0.657,12.291 -0.442,2.389 -1.195,4.425 -2.242,6.109 -1.01,1.674 -2.43,2.85 -4.232,3.511 -1.811,0.661 -4.944,0.996 -9.4,0.996l-11.321 0z"/>
+          <polygon id="_4_84" fill="#C6C6C6" fill-rule="nonzero" points="709.298,1571.843 709.298,1531.008 731.987,1531.008 731.987,1537.795 717.465,1537.795 717.465,1547.244 730.979,1547.244 730.979,1553.706 717.465,1553.706 717.465,1564.947 732.329,1564.947 732.329,1571.843 "/>
+          <polygon fill="#C6C6C6" fill-rule="nonzero" points="99.944,904.252 99.944,879.469 93.07,879.469 93.07,874.576 112.797,874.576 112.797,879.469 105.923,879.469 105.923,904.252 "/>
+          <polygon id="_1_85" fill="#C6C6C6" fill-rule="nonzero" points="121.508,904.252 121.508,879.469 114.634,879.469 114.634,874.576 134.36,874.576 134.36,879.469 127.486,879.469 127.486,904.252 "/>
+          <polygon id="_2_86" fill="#C6C6C6" fill-rule="nonzero" points="135.173,904.252 143.021,889.105 135.557,874.576 142.288,874.576 146.566,883.921 150.922,874.576 157.59,874.576 149.854,889.105 157.803,904.252 151.041,904.252 146.395,894.347 141.662,904.252 "/>
+          <polygon id="_3_87" fill="#C6C6C6" fill-rule="nonzero" points="160.059,907.921 156.899,907.921 168.934,873.865 172.1,873.865 "/>
+          <polygon id="_4_88" fill="#C6C6C6" fill-rule="nonzero" points="174.03,904.252 174.03,874.576 183.032,874.576 187.437,893.788 191.835,874.576 200.845,874.576 200.845,904.252 195.124,904.252 195.251,877.931 189.273,904.252 185.602,904.252 179.609,877.931 179.752,904.252 "/>
+          <polygon id="_5_89" fill="#C6C6C6" fill-rule="nonzero" points="206.302,904.252 206.302,874.576 212.28,874.576 212.28,904.252 "/>
+          <polygon id="_6_90" fill="#C6C6C6" fill-rule="nonzero" points="215.398,904.252 223.247,889.105 215.782,874.576 222.514,874.576 226.791,883.921 231.148,874.576 237.815,874.576 230.08,889.105 238.028,904.252 231.267,904.252 226.621,894.347 221.887,904.252 "/>
+          <path fill="#C6C6C6" d="M117.038 1242.85l107.961 -39.125 0 41.402c-35.987,0 -71.974,0 -107.961,0 0.085,-0.759 -0.086,-1.518 0,-2.277z"/>
+          <polygon fill="#C6C6C6" points="124.412,1097.932 163.185,1097.932 163.185,1059.16 178.827,1059.16 178.827,1097.932 217.599,1097.932 217.599,1113.574 178.827,1113.574 178.827,1152.346 163.185,1152.346 163.185,1113.574 124.412,1113.574 "/>
+          <rect fill="#C6C6C6" x="124.412" y="1337.073" width="93.187" height="15.642"/>
+          <polygon fill="#C6C6C6" points="594.962,1118.622 654.962,1071.235 655.334,1071.235 659.469,1071.235 659.84,1071.235 719.84,1118.622 710.915,1132.826 659.652,1091.327 659.469,1091.327 655.334,1091.327 655.151,1091.327 603.888,1132.826 "/>
+          <polygon fill="#C6C6C6" points="594.962,1330.093 654.962,1377.48 655.334,1377.48 659.469,1377.48 659.84,1377.48 719.84,1330.093 710.915,1315.889 659.652,1357.388 659.469,1357.388 655.334,1357.388 655.151,1357.388 603.888,1315.889 "/>
+          <path fill="#C6C6C6" d="M632.518 1195.993l0.435 0 13.875 0 18.322 0c9.425,0 17.134,7.71 17.134,17.134l0 0.002c0,9.424 -7.709,17.134 -17.134,17.134l-18.322 0 0 22.972 -14.31 0 0 -57.242zm14.31 9.941l13.518 0c3.958,0 7.195,3.237 7.195,7.195l0 0c0,3.957 -3.237,7.193 -7.195,7.193l-13.518 0 0 -14.388z"/>
+          <polygon fill="#C6C6C6" fill-rule="nonzero" points="368.753,1084.024 368.753,1054.348 377.756,1054.348 382.161,1073.56 386.559,1054.348 395.568,1054.348 395.568,1084.024 389.846,1084.024 389.975,1057.703 383.995,1084.024 380.324,1084.024 374.331,1057.703 374.474,1084.024 "/>
+          <path id="_1_91" fill="#C6C6C6" fill-rule="nonzero" d="M401.026 1054.348l5.977 0 0 20.007c0,2.289 0.307,3.842 0.912,4.658 0.605,0.815 1.672,1.222 3.216,1.222 1.529,0 2.591,-0.414 3.182,-1.236 0.591,-0.822 0.888,-2.395 0.888,-4.722l0 -19.929 5.895 0 0 20.487c0,1.993 -0.122,3.448 -0.365,4.361 -0.242,0.921 -0.647,1.724 -1.224,2.421 -0.86,1.039 -2,1.815 -3.416,2.335 -1.416,0.52 -3.096,0.783 -5.038,0.783 -3.673,0 -6.256,-0.737 -7.764,-2.205 -1.509,-1.473 -2.263,-4.03 -2.263,-7.695l0 -20.487z"/>
+          <polygon id="_2_92" fill="#C6C6C6" fill-rule="nonzero" points="431.093,1084.024 431.093,1059.241 424.219,1059.241 424.219,1054.348 443.947,1054.348 443.947,1059.241 437.071,1059.241 437.071,1084.024 "/>
+          <polygon id="_3_93" fill="#C6C6C6" fill-rule="nonzero" points="447.106,1084.024 447.106,1054.348 463.596,1054.348 463.596,1059.28 453.042,1059.28 453.042,1066.148 462.864,1066.148 462.864,1070.843 453.042,1070.843 453.042,1079.013 463.846,1079.013 463.846,1084.024 "/>
+          <g id="_2394170375456">
+          <path fill="#C6C6C6" d="M416.912 1100.283c-1.039,0.266 -3.812,2.792 -4.405,3.4 -1.325,1.358 -1.982,1.719 -3.074,2.668 -3.465,3.011 -8.212,7.542 -11.481,10.218l-4.156 3.633c-0.856,0.698 -2.26,0.432 -3.596,0.432 -5.254,-0.002 -10.513,0.015 -15.768,-0.002 -6.361,-0.02 -5.055,3.206 -5.055,10.509 0,5.255 0,10.511 0,15.768 0,7.335 1.207,6.501 9.151,6.501l13.733 -0.014c1.811,0.004 1.17,0.162 3.656,2.328l15.572 13.716c0.422,0.4 0.718,0.543 1.129,0.929 0.414,0.391 0.485,0.544 0.929,0.9 1.892,1.51 3.819,3.994 6.465,1.771 1.732,-1.455 1.251,-3.789 1.251,-6.472l0 -55.086c0,-4.226 1.326,-12.645 -4.351,-11.199z"/>
+          <path fill="#C6C6C6" d="M440.614 1136.259c-0.405,0.893 -9.383,11.457 -10.818,13.186 -1.134,1.364 -2.776,3.337 -0.9,5.459 3.339,3.778 6.702,-1.803 8.999,-4.532l5.391 -6.487c0.484,-0.612 1.315,-1.777 2.051,-2.16 0.443,0.86 9.55,11.597 10.718,13.051 2.595,3.229 9.284,0.041 4.39,-5.414l-3.632 -4.358c-0.59,-0.758 -1.144,-1.344 -1.778,-2.105l-5.399 -6.652 10.784 -12.905c1.077,-1.277 2.982,-3.461 0.945,-5.619 -3.152,-3.336 -5.773,0.803 -7.09,2.344 -0.736,0.86 -1.209,1.423 -1.862,2.231 -0.651,0.809 -6.647,8.193 -7.396,8.638l-10.727 -12.963c-1.32,-1.748 -3.867,-2.021 -5.434,-0.188 -1.799,2.103 -0.217,4.134 0.871,5.361l10.887 13.113z"/>
+          </g>
+          <path fill="#C6C6C6" fill-rule="nonzero" d="M362.807 1322.599l5.808 0c0,0.125 0.006,0.316 0.021,0.566 0.015,0.249 0.022,0.447 0.022,0.591 0,3.427 -0.784,5.973 -2.348,7.637 -1.559,1.664 -3.951,2.493 -7.174,2.493 -1.532,0 -2.848,-0.184 -3.942,-0.547 -1.098,-0.367 -2.044,-0.94 -2.834,-1.709 -1.082,-1.027 -1.85,-2.44 -2.292,-4.237 -0.448,-1.801 -0.669,-4.932 -0.669,-9.404 0,-3.059 0.135,-5.486 0.399,-7.288 0.263,-1.808 0.67,-3.15 1.232,-4.038 0.86,-1.362 1.928,-2.349 3.208,-2.96 1.282,-0.612 2.912,-0.915 4.905,-0.915 3.251,0 5.623,0.783 7.102,2.349 1.48,1.572 2.227,4.091 2.242,7.557l-5.808 0 0 -0.711c0,-1.604 -0.285,-2.801 -0.846,-3.591 -0.563,-0.789 -1.416,-1.184 -2.57,-1.184 -1.436,0 -2.413,0.547 -2.933,1.639 -0.518,1.091 -0.781,4.11 -0.781,9.057 0,5.339 0.256,8.595 0.761,9.747 0.505,1.157 1.48,1.735 2.911,1.735 1.33,0 2.263,-0.453 2.796,-1.36 0.527,-0.901 0.79,-2.579 0.79,-5.019l0 -0.408z"/>
+          <polygon id="_1_94" fill="#C6C6C6" fill-rule="nonzero" points="373.433,1333.175 373.433,1303.499 379.369,1303.499 379.369,1315.14 387.567,1315.14 387.567,1303.499 393.502,1303.499 393.502,1333.175 387.567,1333.175 387.567,1319.719 379.369,1319.719 379.369,1333.175 "/>
+          <polygon id="_2_95" fill="#C6C6C6" fill-rule="nonzero" points="409.65,1333.175 409.65,1303.499 415.627,1303.499 415.627,1328.125 426.431,1328.125 426.431,1333.175 "/>
+          <polygon id="_3_96" fill="#C6C6C6" fill-rule="nonzero" points="430.481,1333.175 430.481,1303.499 436.458,1303.499 436.458,1333.175 "/>
+          <path id="_4_97" fill="#C6C6C6" fill-rule="nonzero" d="M441.32 1322.758l5.984 0 0 1.906c0,1.822 0.25,3.073 0.74,3.729 0.492,0.665 1.344,0.993 2.556,0.993 1.267,0 2.227,-0.296 2.889,-0.887 0.662,-0.592 0.989,-1.467 0.989,-2.618 0,-0.888 -0.228,-1.651 -0.69,-2.289 -0.456,-0.631 -1.452,-1.453 -2.982,-2.453l-3.061 -2.006c-2.646,-1.697 -4.326,-3.097 -5.045,-4.203 -0.72,-1.104 -1.074,-2.492 -1.074,-4.163 0,-2.493 0.796,-4.446 2.398,-5.86 1.601,-1.415 3.807,-2.119 6.611,-2.119 2.982,0 5.26,0.75 6.847,2.256 1.586,1.501 2.375,3.658 2.375,6.473 0,0.282 0,0.499 -0.006,0.651 -0.007,0.157 -0.021,0.289 -0.036,0.408l-5.679 0 0 -0.789c0,-1.612 -0.284,-2.762 -0.854,-3.46 -0.569,-0.69 -1.507,-1.039 -2.811,-1.039 -0.961,0 -1.708,0.263 -2.256,0.783 -0.548,0.519 -0.825,1.243 -0.825,2.169 0,1.251 1.232,2.632 3.686,4.151l0.064 0.033 3.295 2.065c2.35,1.441 3.935,2.796 4.768,4.078 0.832,1.276 1.253,2.9 1.253,4.88 0,2.697 -0.833,4.782 -2.505,6.241 -1.666,1.467 -4.049,2.198 -7.145,2.198 -3.225,0 -5.623,-0.77 -7.202,-2.309 -1.574,-1.54 -2.364,-3.893 -2.364,-7.05 0,-0.33 0.03,-0.882 0.08,-1.651l0 -0.118z"/>
+          <polygon id="_5_98" fill="#C6C6C6" fill-rule="nonzero" points="469.886,1333.175 469.886,1308.392 463.011,1308.392 463.011,1303.499 482.738,1303.499 482.738,1308.392 475.864,1308.392 475.864,1333.175 "/>
+          <g id="_2394170376368">
+          <polygon fill="#C6C6C6" fill-rule="nonzero" points="108.499,1721.911 108.499,1687.81 100.188,1687.81 100.188,1681.077 124.032,1681.077 124.032,1687.81 115.723,1687.81 115.723,1721.911 "/>
+          <path id="_1_99" fill="#C6C6C6" fill-rule="nonzero" d="M134.457 1701.504c0,6.723 0.369,10.95 1.118,12.687 0.748,1.747 2.132,2.615 4.145,2.615 1.978,0 3.338,-0.85 4.068,-2.56 0.731,-1.702 1.093,-5.955 1.093,-12.742 0,-6.789 -0.369,-11.042 -1.11,-12.78 -0.74,-1.728 -2.107,-2.598 -4.102,-2.598 -1.996,0 -3.365,0.87 -4.103,2.598 -0.74,1.738 -1.109,5.991 -1.109,12.78zm-7.38 -0.01c0,-4.326 0.188,-7.792 0.575,-10.381 0.388,-2.588 0.998,-4.534 1.816,-5.847 1.126,-1.854 2.469,-3.176 4.034,-3.972 1.556,-0.796 3.612,-1.195 6.167,-1.195 2.554,0 4.61,0.399 6.167,1.195 1.564,0.796 2.915,2.118 4.059,3.972 0.818,1.349 1.42,3.304 1.798,5.892 0.379,2.58 0.567,6.019 0.567,10.336 0,4.299 -0.188,7.738 -0.576,10.327 -0.387,2.588 -0.988,4.551 -1.789,5.9 -1.144,1.856 -2.495,3.177 -4.059,3.973 -1.557,0.797 -3.613,1.194 -6.167,1.194 -2.555,0 -4.611,-0.397 -6.167,-1.194 -1.565,-0.796 -2.908,-2.117 -4.034,-3.973 -0.818,-1.312 -1.428,-3.257 -1.816,-5.846 -0.387,-2.588 -0.575,-6.055 -0.575,-10.381z"/>
+          <path id="_2_100" fill="#C6C6C6" fill-rule="nonzero" d="M164.741 1701.504c0,6.723 0.37,10.95 1.118,12.687 0.748,1.747 2.134,2.615 4.145,2.615 1.978,0 3.338,-0.85 4.069,-2.56 0.731,-1.702 1.093,-5.955 1.093,-12.742 0,-6.789 -0.37,-11.042 -1.111,-12.78 -0.739,-1.728 -2.107,-2.598 -4.102,-2.598 -1.996,0 -3.363,0.87 -4.103,2.598 -0.739,1.738 -1.109,5.991 -1.109,12.78zm-7.38 -0.01c0,-4.326 0.19,-7.792 0.576,-10.381 0.387,-2.588 0.997,-4.534 1.815,-5.847 1.128,-1.854 2.469,-3.176 4.035,-3.972 1.556,-0.796 3.613,-1.195 6.166,-1.195 2.554,0 4.611,0.399 6.167,1.195 1.566,0.796 2.917,2.118 4.06,3.972 0.817,1.349 1.419,3.304 1.798,5.892 0.378,2.58 0.567,6.019 0.567,10.336 0,4.299 -0.189,7.738 -0.575,10.327 -0.388,2.588 -0.99,4.551 -1.79,5.9 -1.143,1.856 -2.494,3.177 -4.06,3.973 -1.556,0.797 -3.613,1.194 -6.167,1.194 -2.553,0 -4.61,-0.397 -6.166,-1.194 -1.566,-0.796 -2.907,-2.117 -4.035,-3.973 -0.818,-1.312 -1.428,-3.257 -1.815,-5.846 -0.386,-2.588 -0.576,-6.055 -0.576,-10.381z"/>
+          <polygon id="_3_101" fill="#C6C6C6" fill-rule="nonzero" points="188.421,1721.911 188.421,1681.077 195.645,1681.077 195.645,1714.961 208.701,1714.961 208.701,1721.911 "/>
+          <path id="_4_102" fill="#C6C6C6" fill-rule="nonzero" d="M212.866 1707.576l7.232 0 0 2.625c0,2.506 0.302,4.226 0.895,5.131 0.593,0.914 1.625,1.366 3.088,1.366 1.53,0 2.691,-0.407 3.492,-1.221 0.8,-0.815 1.196,-2.019 1.196,-3.602 0,-1.222 -0.276,-2.272 -0.834,-3.15 -0.551,-0.868 -1.755,-2 -3.606,-3.375l-3.697 -2.761c-3.2,-2.335 -5.229,-4.263 -6.099,-5.783 -0.868,-1.521 -1.298,-3.43 -1.298,-5.729 0,-3.43 0.963,-6.117 2.899,-8.064 1.934,-1.946 4.601,-2.914 7.989,-2.914 3.605,0 6.357,1.032 8.275,3.104 1.919,2.063 2.872,5.033 2.872,8.906 0,0.389 0,0.688 -0.008,0.895 -0.008,0.217 -0.026,0.399 -0.043,0.562l-6.865 0 0 -1.087c0,-2.216 -0.342,-3.801 -1.031,-4.76 -0.688,-0.95 -1.823,-1.43 -3.397,-1.43 -1.161,0 -2.065,0.362 -2.727,1.077 -0.663,0.715 -0.998,1.711 -0.998,2.988 0,1.718 1.488,3.619 4.456,5.71l0.078 0.046 3.983 2.84c2.837,1.983 4.755,3.847 5.761,5.611 1.007,1.757 1.514,3.992 1.514,6.716 0,3.712 -1.006,6.579 -3.028,8.589 -2.011,2.018 -4.894,3.022 -8.636,3.022 -3.896,0 -6.794,-1.058 -8.704,-3.176 -1.899,-2.117 -2.856,-5.357 -2.856,-9.702 0,-0.452 0.036,-1.213 0.097,-2.271l0 -0.163z"/>
+          <g>
+            <path fill="#C6C6C6" fill-rule="nonzero" d="M145.479 1731.672l-3.23 3.23 7.106 9.953c0.608,0.849 1.587,1.354 2.631,1.354 0.001,0 0.002,0 0.004,0l0.225 0c0.001,-0.002 0.001,-0.002 0.003,-0.002 0.857,0 1.679,0.341 2.284,0.946l8.641 8.64 -8.452 8.573c-0.889,-0.259 -1.814,-0.394 -2.741,-0.394 -5.351,0 -9.694,4.337 -9.698,9.689 0.005,5.347 4.344,9.677 9.689,9.677 5.35,0 9.69,-4.34 9.69,-9.69 0,-0.925 -0.134,-1.848 -0.393,-2.735l8.572 -8.453 3.126 3.125 -0.985 2.952c-0.111,0.33 -0.167,0.675 -0.167,1.022 0,0.856 0.341,1.678 0.947,2.284l10.563 10.563c0.604,0.607 1.427,0.95 2.283,0.95 0.858,0 1.681,-0.343 2.285,-0.95l5.122 -5.122c0.607,-0.604 0.95,-1.428 0.95,-2.285 0,-0.856 -0.343,-1.68 -0.95,-2.283l-10.562 -10.563c-0.607,-0.606 -1.429,-0.947 -2.285,-0.947 -0.347,0 -0.692,0.056 -1.02,0.164l-2.952 0.988 -3.1 -3.101 8.657 -8.536c0.814,0.217 1.657,0.328 2.501,0.328 5.353,0 9.696,-4.334 9.707,-9.686 0,-0.873 -0.11,-1.71 -0.33,-2.51l-6.912 6.916 -5.679 -1.176 -1.176 -5.676 6.916 -6.915c-0.819,-0.221 -1.666,-0.334 -2.515,-0.334 -5.352,0 -9.692,4.34 -9.692,9.691 0,0.853 0.114,1.705 0.337,2.53l-8.527 8.648 -8.621 -8.613c-0.605,-0.605 -0.946,-1.427 -0.946,-2.283l0 -0.229c0.002,-0.002 0.002,-0.002 0.002,-0.002 0,-1.043 -0.505,-2.023 -1.354,-2.629l-9.954 -7.109zm31.158 34.388c0.302,-0.305 0.715,-0.476 1.144,-0.476 0.428,0 0.841,0.171 1.143,0.475l9.412 9.415c0.291,0.302 0.454,0.704 0.454,1.122 0,0.892 -0.723,1.615 -1.616,1.615 -0.418,0 -0.82,-0.162 -1.122,-0.453l-9.415 -9.412c-0.304,-0.302 -0.475,-0.715 -0.475,-1.144 0,-0.428 0.171,-0.841 0.475,-1.143l0 0.001zm-24.697 1.144l1.52 0.781 1.71 0.084 0.926 1.437 1.437 0.927 0.085 1.709 0.78 1.521 -0.78 1.52 -0.085 1.71 -1.437 0.926 -0.926 1.437 -1.71 0.084 -1.52 0.783 -1.521 -0.781 -1.71 -0.085 -0.926 -1.436 -1.438 -0.928 -0.084 -1.71 -0.782 -1.52 0.782 -1.521 0.084 -1.709 1.436 -0.927 0.927 -1.437 1.709 -0.084 1.523 -0.781z"/>
+          </g>
+          </g>
+          <g id="_2394170377712">
+          <path fill="#C6C6C6" fill-rule="nonzero" d="M99.047 2096.682l3.856 0c1.955,0 3.303,-0.443 4.062,-1.329 0.758,-0.878 1.132,-2.462 1.132,-4.743 0,-2.036 -0.413,-3.457 -1.237,-4.272 -0.829,-0.814 -2.331,-1.221 -4.515,-1.221l-3.298 0 0 11.565zm-6.463 23.568l0 -40.835 12.011 0c3.63,0 6.256,0.832 7.852,2.507 1.603,1.674 2.402,4.398 2.402,8.181 0,2.652 -0.431,4.743 -1.293,6.271 -0.853,1.531 -2.123,2.426 -3.79,2.697 3.184,0.951 4.851,4.001 4.987,9.141 0,0.236 0,0.409 0,0.535l0.191 5.403c0.065,1.539 0.232,2.769 0.512,3.701 0.279,0.924 0.719,1.729 1.308,2.399l-7.964 0c-0.183,-0.688 -0.327,-1.494 -0.423,-2.426 -0.087,-0.932 -0.152,-2.244 -0.183,-3.937l-0.097 -4.272 0 -1.085c0,-2.362 -0.446,-3.991 -1.332,-4.879 -0.886,-0.877 -2.697,-1.321 -5.426,-1.321l-2.292 0 0 17.92 -6.463 0z"/>
+          <polygon id="_1_103" fill="#C6C6C6" fill-rule="nonzero" points="120.22,2120.25 120.22,2079.415 138.71,2079.415 138.71,2086.202 126.874,2086.202 126.874,2095.651 137.888,2095.651 137.888,2102.113 126.874,2102.113 126.874,2113.354 138.988,2113.354 138.988,2120.25 "/>
+          <polygon id="_2_104" fill="#C6C6C6" fill-rule="nonzero" points="149.053,2120.25 149.053,2086.148 141.343,2086.148 141.343,2079.415 163.464,2079.415 163.464,2086.148 155.754,2086.148 155.754,2120.25 "/>
+          <path id="_3_105" fill="#C6C6C6" fill-rule="nonzero" d="M167.008 2079.415l6.703 0 0 27.53c0,3.15 0.342,5.286 1.02,6.409 0.678,1.122 1.876,1.682 3.609,1.682 1.714,0 2.904,-0.57 3.566,-1.701 0.663,-1.131 0.997,-3.294 0.997,-6.498l0 -27.422 6.607 0 0 28.191c0,2.743 -0.134,4.743 -0.406,6 -0.272,1.267 -0.727,2.372 -1.373,3.331 -0.964,1.43 -2.242,2.499 -3.829,3.214 -1.589,0.715 -3.472,1.076 -5.652,1.076 -4.117,0 -7.014,-1.014 -8.706,-3.031 -1.691,-2.028 -2.536,-5.549 -2.536,-10.59l0 -28.191z"/>
+          <path id="_4_106" fill="#C6C6C6" fill-rule="nonzero" d="M202.064 2096.682l3.854 0c1.955,0 3.304,-0.443 4.062,-1.329 0.758,-0.878 1.133,-2.462 1.133,-4.743 0,-2.036 -0.414,-3.457 -1.237,-4.272 -0.829,-0.814 -2.33,-1.221 -4.515,-1.221l-3.297 0 0 11.565zm-6.464 23.568l0 -40.835 12.01 0c3.63,0 6.257,0.832 7.852,2.507 1.604,1.674 2.403,4.398 2.403,8.181 0,2.652 -0.432,4.743 -1.293,6.271 -0.853,1.531 -2.123,2.426 -3.79,2.697 3.184,0.951 4.851,4.001 4.987,9.141 0,0.236 0,0.409 0,0.535l0.191 5.403c0.065,1.539 0.232,2.769 0.511,3.701 0.28,0.924 0.719,1.729 1.308,2.399l-7.963 0c-0.183,-0.688 -0.327,-1.494 -0.424,-2.426 -0.086,-0.932 -0.152,-2.244 -0.183,-3.937l-0.096 -4.272 0 -1.085c0,-2.362 -0.446,-3.991 -1.332,-4.879 -0.886,-0.877 -2.697,-1.321 -5.427,-1.321l-2.29 0 0 17.92 -6.464 0z"/>
+          <polygon id="_5_107" fill="#C6C6C6" fill-rule="nonzero" points="223.236,2120.25 223.236,2079.415 230.137,2079.415 239.506,2107.968 239.323,2079.415 245.643,2079.415 245.643,2120.25 238.813,2120.25 229.372,2091.641 229.555,2120.25 "/>
+          </g>
+          <path fill="#C6C6C6" fill-rule="nonzero" d="M664.115 1749.512l-13.025 1.632 -0.465 2.162 2.563 0.466c1.667,0.4 1.998,1 1.636,2.667l-4.2 19.713c-1.099,5.096 0.602,7.494 4.594,7.494 3.102,0 6.695,-1.428 8.326,-3.398l0.501 -2.366c-1.134,1 -2.8,1.4 -3.898,1.4 -1.563,0 -2.128,-1.099 -1.732,-3.032l5.7 -26.738zm0.392 -11.868c0,3.141 -2.545,5.687 -5.685,5.687 -3.14,0 -5.685,-2.546 -5.685,-5.687 0,-3.139 2.545,-5.685 5.685,-5.685 3.14,0 5.685,2.546 5.685,5.685z"/>
+          <g id="_2394170373632">
+          <polygon fill="#C6C6C6" fill-rule="nonzero" points="106.984,1539.851 106.984,1499.016 118.104,1499.016 123.545,1525.451 128.977,1499.016 140.107,1499.016 140.107,1539.851 133.039,1539.851 133.196,1503.631 125.812,1539.851 121.277,1539.851 113.875,1503.631 114.05,1539.851 "/>
+          <polygon id="_1_108" fill="#C6C6C6" fill-rule="nonzero" points="146.849,1539.851 146.849,1499.016 167.217,1499.016 167.217,1505.803 154.179,1505.803 154.179,1515.252 166.312,1515.252 166.312,1521.714 154.179,1521.714 154.179,1532.955 167.524,1532.955 167.524,1539.851 "/>
+          <polygon id="_2_109" fill="#C6C6C6" fill-rule="nonzero" points="172.966,1539.851 172.966,1499.016 180.568,1499.016 190.89,1527.569 190.688,1499.016 197.648,1499.016 197.648,1539.851 190.125,1539.851 179.726,1511.242 179.927,1539.851 "/>
+          <path id="_3_110" fill="#C6C6C6" fill-rule="nonzero" d="M204.41 1499.016l7.384 0 0 27.53c0,3.15 0.377,5.286 1.125,6.409 0.746,1.122 2.066,1.682 3.973,1.682 1.89,0 3.199,-0.57 3.93,-1.701 0.73,-1.131 1.099,-3.294 1.099,-6.498l0 -27.422 7.277 0 0 28.191c0,2.743 -0.149,4.743 -0.448,6 -0.299,1.267 -0.8,2.372 -1.511,3.331 -1.063,1.43 -2.47,2.499 -4.219,3.214 -1.75,0.715 -3.824,1.075 -6.226,1.075 -4.535,0 -7.726,-1.013 -9.59,-3.03 -1.862,-2.028 -2.794,-5.549 -2.794,-10.59l0 -28.191z"/>
+          <g>
+            <path fill="#C6C6C6" d="M136.504 1601.939c0.003,-1.588 1.287,-2.873 2.875,-2.873l57.428 0.001c1.586,-0.001 2.871,1.284 2.871,2.871 0,1.586 -1.285,2.871 -2.871,2.871l-57.431 0.002c-1.585,-0.002 -2.869,-1.287 -2.869,-2.873l-0.003 0.001zm0 -22.971c0.003,-1.588 1.287,-2.872 2.875,-2.872l57.428 0c1.586,0 2.871,1.284 2.871,2.872 0,1.584 -1.285,2.869 -2.871,2.869l-57.431 0.003c-1.585,-0.003 -2.869,-1.288 -2.869,-2.872l-0.003 0zm0 -22.972c0.003,-1.587 1.287,-2.872 2.875,-2.872l57.428 0c1.586,0 2.871,1.285 2.871,2.872 0,1.586 -1.285,2.872 -2.871,2.872l-57.431 0c-1.585,0 -2.869,-1.286 -2.869,-2.872l-0.003 0zm0 0l0 0 0 0z"/>
+          </g>
+          </g>
+          <g id="_2394170374112">
+          <g>
+            <g>
+            <rect fill="#212121" stroke="#080808" stroke-width="4.07" stroke-miterlimit="22.9256" transform="matrix(2.82612E-14 -1.06708 0.937966 2.48416E-14 351.631 1831.86)" width="169.066" height="136.755" rx="19.535" ry="19.535"/>
+            </g>
+          </g>
+          <polygon fill="#C6C6C6" points="448.276,1780.964 383.258,1780.964 412.876,1702.36 418.383,1702.36 "/>
+          </g>
+          <g id="_2394170372624">
+          <g>
+            <g>
+            <rect fill="#212121" stroke="#080808" stroke-width="4.07" stroke-miterlimit="22.9256" transform="matrix(-8.47836E-14 1.06708 -0.937966 -7.45248E-14 479.903 2030.5)" width="169.066" height="136.755" rx="19.535" ry="19.535"/>
+            </g>
+          </g>
+          <polygon fill="#C6C6C6" points="383.258,2081.4 448.276,2081.4 418.658,2160.004 413.151,2160.004 "/>
+          </g>
+          <g id="_2394170374592">
+          <g>
+            <g>
+            <rect fill="#212121" stroke="#080808" stroke-width="4.07" stroke-miterlimit="22.9256" x="77.888" y="1864.601" width="180.407" height="128.271" rx="20.846" ry="18.324"/>
+            </g>
+          </g>
+          <polygon fill="#C6C6C6" points="207.394,1896.227 207.394,1961.245 128.79,1931.627 128.79,1926.12 "/>
+          </g>
+          <g id="_2394170375216">
+          <g>
+            <g>
+            <rect fill="#212121" stroke="#080808" stroke-width="4.07" stroke-miterlimit="22.9256" x="567.198" y="1864.6" width="180.407" height="128.271" rx="20.846" ry="18.324"/>
+            </g>
+          </g>
+          <polygon fill="#C6C6C6" points="618.098,1961.245 618.098,1896.227 696.703,1925.845 696.703,1931.352 "/>
+          </g>
+          <path fill="#C6C6C6" d="M371.313 1896.044l67.118 0c2.264,0 4.116,1.86 4.116,4.116l0 19.038 -10.301 0 0 -10.929c0,-1.372 -1.134,-2.494 -2.495,-2.494l-49.758 0c-1.352,0 -2.495,1.144 -2.495,2.494l0 40.934c0,1.35 1.122,2.494 2.495,2.494l49.758 0c1.373,0 2.495,-1.122 2.495,-2.494l0 -8.128 10.301 0 0 16.237c0,2.259 -1.857,4.116 -4.116,4.116l-67.118 0c-2.251,0 -4.116,-1.852 -4.116,-4.116l0 -57.152c0,-2.264 1.852,-4.116 4.116,-4.116zm86.98 40.437l-8.682 0 -35.307 0 0 5.587 -20.076 -10.354 0 -6.692 20.076 -7.956 0 6.892 35.307 0 0 -17.701 8.682 0 0 17.701 0 12.523z"/>
+          <path fill="#C6C6C6" d="M196.088 2135.017c1.19,0 2.155,0.963 2.155,2.154l0 20.674c0,5.944 -4.822,10.767 -10.769,10.767l-42.179 0.002 14.417 14.411c0.405,0.4 0.633,0.951 0.633,1.522 0,1.191 -0.966,2.157 -2.157,2.157 -0.571,0 -1.122,-0.228 -1.525,-0.632l-18.09 -18.091c-0.405,-0.401 -0.632,-0.952 -0.632,-1.523 0,-0.571 0.227,-1.122 0.633,-1.525l17.228 -17.228c0.401,-0.404 0.952,-0.632 1.523,-0.632 1.191,0 2.157,0.965 2.157,2.157 0,0.571 -0.228,1.122 -0.632,1.525l-13.555 13.551 42.179 0c3.568,-0.001 6.461,-2.893 6.461,-6.461l0 -20.674c0,-1.191 0.964,-2.154 2.153,-2.154z"/>
+          <g id="_2394170370896">
+          <g>
+            <path fill="#C6C6C6" fill-rule="nonzero" d="M676.901 2167.322c0.892,0 1.615,-1.446 1.615,-3.23 0,-1.784 -0.723,-3.232 -1.615,-3.232 -0.891,0 -1.615,1.448 -1.615,3.232 0,1.784 0.724,3.23 1.615,3.23z"/>
+            <g>
+            <path fill="#C6C6C6" fill-rule="nonzero" d="M669.382 2135.411c-0.354,0.308 -0.558,0.753 -0.558,1.22 0,0 0,0.001 0,0.003l0 1.614 -1.613 0c-2.677,0 -4.846,2.169 -4.846,4.846l0 40.38 -4.846 0c-0.892,-0.001 -1.615,0.722 -1.615,1.614 0,0.893 0.723,1.615 1.615,1.615l41.995 0.001c0.891,-0.001 1.614,-0.723 1.614,-1.616 0,-0.892 -0.723,-1.615 -1.616,-1.615l-4.844 0.001 0 -43.611c-0.002,-0.805 -0.593,-1.487 -1.391,-1.599l-22.612 -3.231c-0.073,-0.01 -0.149,-0.016 -0.227,-0.016 -0.388,0 -0.763,0.141 -1.056,0.394l0 0zm-2.171 6.067l1.613 0 0 41.996 -3.229 0 0 -40.38c0,-0.893 0.723,-1.616 1.616,-1.616l0 0zm24.227 -0.213l0 42.209 -19.382 0 0 -44.978 19.382 2.769z"/>
+            </g>
+          </g>
+          <path fill="#C6C6C6" d="M613.676 2168.211l32.373 0.001 -11.065 11.062c-0.312,0.306 -0.487,0.73 -0.487,1.168 0,0.914 0.741,1.655 1.657,1.655 0.438,0 0.86,-0.175 1.171,-0.484l13.885 -13.885c0.309,-0.31 0.484,-0.732 0.484,-1.17 0,-0.439 -0.175,-0.861 -0.486,-1.171l-13.223 -13.223c-0.309,-0.31 -0.731,-0.485 -1.169,-0.485 -0.915,0 -1.657,0.742 -1.657,1.656 0,0.438 0.175,0.86 0.486,1.171l10.404 10.4 -32.373 0 0 3.305z"/>
+          </g>
+          <g id="_2394170370176">
+          <rect fill="#DD392C" stroke="#080808" stroke-width="4.07" stroke-miterlimit="22.9256" x="72.787" y="2241.76" width="122.232" height="94.253" rx="14.124" ry="13.464"/>
+          <path fill="#FEFEFE" fill-rule="nonzero" d="M109.842 2316.539l19.717 -51.401 7.478 0 20.927 51.401 -7.742 0 -5.946 -15.578 -21.644 0 -5.575 15.578 -7.215 0zm14.789 -21.107l17.515 0 -5.36 -14.25c-1.614,-4.33 -2.835,-7.907 -3.685,-10.732 -0.706,3.351 -1.651,6.641 -2.835,9.895l-5.635 15.087z"/>
+          </g>
+          <g id="_2394170371952">
+          <rect fill="#5E86E5" stroke="#080808" stroke-width="4.07" stroke-miterlimit="22.9256" x="625.373" y="2241.76" width="122.232" height="94.253" rx="14.124" ry="13.464"/>
+          <path fill="#FEFEFE" fill-rule="nonzero" d="M666.082 2316.539l0 -51.401 17.707 0c3.997,0 7.048,0.24 9.153,0.729 2.944,0.683 5.457,1.916 7.539,3.686 2.716,2.297 4.737,5.217 6.078,8.782 1.352,3.566 2.021,7.646 2.021,12.228 0,3.901 -0.454,7.359 -1.363,10.373 -0.909,3.016 -2.083,5.516 -3.506,7.49 -1.435,1.975 -2.991,3.53 -4.69,4.655 -1.687,1.137 -3.733,1.998 -6.126,2.584 -2.406,0.586 -5.157,0.874 -8.268,0.874l-18.545 0zm6.82 -6.03l10.959 0c3.386,0 6.042,-0.311 7.969,-0.946 1.926,-0.634 3.458,-1.519 4.607,-2.668 1.602,-1.615 2.86,-3.792 3.756,-6.52 0.897,-2.729 1.353,-6.031 1.353,-9.92 0,-5.383 -0.886,-9.524 -2.646,-12.419 -1.758,-2.895 -3.9,-4.833 -6.425,-5.814 -1.817,-0.707 -4.749,-1.054 -8.793,-1.054l-10.78 0 0 39.341z"/>
+          </g>
+          <g id="_2394170369120">
+          <rect fill="#DDCA23" stroke="#080808" stroke-width="4.07" stroke-miterlimit="22.9256" x="441.177" y="2241.76" width="122.232" height="94.253" rx="14.124" ry="13.464"/>
+          <path fill="#FEFEFE" fill-rule="nonzero" d="M518.498 2298.508l6.819 1.723c-1.423,5.588 -3.983,9.835 -7.681,12.766 -3.697,2.931 -8.22,4.403 -13.568,4.403 -5.528,0 -10.026,-1.124 -13.495,-3.386 -3.471,-2.249 -6.102,-5.516 -7.909,-9.787 -1.807,-4.284 -2.716,-8.867 -2.716,-13.772 0,-5.348 1.017,-10.013 3.063,-13.998 2.046,-3.984 4.953,-7.012 8.722,-9.081 3.768,-2.07 7.921,-3.1 12.443,-3.1 5.145,0 9.465,1.305 12.958,3.925 3.506,2.621 5.946,6.293 7.322,11.032l-6.676 1.579c-1.184,-3.733 -2.92,-6.462 -5.181,-8.16 -2.262,-1.711 -5.109,-2.56 -8.543,-2.56 -3.935,0 -7.239,0.944 -9.883,2.835 -2.644,1.89 -4.511,4.439 -5.576,7.622 -1.075,3.195 -1.614,6.484 -1.614,9.871 0,4.367 0.634,8.184 1.902,11.437 1.269,3.267 3.242,5.697 5.923,7.311 2.679,1.616 5.576,2.418 8.697,2.418 3.806,0 7.013,-1.102 9.645,-3.291 2.632,-2.201 4.414,-5.455 5.348,-9.787z"/>
+          </g>
+          <g id="_2394170368496">
+          <rect fill="#199A77" stroke="#080808" stroke-width="4.07" stroke-miterlimit="22.9256" x="256.982" y="2241.76" width="122.232" height="94.253" rx="14.124" ry="13.464"/>
+          <path fill="#FEFEFE" fill-rule="nonzero" d="M299.385 2316.539l0 -51.401 19.287 0c3.924,0 7.07,0.515 9.451,1.556 2.37,1.04 4.225,2.644 5.564,4.809 1.352,2.154 2.023,4.416 2.023,6.784 0,2.19 -0.599,4.26 -1.783,6.199 -1.184,1.937 -2.979,3.505 -5.384,4.702 3.11,0.909 5.503,2.463 7.167,4.665 1.675,2.19 2.512,4.786 2.512,7.778 0,2.416 -0.514,4.654 -1.532,6.723 -1.017,2.07 -2.273,3.662 -3.768,4.786 -1.495,1.113 -3.374,1.963 -5.623,2.537 -2.262,0.574 -5.025,0.862 -8.304,0.862l-19.61 0zm6.819 -29.793l11.115 0c3.016,0 5.181,-0.202 6.486,-0.598 1.734,-0.515 3.039,-1.376 3.913,-2.573 0.872,-1.196 1.316,-2.691 1.316,-4.498 0,-1.711 -0.407,-3.218 -1.234,-4.511 -0.812,-1.304 -1.986,-2.202 -3.505,-2.679 -1.519,-0.479 -4.128,-0.719 -7.813,-0.719l-10.278 0 0 15.578zm0 23.763l12.803 0c2.202,0 3.744,-0.085 4.642,-0.251 1.555,-0.276 2.872,-0.742 3.925,-1.4 1.053,-0.658 1.914,-1.616 2.597,-2.872 0.681,-1.257 1.016,-2.704 1.016,-4.343 0,-1.926 -0.49,-3.59 -1.483,-5.014 -0.982,-1.423 -2.346,-2.416 -4.093,-2.991 -1.735,-0.574 -4.248,-0.862 -7.513,-0.862l-11.894 0 0 17.733z"/>
+          </g>
+          <g id="_2394170368208">
+          <rect fill="#212121" stroke="#080808" stroke-width="4.07" stroke-miterlimit="22.9256" x="72.787" y="2379.593" width="122.232" height="94.253" rx="14.124" ry="13.464"/>
+          <polygon fill="#C6C6C6" fill-rule="nonzero" points="87.846,2440.821 87.846,2411.075 96.344,2411.075 96.344,2416.02 90.905,2416.02 90.905,2422.902 95.965,2422.902 95.965,2427.61 90.905,2427.61 90.905,2435.797 96.471,2435.797 96.471,2440.821 "/>
+          <polygon id="_1_111" fill="#C6C6C6" fill-rule="nonzero" points="98.323,2431.961 98.323,2427.332 103.56,2427.332 103.56,2431.961 "/>
+          <polygon id="_2_112" fill="#C6C6C6" fill-rule="nonzero" points="105.961,2440.821 105.961,2411.075 110.599,2411.075 112.87,2430.333 115.136,2411.075 119.778,2411.075 119.778,2440.821 116.83,2440.821 116.897,2414.437 113.816,2440.821 111.924,2440.821 108.835,2414.437 108.909,2440.821 "/>
+          <path id="_3_113" fill="#C6C6C6" fill-rule="nonzero" d="M125.803 2428.876l2.622 0 -1.32 -12.475 -1.302 12.475zm-4.423 11.945l3.727 -29.746 4.132 0 3.758 29.746 -3.318 0 -0.813 -7.477 -3.543 0 -0.795 7.477 -3.148 0z"/>
+          <polygon id="_4_114" fill="#C6C6C6" fill-rule="nonzero" points="134.622,2440.821 134.622,2411.075 137.794,2411.075 142.1,2431.875 142.014,2411.075 144.919,2411.075 144.919,2440.821 141.78,2440.821 137.443,2419.982 137.527,2440.821 "/>
+          <path id="_5_115" fill="#C6C6C6" fill-rule="nonzero" d="M147.738 2411.075l3.081 0 0 20.055c0,2.294 0.157,3.849 0.469,4.667 0.312,0.818 0.862,1.227 1.658,1.227 0.788,0 1.334,-0.416 1.639,-1.24 0.304,-0.824 0.459,-2.4 0.459,-4.734l0 -19.975 3.036 0 0 20.536c0,1.998 -0.063,3.455 -0.188,4.371 -0.124,0.922 -0.333,1.727 -0.63,2.425 -0.444,1.042 -1.03,1.821 -1.76,2.342 -0.73,0.519 -1.595,0.784 -2.597,0.784 -1.892,0 -3.223,-0.738 -4,-2.209 -0.778,-1.477 -1.167,-4.041 -1.167,-7.713l0 -20.536z"/>
+          <path id="_6_116" fill="#C6C6C6" fill-rule="nonzero" d="M164.089 2428.876l2.623 0 -1.32 -12.475 -1.303 12.475zm-4.422 11.945l3.727 -29.746 4.132 0 3.759 29.746 -3.32 0 -0.812 -7.477 -3.544 0 -0.795 7.477 -3.147 0z"/>
+          <polygon id="_7_117" fill="#C6C6C6" fill-rule="nonzero" points="172.909,2440.821 172.909,2411.075 175.99,2411.075 175.99,2435.758 181.556,2435.758 181.556,2440.821 "/>
+          </g>
+          <g id="_2394170367872">
+          <rect fill="#212121" stroke="#080808" stroke-width="4.07" stroke-miterlimit="22.9256" x="256.982" y="2379.593" width="122.232" height="94.253" rx="14.124" ry="13.464"/>
+          <path fill="#C6C6C6" fill-rule="nonzero" d="M282.672 2430.379l3.084 0 0 1.911c0,1.826 0.127,3.078 0.381,3.738 0.254,0.666 0.693,0.996 1.316,0.996 0.654,0 1.148,-0.298 1.49,-0.89 0.34,-0.593 0.508,-1.471 0.508,-2.624 0,-0.89 -0.116,-1.655 -0.355,-2.294 -0.235,-0.634 -0.748,-1.457 -1.536,-2.46l-1.578 -2.01c-1.363,-1.701 -2.228,-3.106 -2.599,-4.213 -0.37,-1.108 -0.553,-2.498 -0.553,-4.173 0,-2.498 0.409,-4.456 1.236,-5.874 0.824,-1.417 1.961,-2.123 3.406,-2.123 1.536,0 2.709,0.752 3.527,2.262 0.818,1.503 1.225,3.665 1.225,6.487 0,0.284 0,0.501 -0.004,0.653 -0.004,0.157 -0.011,0.29 -0.017,0.408l-2.927 0 0 -0.791c0,-1.616 -0.146,-2.769 -0.441,-3.468 -0.293,-0.691 -0.776,-1.041 -1.448,-1.041 -0.494,0 -0.88,0.263 -1.162,0.784 -0.282,0.521 -0.426,1.246 -0.426,2.176 0,1.252 0.635,2.637 1.9,4.159l0.034 0.034 1.697 2.069c1.21,1.445 2.028,2.803 2.457,4.087 0.428,1.28 0.645,2.908 0.645,4.892 0,2.703 -0.428,4.793 -1.29,6.257 -0.859,1.469 -2.086,2.202 -3.682,2.202 -1.662,0 -2.898,-0.772 -3.712,-2.314 -0.809,-1.543 -1.216,-3.903 -1.216,-7.067 0,-0.33 0.015,-0.883 0.04,-1.655l0 -0.118z"/>
+          <path id="_1_118" fill="#C6C6C6" fill-rule="nonzero" d="M298.01 2424.089l1.288 0c0.96,0 1.634,-0.336 2.024,-1.016 0.385,-0.671 0.579,-1.826 0.579,-3.46 0,-1.649 -0.176,-2.79 -0.532,-3.429 -0.355,-0.639 -1.029,-0.956 -2.028,-0.956l-1.331 0 0 8.861zm-2.973 16.732l0 -29.746 5.35 0c1.632,0 2.806,0.66 3.519,1.972 0.717,1.311 1.076,3.46 1.076,6.448 0,2.933 -0.381,5.121 -1.145,6.552 -0.762,1.437 -1.928,2.156 -3.495,2.156l-2.248 0 0 12.618 -3.057 0z"/>
+          <path id="_2_119" fill="#C6C6C6" fill-rule="nonzero" d="M309.844 2425.955c0,4.897 0.158,7.977 0.476,9.243 0.321,1.272 0.911,1.904 1.768,1.904 0.844,0 1.423,-0.62 1.735,-1.865 0.312,-1.24 0.465,-4.339 0.465,-9.282 0,-4.945 -0.157,-8.044 -0.473,-9.309 -0.315,-1.259 -0.898,-1.891 -1.749,-1.891 -0.85,0 -1.434,0.632 -1.748,1.891 -0.316,1.265 -0.474,4.364 -0.474,9.309zm-3.146 -0.007c0,-3.151 0.082,-5.676 0.246,-7.562 0.165,-1.885 0.424,-3.302 0.773,-4.258 0.48,-1.351 1.053,-2.315 1.72,-2.894 0.664,-0.581 1.54,-0.871 2.629,-0.871 1.09,0 1.966,0.29 2.629,0.871 0.668,0.579 1.245,1.543 1.732,2.894 0.348,0.982 0.605,2.406 0.766,4.291 0.161,1.879 0.242,4.384 0.242,7.529 0,3.131 -0.081,5.637 -0.246,7.523 -0.166,1.884 -0.422,3.315 -0.762,4.297 -0.487,1.352 -1.064,2.315 -1.732,2.894 -0.663,0.581 -1.539,0.871 -2.629,0.871 -1.089,0 -1.965,-0.29 -2.629,-0.871 -0.667,-0.579 -1.24,-1.542 -1.72,-2.894 -0.349,-0.956 -0.608,-2.372 -0.773,-4.258 -0.164,-1.886 -0.246,-4.41 -0.246,-7.562z"/>
+          <path id="_3_120" fill="#C6C6C6" fill-rule="nonzero" d="M322.91 2423.654l1.77 0c0.898,0 1.518,-0.323 1.867,-0.969 0.349,-0.64 0.521,-1.793 0.521,-3.455 0,-1.483 -0.191,-2.518 -0.569,-3.112 -0.381,-0.593 -1.07,-0.89 -2.075,-0.89l-1.514 0 0 8.426zm-2.971 17.167l0 -29.746 5.519 0c1.668,0 2.874,0.607 3.608,1.826 0.737,1.22 1.105,3.205 1.105,5.96 0,1.932 -0.199,3.454 -0.595,4.569 -0.392,1.114 -0.975,1.766 -1.742,1.965 1.463,0.691 2.229,2.914 2.292,6.658 0,0.171 0,0.297 0,0.389l0.088 3.936c0.03,1.12 0.106,2.017 0.235,2.695 0.127,0.673 0.329,1.259 0.601,1.748l-3.659 0c-0.084,-0.501 -0.151,-1.088 -0.196,-1.767 -0.039,-0.679 -0.069,-1.636 -0.084,-2.867l-0.043 -3.113 0 -0.79c0,-1.721 -0.205,-2.908 -0.613,-3.553 -0.407,-0.641 -1.239,-0.964 -2.494,-0.964l-1.051 0 0 13.054 -2.971 0z"/>
+          <polygon id="_4_121" fill="#C6C6C6" fill-rule="nonzero" points="334.992,2440.821 334.992,2415.98 331.45,2415.98 331.45,2411.075 341.614,2411.075 341.614,2415.98 338.072,2415.98 338.072,2440.821 "/>
+          <path id="_5_122" fill="#C6C6C6" fill-rule="nonzero" d="M342.931 2430.379l3.084 0 0 1.911c0,1.826 0.128,3.078 0.381,3.738 0.253,0.666 0.693,0.996 1.317,0.996 0.653,0 1.148,-0.298 1.488,-0.89 0.342,-0.593 0.51,-1.471 0.51,-2.624 0,-0.89 -0.116,-1.655 -0.355,-2.294 -0.235,-0.634 -0.749,-1.457 -1.537,-2.46l-1.577 -2.01c-1.364,-1.701 -2.228,-3.106 -2.599,-4.213 -0.372,-1.108 -0.555,-2.498 -0.555,-4.173 0,-2.498 0.411,-4.456 1.236,-5.874 0.825,-1.417 1.962,-2.123 3.407,-2.123 1.537,0 2.71,0.752 3.528,2.262 0.818,1.503 1.224,3.665 1.224,6.487 0,0.284 0,0.501 -0.003,0.653 -0.004,0.157 -0.011,0.29 -0.019,0.408l-2.926 0 0 -0.791c0,-1.616 -0.146,-2.769 -0.44,-3.468 -0.294,-0.691 -0.777,-1.041 -1.448,-1.041 -0.496,0 -0.881,0.263 -1.163,0.784 -0.282,0.521 -0.425,1.246 -0.425,2.176 0,1.252 0.634,2.637 1.9,4.159l0.032 0.034 1.699 2.069c1.21,1.445 2.026,2.803 2.457,4.087 0.428,1.28 0.644,2.908 0.644,4.892 0,2.703 -0.429,4.793 -1.29,6.257 -0.858,1.469 -2.087,2.202 -3.682,2.202 -1.662,0 -2.897,-0.772 -3.71,-2.314 -0.812,-1.543 -1.217,-3.903 -1.217,-7.067 0,-0.33 0.013,-0.883 0.039,-1.655l0 -0.118z"/>
+          </g>
+          <g id="_2394170363552">
+          <rect fill="#212121" stroke="#080808" stroke-width="4.07" stroke-miterlimit="22.9256" x="441.177" y="2379.593" width="122.232" height="94.253" rx="14.124" ry="13.464"/>
+          <path fill="#C6C6C6" fill-rule="nonzero" d="M465.148 2428.876l2.623 0 -1.32 -12.475 -1.303 12.475zm-4.422 11.945l3.726 -29.746 4.132 0 3.758 29.746 -3.318 0 -0.814 -7.477 -3.542 0 -0.796 7.477 -3.146 0z"/>
+          <path id="_1_123" fill="#C6C6C6" fill-rule="nonzero" d="M476.982 2436.431l1.363 0c0.698,0 1.185,-0.093 1.464,-0.272 0.278,-0.177 0.502,-0.487 0.668,-0.929 0.286,-0.77 0.491,-1.826 0.612,-3.17 0.12,-1.346 0.183,-3.502 0.183,-6.462 0,-2.88 -0.074,-4.977 -0.217,-6.289 -0.143,-1.318 -0.384,-2.307 -0.729,-2.973 -0.18,-0.336 -0.411,-0.573 -0.693,-0.705 -0.282,-0.138 -0.726,-0.205 -1.328,-0.205l-1.323 0 0 21.005zm-3.014 4.39l0 -29.746 4.95 0c1.008,0 1.811,0.152 2.412,0.462 0.598,0.309 1.089,0.811 1.475,1.51 0.583,1.014 0.99,2.3 1.231,3.85 0.239,1.556 0.36,3.961 0.36,7.239 0,4.219 -0.08,7.205 -0.246,8.952 -0.165,1.741 -0.447,3.223 -0.839,4.45 -0.377,1.219 -0.909,2.077 -1.585,2.557 -0.678,0.482 -1.852,0.726 -3.519,0.726l-4.239 0z"/>
+          <polygon id="_2_124" fill="#C6C6C6" fill-rule="nonzero" points="486.461,2444.5 484.831,2444.5 491.033,2410.363 492.665,2410.363 "/>
+          <path id="_3_125" fill="#C6C6C6" fill-rule="nonzero" d="M493.347 2430.379l3.084 0 0 1.911c0,1.826 0.129,3.078 0.381,3.738 0.254,0.666 0.693,0.996 1.317,0.996 0.653,0 1.148,-0.298 1.488,-0.89 0.342,-0.593 0.51,-1.471 0.51,-2.624 0,-0.89 -0.118,-1.655 -0.355,-2.294 -0.235,-0.634 -0.749,-1.457 -1.537,-2.46l-1.576 -2.01c-1.365,-1.701 -2.231,-3.106 -2.601,-4.213 -0.37,-1.108 -0.554,-2.498 -0.554,-4.173 0,-2.498 0.411,-4.456 1.236,-5.874 0.825,-1.417 1.962,-2.123 3.407,-2.123 1.537,0 2.709,0.752 3.527,2.262 0.818,1.503 1.225,3.665 1.225,6.487 0,0.284 0,0.501 -0.004,0.653 -0.003,0.157 -0.01,0.29 -0.018,0.408l-2.926 0 0 -0.791c0,-1.616 -0.146,-2.769 -0.439,-3.468 -0.295,-0.691 -0.778,-1.041 -1.449,-1.041 -0.496,0 -0.881,0.263 -1.163,0.784 -0.282,0.521 -0.426,1.246 -0.426,2.176 0,1.252 0.635,2.637 1.899,4.159l0.034 0.034 1.697 2.069c1.212,1.445 2.029,2.803 2.459,4.087 0.427,1.28 0.644,2.908 0.644,4.892 0,2.703 -0.429,4.793 -1.29,6.257 -0.858,1.469 -2.087,2.202 -3.682,2.202 -1.662,0 -2.896,-0.772 -3.71,-2.314 -0.812,-1.543 -1.219,-3.903 -1.219,-7.067 0,-0.33 0.015,-0.883 0.041,-1.655l0 -0.118z"/>
+          <path id="_4_126" fill="#C6C6C6" fill-rule="nonzero" d="M505.711 2411.075l3.081 0 0 20.055c0,2.294 0.158,3.849 0.47,4.667 0.31,0.818 0.861,1.227 1.657,1.227 0.789,0 1.334,-0.416 1.639,-1.24 0.304,-0.824 0.459,-2.4 0.459,-4.734l0 -19.975 3.036 0 0 20.536c0,1.998 -0.063,3.455 -0.187,4.371 -0.125,0.922 -0.334,1.727 -0.631,2.425 -0.444,1.042 -1.03,1.821 -1.76,2.342 -0.73,0.519 -1.595,0.784 -2.596,0.784 -1.893,0 -3.224,-0.738 -4.001,-2.209 -0.777,-1.477 -1.167,-4.041 -1.167,-7.713l0 -20.536z"/>
+          <path id="_5_127" fill="#C6C6C6" fill-rule="nonzero" d="M521.843 2436.588l1.272 0c0.795,0 1.354,-0.349 1.676,-1.054 0.323,-0.699 0.484,-1.918 0.484,-3.652 0,-1.8 -0.175,-3.04 -0.527,-3.725 -0.352,-0.68 -1.008,-1.022 -1.977,-1.022l-0.928 0 0 9.453zm0 -13.448l1.034 0c0.774,0 1.309,-0.304 1.606,-0.91 0.293,-0.6 0.44,-1.714 0.44,-3.336 0,-1.457 -0.15,-2.452 -0.447,-2.986 -0.297,-0.535 -0.859,-0.798 -1.687,-0.798l-0.946 0 0 8.03zm-2.993 17.681l0 -29.746 4.955 0c1.416,0 2.471,0.593 3.161,1.78 0.693,1.181 1.037,3.007 1.037,5.466 0,1.965 -0.168,3.493 -0.51,4.575 -0.34,1.081 -0.85,1.733 -1.529,1.95 0.771,0.192 1.376,0.885 1.809,2.077 0.433,1.194 0.648,2.763 0.648,4.722 0,3.156 -0.366,5.471 -1.1,6.954 -0.733,1.484 -1.878,2.222 -3.432,2.222l-5.039 0z"/>
+          <polygon id="_6_128" fill="#C6C6C6" fill-rule="nonzero" points="533.197,2440.821 533.197,2415.98 529.654,2415.98 529.654,2411.075 539.818,2411.075 539.818,2415.98 536.276,2415.98 536.276,2440.821 "/>
+          <polygon id="_7_129" fill="#C6C6C6" fill-rule="nonzero" points="539.189,2440.821 539.189,2435.481 541.96,2435.481 541.96,2440.821 "/>
+          </g>
+          <g id="_2394170364752">
+          <rect fill="#212121" stroke="#080808" stroke-width="4.07" stroke-miterlimit="22.9256" x="72.787" y="2517.426" width="122.232" height="94.253" rx="14.124" ry="13.464"/>
+          <g>
+            <polygon fill="#C6C6C6" points="96.837,2564.553 115.985,2553.498 135.132,2542.444 135.132,2564.553 135.132,2586.662 115.985,2575.608 "/>
+            <polygon fill="#C6C6C6" points="132.674,2564.553 151.822,2553.498 170.969,2542.444 170.969,2564.553 170.969,2586.662 151.822,2575.608 "/>
+          </g>
+          </g>
+          <g id="_2394170365472">
+          <rect fill="#212121" stroke="#080808" stroke-width="4.07" stroke-miterlimit="22.9256" x="256.982" y="2517.426" width="122.232" height="94.253" rx="14.124" ry="13.464"/>
+          <g>
+            <polygon fill="#C6C6C6" points="337.245,2564.553 318.098,2553.498 298.95,2542.444 298.95,2564.553 298.95,2586.662 318.098,2575.608 "/>
+          </g>
+          </g>
+          <g id="_2394170364464">
+          <rect fill="#212121" stroke="#080808" stroke-width="4.07" stroke-miterlimit="22.9256" x="625.373" y="2517.426" width="122.232" height="94.253" rx="14.124" ry="13.464"/>
+          <g>
+            <polygon fill="#C6C6C6" points="723.554,2564.553 704.407,2553.498 685.26,2542.444 685.26,2564.553 685.26,2586.662 704.407,2575.608 "/>
+            <polygon fill="#C6C6C6" points="687.718,2564.553 668.57,2553.498 649.423,2542.444 649.423,2564.553 649.423,2586.662 668.57,2575.608 "/>
+          </g>
+          </g>
+          <g id="_2394170363264">
+          <rect fill="#212121" stroke="#080808" stroke-width="4.07" stroke-miterlimit="22.9256" x="441.177" y="2517.426" width="122.232" height="94.253" rx="14.124" ry="13.464"/>
+          <g>
+            <rect fill="#C6C6C6" x="483.828" y="2543.697" width="14.188" height="41.714"/>
+            <rect fill="#C6C6C6" x="506.57" y="2543.697" width="14.188" height="41.714"/>
+          </g>
+          </g>
+          <g id="_2394170362400">
+          <rect fill="#212121" stroke="#080808" stroke-width="4.07" stroke-miterlimit="22.9256" x="625.373" y="2379.593" width="122.232" height="94.253" rx="14.124" ry="13.464"/>
+          <rect fill="#C6C6C6" x="668.482" y="2409.614" width="36.013" height="34.211"/>
+          </g>
+          <g id="_2394170361872">
+          <path fill="#0F0F0F" stroke="#080808" stroke-width="1.034" stroke-miterlimit="22.9256" d="M434.254 2719.737c0,0 -4.176,-2.585 -6.76,-3.582 0,0 -7.992,-3.704 -9.578,-5.467 0,0 -3.111,-2.935 -1.29,-6.344 0,0 0.763,-2.23 4.053,-2.23 0,0 4.285,0.236 4.285,3.758l0 4.969 15.358 0 -0.026 -7.317c0,0 1.179,-11.985 -18.092,-12.51 0,0 -15.153,-0.998 -19.501,7.166 0,0 -1.706,1.818 -1.706,8.163l0 4.582c0,0 -0.173,5.287 2.528,8.691 0,0 1.527,2.236 5.288,4.699 0,0 7.634,4.112 12.216,6.466 0,0 4.628,2.641 4.019,6.843 0,0 -0.375,4.308 -4.845,4.136 0,0 -4.086,-0.187 -4.086,-4.414l0 -4.964 -16.362 0 0 7.213c0,0 -0.46,13.794 20.572,13.794 0,0 20.088,0.408 21.029,-14.16l0 -5.869c0,0 0.705,-8.924 -7.102,-13.623l0 0z"/>
+          <polygon fill="#0F0F0F" stroke="#080808" stroke-width="1.034" stroke-miterlimit="22.9256" points="355.63,2692.729 350.489,2724.954 349.285,2724.954 344.373,2693.018 318.719,2693.018 317.435,2751.37 332.625,2751.37 332.805,2707.403 334,2707.403 342.051,2751.365 358.03,2751.365 365.981,2707.42 367.041,2707.42 367.406,2751.37 382.675,2751.37 381.032,2692.729 355.63,2692.729 "/>
+          <polygon fill="#0F0F0F" stroke="#080808" stroke-width="1.034" stroke-miterlimit="22.9256" points="265.217,2692.97 255.111,2751.308 271.461,2751.308 277.447,2706.074 278.791,2706.074 284.775,2751.308 301.124,2751.308 291.021,2692.97 265.217,2692.97 "/>
+          <path fill="#0F0F0F" stroke="#080808" stroke-width="1.034" stroke-miterlimit="22.9256" d="M608.313 2718.932l0 8.607 4.191 0 0 9.237c0,4.513 -3.857,4.597 -3.857,4.597 -4.696,0 -4.519,-4.289 -4.519,-4.289l0 -31.953c0,-3.292 4.166,-3.467 4.166,-3.467 3.998,0 4.028,3.926 4.028,3.926l0 4.858 15.392 0c0.503,-9.482 -1.388,-11.779 -1.388,-11.779 -3.816,-8.575 -18.264,-8.105 -18.264,-8.105 -22.203,0 -19.738,17.032 -19.738,17.032l0 30.896c0.477,15.974 22.351,14.353 22.72,14.333 9.732,-1.079 12.674,-4.165 12.674,-4.165 2.705,-2.008 3.402,-4.79 3.402,-4.79 0.771,-1.623 0.966,-6.786 0.966,-6.786l0 -18.152 -19.773 0 0 0z"/>
+          <polygon fill="#0F0F0F" stroke="#080808" stroke-width="1.034" stroke-miterlimit="22.9256" points="557.282,2728.427 556.613,2728.427 540.985,2692.742 522.302,2692.742 522.302,2751.38 537.508,2751.38 536.6,2715.701 537.276,2715.701 553.461,2751.38 571.59,2751.38 571.59,2692.74 556.187,2692.74 557.282,2728.427 "/>
+          <path fill="#0F0F0F" stroke="#080808" stroke-width="1.034" stroke-miterlimit="22.9256" d="M485.161 2736.77c0,0 0.22,4.814 -4.239,4.814 0,0 -4.696,0.251 -4.696,-4.694l-0.047 -44.111 -16.685 0 0 43.761c0,0 -1.714,16.561 21.658,16.561 0,0 20.314,0.241 20.314,-15.802l0 -44.52 -16.305 0 0 43.991 0 0z"/>
+          <path fill="#0F0F0F" stroke="#080808" stroke-width="1.034" stroke-miterlimit="22.9256" d="M233.405 2719.734c0,0 -4.168,-2.582 -6.755,-3.579 0,0 -7.987,-3.699 -9.571,-5.467 0,0 -3.114,-2.937 -1.291,-6.34 0,0 0.761,-2.231 4.049,-2.231 0,0 4.287,0.233 4.287,3.755l0 4.969 15.364 0 -0.03 -7.32c0,0 1.172,-11.983 -18.092,-12.507 0,0 -1.449,-0.095 -3.58,0.012 0,0 -11.668,0.627 -15.84,7.029 -0.024,0.045 -0.057,0.081 -0.081,0.125 0,0 -1.705,1.818 -1.705,8.163l0 4.582c0,0 -0.176,5.284 2.527,8.691 0,0 1.526,2.236 5.288,4.699 0,0 7.631,4.112 12.214,6.46 0,0 4.63,2.642 4.021,6.849 0,0 -0.377,4.308 -4.842,4.136 0,0 -4.086,-0.187 -4.086,-4.414l0 -4.97 -16.368 0 0 7.219c0,0 -0.457,13.794 20.569,13.794 0,0 20.089,0.408 21.032,-14.16l0 -5.869c0,0 0.706,-8.924 -7.11,-13.626l0 0z"/>
+          </g>
+          <path fill="#C6C6C6" d="M415.767 1516.591l0 0c15.383,0 27.967,12.586 27.967,27.969l0 37.445c0,15.383 -12.584,27.968 -27.967,27.968l0 0c-15.383,0 -27.968,-12.585 -27.968,-27.968l0 -37.445c0,-15.383 12.585,-27.969 27.968,-27.969zm-19.877 17.86l11.829 0 0 11.194 -11.829 0 0 -11.194zm14.054 0l11.83 0 0 11.194 -11.83 0 0 -11.194zm14.056 0l11.83 0 0 11.194 -11.83 0 0 -11.194zm-28.11 14.374l11.829 0 0 11.193 -11.829 0 0 -11.193zm14.054 0l11.83 0 0 11.193 -11.83 0 0 -11.193zm14.056 0l11.83 0 0 11.193 -11.83 0 0 -11.193zm-28.11 14.373l11.829 0 0 11.194 -11.829 0 0 -11.194zm14.054 0l11.83 0 0 11.194 -11.83 0 0 -11.194zm14.056 0l11.83 0 0 11.194 -11.83 0 0 -11.194zm-8.233 17.172c5.479,0 9.921,4.442 9.921,9.921 0,5.48 -4.442,9.921 -9.921,9.921 -5.481,0 -9.922,-4.441 -9.922,-9.921 0,-5.479 4.441,-9.921 9.922,-9.921z"/>
+        </g>
+        </svg>
+
+
+card_mod:
+  style: |
+    ha-card {
+      display: flex;
+      justify-content: center;
+    }
