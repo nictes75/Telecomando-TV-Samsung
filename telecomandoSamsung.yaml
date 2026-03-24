@@ -1,7 +1,7 @@
 type: custom:mod-card
 variables:
-  remote: remote.broadlink_remote         # SOSTITUIRE QUI CON LA VOSTRA ENTITA' BROADLINK
-  media: media_player.tv_salotto          # SOSTITUIRE INDICANDO IL MEDIA_PLAYER DA COMANDARE
+  remote: remote.broadlink_remote
+  media: media_player.tv_salotto
 card:
   type: horizontal-stack
   cards:
@@ -207,11 +207,12 @@ card:
           tap_action:
             action: call-service
             service: remote.send_command
-            service_data:
-              entity_id: '[[[ return variables.remote ]]]'
-              device: '[[[ return variables.media ]]]'
+            data:
+              entity_id: "[[[ return variables.remote ]]]"
+              device: "[[[ return variables.media ]]]"
               command: >-
-                b64:JgAwAoyTEjgROBI4ERQRFBIUERQRFBE5ETgSOBEUEhQRFBEUERQSFBE4EhMSFBEUERQRFBIUETgSFBE4ETkRORE4ETkROBIABf6QlBE5ETgSOBEUERQSFBEUERQSOBE4EjgRFBITEhQRFBEUERQSOBEUEhQRFBEUERQSExI4ERQSOBE5ETgSOBE5ETgRAAX/kJQSNxI4ETkRFBEUERQSExIUETgSOBE5ERQRFBEUEhQRFBEUETkRFBEUERQSFBEUERQROREUETkROBI4ETgSOBE5EQAF/pCUEjgROBI4ERQSFBEUERQRFBI4ETgSOBEUEhQRFBEUERQSFBE4EhMSFBEUERQRFBIUETgSFBE4ETkROBI4ETkROBIABf6QlBI3ETkROBIUERQRFBEUEhQROBE5ETgSFBEUERQRFBIUERQROREUERQRFBITEhQRFBE5ERQROBI4ETkROBI4ETkRAAX+kJQSOBE4EjgRFBEUEhQRFBEUETkROBI4ERQRFBIUERQRFBEUEjgRFBITEhQRFBEUERQSOBEUEjgRORE4ETkROBI4EQAF/pGTEjgRORE4EhMSFBEUERQRFBI4ETkROBIUERQRFBEUEhMSFBE4EhQRFBEUERQSFBEUETgSFBE4EjgRORE4ETkROBIABf6QlBI3EjgROREUERQRFBIUERQROBI4ETkRFBEUERQSFBEUERQROREUERQRFBIUERQRFBE5ERQRORE4EjgROBI4ETkRAA0FAAAAAAAA
+                "b64:JgAwAoyTEjgROBI4ERQRFBIUERQRFBE5ETgSOBEUEhQRFBEUERQSFBE4EhMSFBEUERQRFBIUETgSFBE4ETkRORE4ETkROBIABf6QlBE5ETgSOBEUERQSFBEUERQSOBE4EjgRFBITEhQRFBEUERQSOBEUEhQRFBEUERQSExI4ERQSOBE5ETgSOBE5ETgRAAX/kJQSNxI4ETkRFBEUERQSExIUETgSOBE5ERQRFBEUEhQRFBEUETkRFBEUERQSFBEUERQROREUETkROBI4ETgSOBE5EQAF/pCUEjgROBI4ERQSFBEUERQRFBI4ETgSOBEUEhQRFBEUERQSFBE4EhMSFBEUERQRFBIUETgSFBE4ETkROBI4ETkROBIABf6QlBI3ETkROBIUERQRFBEUEhQROBE5ETgSFBEUERQRFBIUERQROREUERQRFBITEhQRFBE5ERQROBI4ETkROBI4ETkRAAX+kJQSOBE4EjgRFBEUEhQRFBEUETkROBI4ERQRFBIUERQRFBEUEjgRFBITEhQRFBEUERQSOBEUEjgRORE4ETkROBI4EQAF/pGTEjgRORE4EhMSFBEUERQRFBI4ETkROBIUERQRFBEUEhMSFBE4EhQRFBEUERQSFBEUETgSFBE4EjgRORE4ETkROBIABf6QlBI3EjgROREUERQRFBIUERQROBI4ETkRFBEUERQSFBEUERQROREUERQRFBIUERQRFBE5ERQRORE4EjgROBI4ETkRAA0FAAAAAAAA"
+
 
       source:
         card:
@@ -227,9 +228,9 @@ card:
           tap_action:
             action: call-service
             service: remote.send_command
-            service_data:
-              entity_id: '[[[ return variables.remote ]]]'
-              device: '[[[ return variables.media ]]]'
+            data:
+              entity_id: "[[[ return variables.remote ]]]"
+              device: "[[[ return variables.media ]]]"
               command: >-
                 b64:JgCkAZCTEzcTNxM3ExITERMSExITEhM3EzcTNxMSExETEhMSExITNxMSExITEhMSExITERMSExITNxM3EzcTNhM3EzcTNxMABgaWkxM3EzcTNxMSExEUERMSExITNxM3EzcTEhMRFBETEhMSEzcTEhMSExITEhMSExITEhMREzcTNxM3EzcTNhQ2EzcTAAYHlZMUNhM3EzcTEhMSExITEhMREzcTNxM3ExITEhMSExITEhM2ExITEhMSExITEhMSExITEhM2FDYTNxM3EzcTNxM2EwAGB5WUEzcTNxM2ExITEhMSExITEhM3EzcTNhQRExITEhMSExITNxMSExITEhMSExISEhMSExITNxM3EzcTNxM2EzcTNxMABgiUkxM3EzcTNxMSExITEhgNEhITNxM3EzcTEhMSExITEhMSEjcTEhMSExITEhMSExITEhMSEzYTNxM3EzcTNxM3EzYTAAYHlZQTNxI3EzcTEhMSExITEhMSEzcSNxM3ExITEhMSExITEhM3EhMSEhMSExITEhMSExITEhM3EzcSNxM3EzcTNxM3EwANBQAA
 
@@ -248,9 +249,9 @@ card:
           tap_action:
             action: call-service
             service: remote.send_command
-            service_data:
-              entity_id: '[[[ return variables.remote ]]]'
-              device: '[[[ return variables.media ]]]'
+            data:
+              entity_id: "[[[ return variables.remote ]]]"
+              device: "[[[ return variables.media ]]]"
               command: >-
                 b64:JgDSAI+VEjgRORE5ERQRFBEUEBUQFBE5ETkROREUERQRFBEUEBQRFBEUETkRFBEUERQRFBEUETgROREUETkRORE5ETgROREABgqSlRI4ETkROREUERQRFBEUEBQRORE5ETkRFBEUERQRFBEUEBQRFBE5ERQRFBEUERQRFBE5EDkRFBE5ETkRORE5EDkRAAYKkpYQOhA5ETkRFBEUERQRFBAUETkRORE5ERQYDREUERQQFRAUERQROREUERQRFBEUERQRORA5FBERORE5ETkROBE5EQANBQAAAAA=
 
@@ -269,9 +270,9 @@ card:
           tap_action:
             action: call-service
             service: remote.send_command
-            service_data:
-              entity_id: '[[[ return variables.remote ]]]'
-              device: '[[[ return variables.media ]]]'
+            data:
+              entity_id: "[[[ return variables.remote ]]]"
+              device: "[[[ return variables.media ]]]"
               command: >-
                 b64:JgDSAJCUEzcTNhM3ExITEhMSExITEhM2FDYTNxMSExITEhMSExITNxMREzcTEhMSExITEhMSExITNhQSEjcTNxM3EzcTNxMABgaVlBM3EzYTNxMSExITEhMSExITNxM2EzcTEhMSExITEhoLEzcTEhM2ExITEhMSExITEhMSEzcTEhM2EzcTNxM3EzcTAAYHlJQTNxM3EzYTEhMSExITEhMSEzcTNxM2ExITEhMSExITEhM3ExITNhQRExITEhMSExITEhM3ExITNxM2EzcTNxM3EwANBQAAAAA=
 
@@ -290,9 +291,9 @@ card:
         tap_action:
           action: call-service
           service: remote.send_command
-          service_data:
-            entity_id: '[[[ return variables.remote ]]]'
-            device: '[[[ return variables.media ]]]'
+          data:
+            entity_id: "[[[ return variables.remote ]]]"
+            device: "[[[ return variables.media ]]]"
             command: >-
               b64:JgDSAI+VEjgRORE5ERQQFBEUERQRFBE5ETkRORAUERQRFBEUERQRFBE5ETkSExAUExIRFBEUETkTEhMSEzcSNxM3EzcTNxMABgaTlhE5ETgROREUERQRFBEUERQRORE4ETkRFBEUERQRFBEUERQRORE4ERQRFBEUERQRFBE5ERQRFBI3EzcTNxE5EzcSAAYHk5YRORE5ETkRFBAVEBQRFBEUETkRORE5ERQRFBAVEBQRFBEUETkROREUERQRFBEUEBUQOREUERQRORE5ETkQORE5EQANBQAAAAA=
 
@@ -310,9 +311,9 @@ card:
           tap_action:
             action: call-service
             service: remote.send_command
-            service_data:
-              entity_id: '[[[ return variables.remote ]]]'
-              device: '[[[ return variables.media ]]]'
+            data:
+              entity_id: "[[[ return variables.remote ]]]"
+              device: "[[[ return variables.media ]]]"
               command: >-
                 b64:JgAYAZCUEzcSNxM4EhITEhMSExITEhM2EzcTNxMSExITEhMSExITEhITEhITNxMSExITEhMSEzcTNxI3ExITNxM3EzcTNxIABgeVlBI3EzcTNxMSExITEhMSEhMSNxM3EzcTEhMSExITEhITExETEhMSEzcTEhMSExITEhM3EjcTNxMSEzcTNxM3EzYTAAYHlZQTNxI3EzcTEhMSExITEhMSEzcTNhM3ExITEhMSExITEhMSExITEhM2ExITEhMSExITNxM3EzYTEhM3EzcTNxM3EwAGBpWUEzcTNxM2ExITEhMSExITEhM3EzcTNxITEhITEhMSExITEhMSExITNxMSExISExISEzcTNxM3ExITNxM2EzcTNxMADQUAAAAAAAAAAAAAAAAAAA==    
 
@@ -330,9 +331,9 @@ card:
           tap_action:
             action: call-service
             service: remote.send_command
-            service_data:
-              entity_id: '[[[ return variables.remote ]]]'
-              device: '[[[ return variables.media ]]]'
+            data:
+              entity_id: "[[[ return variables.remote ]]]"
+              device: "[[[ return variables.media ]]]"
               command: >-
                 b64:JgAYAZGUEzcTNhM3ExITEhMSExITEhM3EzYUNhMSExITEhMSExITNxMSExITNhMSExITEhMSExITNxM3ExEUNhM3EzcTNxMABgaVlBM3EzcTNhMSExITEhMSExITNxM3EzcTERMSExITEhMSEzcTEhMSEzcTEhMRExITEhMSEzcTNxMSEzcTNhM3EzcTAAYGlpMTNxM3EzcTEhMSExITERMSEzcTNxM3ExITEhMSExISEhM3ExITEhM3ExITEhMSExITEhI3EzcTEhM3EzcTNxM2EwAGB5WUEzcTNxI3ExITExISExITEhM3EzYTNxMSExITEhMSExITNxMSExMSNhMSExITEhMSExITNxM3ExITNhM3EzcTNxMADQUAAAAAAAAAAAAAAAAAAA==
         
@@ -351,9 +352,9 @@ card:
           tap_action:
             action: call-service
             service: remote.send_command
-            service_data:
-              entity_id: '[[[ return variables.remote ]]]'
-              device: '[[[ return variables.media ]]]'
+            data:
+              entity_id: "[[[ return variables.remote ]]]"
+              device: "[[[ return variables.media ]]]"
               command: >-
                 b64:JgAYAZCUEjcTNxM3ExITEhMSExITEhI3EzcTNxMSExITEhMSExISExI3ExITNxMSExITEhMSEzYTEhM3ExITNxM3EzcSNxMABgeVkxM3EzcTNxMSExITEhITEhITNxM3EzcTEhMSExISExITEhITNxMSEzcTEhMSExITEhI3ExITNxMSEzcTNxM3EjcTAAYHlZQTNxI3EzcTEhMSExITEhMSEzcSNxM3ExITEhMSExITEhMSEjcTEhM3ExITEhMSExITNxITEjcTEhM3EzcTNxM3EgAGCpKUEzcSNxM3ExITEhMSExITEhM3EjcTNxMSExITEhMSExITEhM2ExITNxMSExITEhMSEzcTEhI3ExITNxM3EzcTNxMADQUAAAAAAAAAAAAAAAAAAA==
         
@@ -372,9 +373,9 @@ card:
           tap_action:
             action: call-service
             service: remote.send_command
-            service_data:
-              entity_id: '[[[ return variables.remote ]]]'
-              device: '[[[ return variables.media ]]]'
+            data:
+              entity_id: "[[[ return variables.remote ]]]"
+              device: "[[[ return variables.media ]]]"
               command: >-
                 b64:JgAYAZGUEzcTNhM3ExITEhMSExITEhM2FDYTNxMSExITEhMSExITEhMSEzYTNxMSExITEhMSEzcTNhQRExITNxM3EzcTNxMABgaVlBM3EzYTNxMSExITEhMSExITNxM2EzcTEhMSExITEhMSExITEhM2EzcTEhMSExITEhM3EzcTEhITEjcTNxM3EzcTAAYGlZIVNxM3EzYTEhMSExITEhMSEzcTNxM2ExITEhMSExITEhMSExITNxM2ExITEhMSExITNxM3ExITEhM2EzcTNxM3EwAGB5SUEzcTNxI3ExITEhMSExITEhM3EzcSNxMSExITEhMSExITEhMSEzcTNhMSExITEhMUGS8TNxMSExITNxI3EzcTNxMADQUAAAAAAAAAAAAAAAAAAA==
 
@@ -392,9 +393,9 @@ card:
           tap_action:
             action: call-service
             service: remote.send_command
-            service_data:
-              entity_id: '[[[ return variables.remote ]]]'
-              device: '[[[ return variables.media ]]]'
+            data:
+              entity_id: "[[[ return variables.remote ]]]"
+              device: "[[[ return variables.media ]]]"
               command: >-
                 b64:JgAYAZCUEzcTNxM2ExITEhMSExITEhM3EzcSNxMSExITEhMSExITNxMSEzYTNxMSExITEhMSExITNxITEhITNxM3EzcTNxIABgeVkxM3EzcTNxMSExISExITEhITNxM3EzcTEhMSExISExISEzcTEhM3EzcTEhMSEhMSExISEzcTEhMSEzcTNxI3EzcTAAYIk5QTNxM3EzcTEhMSEhMSEhMSEzcTNxM3ExISExITEhITEhM3ExITNxM3ExISExITEhITEhM3ExITEhM3EzcSNxM3EwAGC5CUEzcTNxM3ExITEhISExITEhM3EzcTNxMSExISEhMSExITNxMSEzcTNxITEhITEhMSExITNxMSExITNxI3EzcTNxMADQUAAAAAAAAAAAAAAAAAAA==
 
@@ -413,9 +414,9 @@ card:
           tap_action:
             action: call-service
             service: remote.send_command
-            service_data:
-              entity_id: '[[[ return variables.remote ]]]'
-              device: '[[[ return variables.media ]]]'
+            data:
+              entity_id: "[[[ return variables.remote ]]]"
+              device: "[[[ return variables.media ]]]"
               command: >-
                 b64:JgAYAZCUEzcTNxM2ExITEhMSExITEhM3EzcTNhMSExITEhMSExITEhM3EzcSOBISExITEhMSEzcTEhMSExISNxM3EzcTNxMABgaVlBM3EzYTNxMSExITEhMSExITNxM2EzcTEhMSExITEhMSExITNxI3EzcTEhMSExITEhM3ExITEhISEzcTNxM3EzcTAAYGlZQTNxM2EzcTEhMSExITEhMSEzcTNhM3ExITEhMSExITEhMSEzYTNxM3ExITEhMSExITNxMSEhITEhM3EzcTNxM3EwAGBpWUEzYTNxM3ExITEhMSExITEhM3EzYTNxMSExITEhMSExITEhM2EzcTNxMSExITEhMSEzcTEhISExITNxM3EzcTNxMADQUAAAAAAAAAAAAAAAAAAA==
 
@@ -434,9 +435,9 @@ card:
           tap_action:
             action: call-service
             service: remote.send_command
-            service_data:
-              entity_id: '[[[ return variables.remote ]]]'
-              device: '[[[ return variables.media ]]]'
+            data:
+              entity_id: "[[[ return variables.remote ]]]"
+              device: "[[[ return variables.media ]]]"
               command: >-
                 b64:JgDSAJCUEzcTNxI3ExITEhMSExITEhM3EzcSNxMSExITEhMSExITEhMSEzcSNxMSEzcTEhMSEzcTNxITEhITNxMSEzcTNxMABgeUlBM3EjcTNxMSExITEhMSExITNxI4EjcTEhMSExITEhMSExITEhM3EjcTEhM3ExITEhM3EzYTExISEzcTEhM3EzcTAAYIk5QTNxM2EzcTEhMSExITEhMSEzcTNhM3ExITEhMSExITEhMSExITNhM3ExITNxMSExITNxM2ExITEhM3ExITNxM3EwANBQAAAAA=
 
@@ -455,9 +456,9 @@ card:
           tap_action:
             action: call-service
             service: remote.send_command
-            service_data:
-              entity_id: '[[[ return variables.remote ]]]'
-              device: '[[[ return variables.media ]]]'
+            data:
+              entity_id: "[[[ return variables.remote ]]]"
+              device: "[[[ return variables.media ]]]"
               command: >-
                 b64:JgAYAY6WFDYRORE5ERMRFBEUERQRFBE5ETkROREUEBUQFBEUERQROREUExITEhM3EhMTEhMRExITNxM3EzcTEhM3EjcTNxMABgeTlRE5ETkROREUERQRFBAVERMRORE5ETkRFBEUERQRFBAUETkRFBEUERQROREUERQRFBEUEDkRORE5ERQRORE5EDkRAAYJk5USOBE5ETkRFBEUERQRFBEUETgRORE5ERQRFBEUERQRFBE5EBUQFBEUETkRFBEUERQRFBE5ETgROREUETkRORE5EQAGCJWUEzcTNxM2ExITEhMSExITEhM3EzcTNxMRExITEhMSExITNxMSExITEhM2ExITEhMSExITNxM3EzcTEhM2EzcTNxMADQUAAAAAAAAAAAAAAAAAAA==
 
@@ -475,9 +476,9 @@ card:
           tap_action:
             action: call-service
             service: remote.send_command
-            service_data:
-              entity_id: '[[[ return variables.remote ]]]'
-              device: '[[[ return variables.media ]]]'
+            data:
+              entity_id: "[[[ return variables.remote ]]]"
+              device: "[[[ return variables.media ]]]"
               command: >-
                 b64:JgAYAZCUFDYTNxI3ExITEhMSExITEhM3EzcSNxMSExITEhMSExITNxI4ERQSExA5ERQTEhEUERQRFBE5ETkQFRA5ETkROREABgiVlBM3EjgSNxMTEhITEhMSExITNxM3EjgSExISExITEhMSEzcTNxMSEhMSNxMSExIUERMSExITNxM3EhITNxM3EzcTAAYHkpYRORE5ETgRFRAUERQRFBEUETkRORA5ERQRFBEUERQRFBE5ETkRFBAUETkRFBEUERQRFBEUETkRORAUETkRORE5EQAGCZKWEjgRORE4ERQRFRAUERQRFBE5ETkROBEUERQRFBEUERQRORE5ERQQFBE5ExITEhMSExITEhM3EzYTEhM3EzcTNxMADQUAAAAAAAAAAAAAAAAAAA==
 
@@ -495,9 +496,9 @@ card:
           tap_action:
             action: call-service
             service: remote.send_command
-            service_data:
-              entity_id: '[[[ return variables.remote ]]]'
-              device: '[[[ return variables.media ]]]'
+            data:
+              entity_id: "[[[ return variables.remote ]]]"
+              device: "[[[ return variables.media ]]]"
               command: >-
                 b64:JgDSAJGTFDYTNxM3ExITEhMSExITERM3EzcTNxMSExITEhMSEhITNxM3EzcTEhMSExITERMSExITEhMSEzcTNxM2FDcSNxMABgaVlBM3EzcTNhQRExITEhMSExITNxM3EzYTEhMSExITEhMSEzcTNxM2ExITEhMSExITEhMSExITEhM3EzYTNxM3EzcTAAYGlZQTNxM3EzcTERMSExITEhMSEzcTNxM2FBETEhMSExITEhM3EzcTNhQRFBETEhMSExITEhMSExITNxM2FDYTNxM3EwANBQAAAAA=
 
@@ -515,9 +516,9 @@ card:
           tap_action:
             action: call-service
             service: remote.send_command
-            service_data:
-              entity_id: '[[[ return variables.remote ]]]'
-              device: '[[[ return variables.media ]]]'
+            data:
+              entity_id: "[[[ return variables.remote ]]]"
+              device: "[[[ return variables.media ]]]"
               command: >-
                 b64:JgAYAY+VETkRORE5ERQRFBEUEhMRExI4EjgSOBITExITEhITEhITNxM3ExITNxMSExITERMSExITEhM3ExITNxM3EzYTNxMABgaVlBM3EzcTNxMRExITEhMSExITNxM3EzYUERMSExITEhMSEzcTNxMSEzYTEhMSExITEhMSExITNxMSEjcSOBM3EjgSAAYHlZQTNxM3EzYTEhMSExITEhMSEzcTNxM2ExITEhMSExITEhM3EzcTEhM2ExITEhMSExITEhMSEzcTEhM2EzcTNxM3EwAGBpWUEzcTNhQ2ExITEhMSExITEhM3EzYUNhMSExITEhMSExITNxM2FBETNxMSExITEhMSExITEhM3ExISNxM3EzcTNxMADQUAAAAAAAAAAAAAAAAAAA==
 
@@ -536,9 +537,9 @@ card:
           tap_action:
             action: call-service
             service: remote.send_command
-            service_data:
-              entity_id: '[[[ return variables.remote ]]]'
-              device: '[[[ return variables.media ]]]'
+            data:
+              entity_id: "[[[ return variables.remote ]]]"
+              device: "[[[ return variables.media ]]]"
               command: >-
                 b64:JgDSAJGTEzcTNxM3ExITEhMSEhITEhM3EzcTNxMSExITEhISExITNxM3EzcTNhMSExITEhMSExITEhMSExITNxM3EjcTNxMABgaVlBM3EzcTNxMSEhITEhMSExITNxM3EzcTEhISExITEhMSEzcTNxM3EzYTEhMSExITEhMSExITEhMSEzYTNxM3EzcTAAYHlJQTNxM3EjcTEhMTEhITEhMSEzcTNxI3ExITEhMSExITEhM3EzcSNxM3ExITEhMSExITEhMSEhITEhM3EzcTNxM3EgANBQAAAAA=
 
@@ -556,9 +557,9 @@ card:
           tap_action:
             action: call-service
             service: remote.send_command
-            service_data:
-              entity_id: '[[[ return variables.remote ]]]'
-              device: '[[[ return variables.media ]]]'
+            data:
+              entity_id: "[[[ return variables.remote ]]]"
+              device: "[[[ return variables.media ]]]"
               command: >-
                 b64:JgAYAZGTEzcTNxM3ExITEhISExITEhM3EzcTNxMSExISEhMSExITNxM3ExITNxISEzcTNxMSExITEhM3ExISNxMSExITNxMABgaVlBM3EzcTNxMSEhITEhMSExITNxM3EzcTEhISExITEhMSEzcTNxMSEzYUERM3EzcTEhMSExITNxMSEjcTEhMSEzcTAAYGlZQTNxM3EzYTEhMSExITEhMSEzcTNxM2ExITEhMSExITEhM3EzcTEhM2ExITNxM3ExITEhMSEzYTEhM3ExITEhM3EwAGB5SUEzoYLhM3ExITEhMSExITEhM3EzYUNhMSExITEhMSExITNxM2FBETNxMSEzcTNxMSExITEhI3ExITNxMSExITNxMADQUAAAAAAAAAAAAAAAAAAA==
 
@@ -577,9 +578,9 @@ card:
           tap_action:
             action: call-service
             service: remote.send_command
-            service_data:
-              entity_id: '[[[ return variables.remote ]]]'
-              device: '[[[ return variables.media ]]]'
+            data:
+              entity_id: "[[[ return variables.remote ]]]"
+              device: "[[[ return variables.media ]]]"
               command: >-
                 b64:JgDSAJCTEzYTNxM2ExITEhMRExITEhM2EzYTNxMSExETEhMSExISEhM3ExETEhM2ExITEhMSEzYTEhM2EzcTERM3EzYTNxIABf6UkxM3EzYTNhMSExITEhMRExITNhM3EzYTEhMSExETEhMSExETNxMSExETNxMRExITEhM2ExITNhM3ExITNhM2EzcTAAX9lJMTNxM2EzcSEhMSExITERMSEzcTNhM2ExITEhMSEhITEhMSEzYTEhMSEjcTEhMRExITNhMSEzcTNhMSEzYTNxI3EwANBQAAAAA=
 
@@ -599,9 +600,9 @@ card:
           tap_action:
             action: call-service
             service: remote.send_command
-            service_data:
-              entity_id: '[[[ return variables.remote ]]]'
-              device: '[[[ return variables.media ]]]'
+            data:
+              entity_id: "[[[ return variables.remote ]]]"
+              device: "[[[ return variables.media ]]]"
               command: >-
                 b64:JgAYAY+TEzYTNxI3ExITERMSExITEhI3EzYTNxMSEhITEhMSExETEhMSExISEhM3ExETEhMSEzYTNxI3EzYTEhM3EjcTNhMABf6UkxM3EjcTNhMSExITEhISExITNhM3EzYTEhMSEhITEhMSExETEhMSExISNxMSExISEhM3EjcTNhM3ExISNxM2EzcTAAX+lJMTNhM3EzYTEhMSEhITEhMSEzYTNhM3ExISEhMSExITEhISExITEhISEzcTEhISExITNhM3EzYTNxISEzcTNhM3EgAF/pSTEzcTNhM3EhITEhMSExETEhM3EjcTNhMSExITEhITEhITEhISExITEhM2ExITEhITEjgSNhM3EjcTEhM2EzcSNxMADQUAAAAAAAAAAAAAAAAAAA==         
 
@@ -620,9 +621,9 @@ card:
           tap_action:
             action: call-service
             service: remote.send_command
-            service_data:
-              entity_id: '[[[ return variables.remote ]]]'
-              device: '[[[ return variables.media ]]]'
+            data:
+              entity_id: "[[[ return variables.remote ]]]"
+              device: "[[[ return variables.media ]]]"
               command: >-
                 b64:JgDSAI6WETkRORE5EBUQFBEUERQRFBE5ETkRORAVEBQRFBEUERQRFBE5ERQRORA5ERQRFBEUETkRFBE5ERQRFBA5ETkROREABgmSlhI4ETkQOREUERQRFBEUERQRORE5EDkRFBEUERQRFBEUERQROREUEDkROREUERQRFBE5ERQROBEUERQRORE5ETkRAAYIk5YROBE5ETkRFBEUERQTEhEUETkQORE5ERQRFBEUERQRFBEUETgRFBE5ETkRFBEUERQRORAUETkRFBEUETkRORE5EAANBQAAAAA=
 
@@ -641,9 +642,9 @@ card:
           tap_action:
             action: call-service
             service: remote.send_command
-            service_data:
-              entity_id: '[[[ return variables.remote ]]]'
-              device: '[[[ return variables.media ]]]'
+            data:
+              entity_id: "[[[ return variables.remote ]]]"
+              device: "[[[ return variables.media ]]]"
               command: >-
                 b64:JgAYAZCUEzcTNxM2ExITEhMSExITEhM3EzYTNxMSExITEhMSExITNxMSExISNxM3EzcTNxMSExITNhM3ExITEhMSExITNxMABgaVkhU2EzcTNxMSExITEhMSExITNhM3EzcTEhMSExITEhMSEzYTEhMSEzcTNxM3EzYTEhMSEzcTNxMSExITEhMSEzYTAAYHlZQTNhM3EzcTEhMSExITEhMSEzYTNxM3ExITEhMSExITEhM2FBETEhM3EzcTNxM3ExITERM3EzcTEhMSExITEhM3EwAGBpWTFDYTNxM3ExITEhMSExITEhM2EzcTNxMSExITEhMSExITNhMSExITNxM3EzcTNhMSExITNxM3ExITEhMSExITNhMADQUAAAAAAAAAAAAAAAAAAA==
 
@@ -663,9 +664,9 @@ card:
           tap_action:
             action: call-service
             service: remote.send_command
-            service_data:
-              entity_id: '[[[ return variables.remote ]]]'
-              device: '[[[ return variables.media ]]]'
+            data:
+              entity_id: "[[[ return variables.remote ]]]"
+              device: "[[[ return variables.media ]]]"
               command: >-
                 b64:JgBeAZGTEzcTNxM3ExITEhMSExISEhM3EzcTNxMSExITEhMSEhMSNxM3EzcTNxMSExISNxMSExITEhMSExITNxM2ExITNxMABgaVlBM3EzcTNxMSExITEhITEhQRNxM3EzcTEhMSEhMSEhMSEzcTNxM3EzcTEhITEjcTEhMSExITEhMSEzcTNhMSEzcTAAYGlZQTNxM3EzcTEhMSEhMSEhMSEzcTNxM3ExITEhITEhITEhM3EzcTNxM3EhMSEhM3ExITEhMSExITEhM3EjcTEhM3EwAGBpWUEzcTNxM2ExITEhMSExITEhM3EzcTNhMSExITEhMSExITNxM3EzYTNxMSExITNxMSExITEhMSEhMSOw83ExITNxMABgaVlBM3EjcTNxMSExITEhMSExITNxI3EzcTEhMSExITEhMSEzcSNxM3EzcTEhMSEzcSExISExITEhMSEzcTNxMSEzcSAA0FAAAAAAAAAAA=
 
@@ -683,9 +684,9 @@ card:
           tap_action:
             action: call-service
             service: remote.send_command
-            service_data:
-              entity_id: '[[[ return variables.remote ]]]'
-              device: '[[[ return variables.media ]]]'
+            data:
+              entity_id: "[[[ return variables.remote ]]]"
+              device: "[[[ return variables.media ]]]"
               command: >-
                 b64:JgAYAZGTEzcTNxM3ExITEhITEhITEhM3EzcTNxMSEhMSEhMSExITNxM3ExITNxITEhITNxUQExITEhM3ExISNxM3ExITNxMABgaVlBM3EjcTNxMSExITEhMSExITNxI3EzcTEhMSExITEhMSEzcSNxMSEzcTEhMSEzcTEhITEhMSNxMSEzcTNxMSEzcSAAYGlZQTNxM3EzcTEhMSEhITEhMSEzcTNxM3ExISEhMSExITEhM3EzcTEhM3EhITEhM3ExITEhMSEzcTEhM2EzcTEhM3EwAGBpWUEzcTNxI3ExITEhMSExITEhM3EzYTNxMSExITEhMSExITNxM3EhITNxMSExITNxMSExITEhI3ExITNxM3ExITNxMADQUAAAAAAAAAAAAAAAAAAA==
 
@@ -703,9 +704,9 @@ card:
           tap_action:
             action: call-service
             service: remote.send_command
-            service_data:
-              entity_id: '[[[ return variables.remote ]]]'
-              device: '[[[ return variables.media ]]]'
+            data:
+              entity_id: "[[[ return variables.remote ]]]"
+              device: "[[[ return variables.media ]]]"
               command: >-
                 b64:JgBGAJGWEDwNOw88DxQQFg8WDxYPFg86ETkROw8VEBYPFQ8XEBUOFhEVDhYPFhEVDzoROBEVDzsQOw86EDkROhAWDhYPPA4ADQUAAA==
 
@@ -723,9 +724,9 @@ card:
           tap_action:
             action: call-service
             service: remote.send_command
-            service_data:
-              entity_id: '[[[ return variables.remote ]]]'
-              device: '[[[ return variables.media ]]]'
+            data:
+              entity_id: "[[[ return variables.remote ]]]"
+              device: "[[[ return variables.media ]]]"
               command: >-
                 b64:JgBeAZGTEzcTNxM3ExITEhMSEhMSEhM3EzcTNxMSExITEhITEhITNxM3EzcTNxM2ExITEhMSExITEhMSExITEhM3EzYTNxMABgaWkxM3EzcTNxMSExITEhISExITNxM3EzcTEhMSExITEhISEzcTNxM3EzcTNxMSEhITEhMSExITEhMSExITNxM3EzYTAAYHlZQTNxI3EzcTEhMSExITEhMSEzYTNxM3ExITEhMSExITEhM2EzcTNxM3EzcTEhMSEhMSEhMSExMSEhMSEzcTNxM3EgAGCZOUEzcTNxM3EhITEhMSExITEhM3EzcTNxITEhITEhMSExITNxM3EzcTNhM3ExITEhMSExITEhMSExITEhI4EjcTNxMABgeVkxM3EzcTNhQSExITEhITEhITNxM3EzcTEhMSExITEhITEjcTNxM3EzcTNxISExITEhMSExITEhMSExITNxM2EzcTAA0FAAAAAAAAAAA=
 
@@ -744,9 +745,9 @@ card:
           tap_action:
             action: call-service
             service: remote.send_command
-            service_data:
-              entity_id: '[[[ return variables.remote ]]]'
-              device: '[[[ return variables.media ]]]'
+            data:
+              entity_id: "[[[ return variables.remote ]]]"
+              device: "[[[ return variables.media ]]]"
               command: >-
                 b64:JgCMAJiTFTUUNhQ2FBEUERQRFBEVEBU1FTYVNRQRFBEUERQRFBEUNhQRFTUVEBURFDYUNhQRFBEUNhQRFDYUNhMSExITNxMABg2VlRM3EzcTOBITEhMSExITEhMSOBI4EjgTEhMSExITEhMTEjgSExI4EhMSExI4EjgSExMSEzcTEhM4EjgSExITEjgSAA0FAAAAAAAAAAAAAAAA
 
@@ -764,9 +765,9 @@ card:
           tap_action:
             action: call-service
             service: remote.send_command
-            service_data:
-              entity_id: '[[[ return variables.remote ]]]'
-              device: '[[[ return variables.media ]]]'
+            data:
+              entity_id: "[[[ return variables.remote ]]]"
+              device: "[[[ return variables.media ]]]"
               command: >-
                 b64:JgDSAJGUEzYTNxM3ExITEhMSExITEhI3EzcTNxMSExITEhMSExISEhMSExITNxMSEzcTNxMSEjcTNxM3ExITNxMSExISNxMABgeUlBM3EzcTNxISExITEhMSExITNxM3EzYTEhMSExITEhMSExITEhMSEzcTEhI3EzcTEhM3EzcTNhMSEzcTEhMSEzcTAAYGlZQTNxM3EzYTEhMSExITEhMSEzcTNxM2ExITEhMSExITEhMSExITEhM3EhMSNxM3ExITNxM3EzYTEhM3ExITEhM3EwANBQAAAAA=
 
@@ -784,9 +785,9 @@ card:
           tap_action:
             action: call-service
             service: remote.send_command
-            service_data:
-              entity_id: '[[[ return variables.remote ]]]'
-              device: '[[[ return variables.media ]]]'
+            data:
+              entity_id: "[[[ return variables.remote ]]]"
+              device: "[[[ return variables.media ]]]"
               command: >-
                 b64:JgDSAJaUEzcUNhQ2FBEUEhMSExITEhI4EjgSOBITEhMSExITExITEhM4EhMSExITEjgSOBITEjgSExI4EzcTNxMTEhMSOBIABg2VlRM4EjgSOBITEhMSExITEhMSOBM3EzgSExITEhMSExQREhMSOBITEhMUERQ2FDYUEhM3EhMUNhQ2FDYUERQRFDYUAAYMlZUSOBI4EzcTExITEhMSExITEjgSOBI4EhMSExITExITEhMSEzgSExITEhMSOBI4EhMSOBITEzcTOBI4EhMSExI4EgANBQAAAAAAAA==
 
@@ -805,9 +806,9 @@ card:
           tap_action:
             action: call-service
             service: remote.send_command
-            service_data:
-              entity_id: '[[[ return variables.remote ]]]'
-              device: '[[[ return variables.media ]]]'
+            data:
+              entity_id: "[[[ return variables.remote ]]]"
+              device: "[[[ return variables.media ]]]"
               command: >-
                 b64:JgAYAZGTEzcTNxM3ExITEhMSExISEhM3EzcTNxMSExITEhMSEhITEhMSExITNxM3ExITNxISEzcTNxM3ExITEhM3EhITNxMABgaWlBI3EzcTNxMSExISExISExITNxM3EzcTEhMSExISEhMSExITEhMSEzcTNxMSEzYTEhM3EzcTNxMSExITNhMSEzcTAAYGlpMTNxM3EzcTEhMSExISEhMSEzcTNxM3ExITEhMSEhITEhMSExITEhM3EzcTEhM2ExITNxM3EzcTEhMSEzYTExM2EwAGCZOTEzcTNxM3ExITEhMSExISEhM3EzcTNxMSExITEhMSExISEhMSExITNxM3ExITNxMSEjcTNxM3ExITEhM3ExISNxMADQUAAAAAAAAAAAAAAAAAAA==
 
@@ -826,9 +827,9 @@ card:
           tap_action:
             action: call-service
             service: remote.send_command
-            service_data:
-              entity_id: '[[[ return variables.remote ]]]'
-              device: '[[[ return variables.media ]]]'
+            data:
+              entity_id: "[[[ return variables.remote ]]]"
+              device: "[[[ return variables.media ]]]"
               command: >-
                 b64:JgCMAJWWEjgSOBI4EhMSExITEhMSExI4EzcTOBITEhMSExITEhMSOBITEhMSExITEzcTNxMTEhMSOBI4EjgSOBITEhMTNxMABg2VlRM3EzgSOBITEhMSExITEhMSOBI4EzcTEhMTEhMSExITEjgSExITEhMSExI4EjgTEhMSEzgSOBM3EjgSExITEjgSAA0FAAAAAAAAAAAAAAAA
 
@@ -847,9 +848,9 @@ card:
           tap_action:
             action: call-service
             service: remote.send_command
-            service_data:
-              entity_id: '[[[ return variables.remote ]]]'
-              device: '[[[ return variables.media ]]]'
+            data:
+              entity_id: "[[[ return variables.remote ]]]"
+              device: "[[[ return variables.media ]]]"
               command: >-
                 b64:JgAYAZGUEzcTNxI4EhITEhMSExITEhM3EzcSNxMSExITEhMSExITNxMSEzcSNxMSEzcTEhMSExITNxITEhMSNxMSEzcTNxMABgaVlBM3EzcTNxISExITEhMSExITNxM3EzYTEhMSExITEhMSEzcTEhM3EzYTEhM3ExITEhMSEzcTEhITEjcTEhM3EzcTAAYGlZQTNxI4EjcTEhMSExITEhMSEzcTNxI3ExITEhMSExITEhM3ExITNxI3ExITNxMSExITEhM3EhMSExI3ExITNxM3EwAGBpWUEzcTNhM3ExITEhMSExITEhM3EzYTNxMSExITEhMSExITNxITEjcTNxMSEzcTEhMSExITNxISExITNxMSEzcTNxMADQUAAAAAAAAAAAAAAAAAAA==
 
@@ -867,9 +868,9 @@ card:
           tap_action:
             action: call-service
             service: remote.send_command
-            service_data:
-              entity_id: '[[[ return variables.remote ]]]'
-              device: '[[[ return variables.media ]]]'
+            data:
+              entity_id: "[[[ return variables.remote ]]]"
+              device: "[[[ return variables.media ]]]"
               command: >-
                 b64:JgAYAZCSFTcTNxM3ExISExISExITEhM3EzcTNxMSEhMSEhMSExITEhMSEzcTNxMSEjcTNxMSEzcTNxMSExISNxMSExITNxMABgeUlBM3EzcTNxMSExISExISExITNxM3EzcTEhMSEhMSEhMSExITEhM3EzcTEhM3EjcTEhM3EzcTEhMSEzcSEhMSEzcTAAYHlZMTNxM3EzcTEhITEhMSEhMSEzcTNxM3ExISExISExITEhMSExITNxM3ExITNxI3ExITNxM3ExITEhM3EhMSEhM3EwAGCJSTEzcTNxM3ExITEhMSExISExI3EzcTNxMSExITEhMSEhMSEhMSEzcTNxMSEzcTNhMSEzcTNxMSExITNxMSEhMSNxMADQUAAAAAAAAAAAAAAAAAAA==
 
@@ -887,9 +888,9 @@ card:
           tap_action:
             action: call-service
             service: remote.send_command
-            service_data:
-              entity_id: '[[[ return variables.remote ]]]'
-              device: '[[[ return variables.media ]]]'
+            data:
+              entity_id: "[[[ return variables.remote ]]]"
+              device: "[[[ return variables.media ]]]"
               command: >-
                 b64:JgAYAZGTEzcTNxM3ExITEhMSEhMSEhM3EzcTNxMTEhITEhMSEhITEhMSEzcTEhM3ExITEhITEjcTNxMSEzcTEhM3EjcTNxMABgeVlBI3EzcTNxMSExITEhMSExISNxM3EzcTEhMSExITEhITEhMSExI3ExITNxMSExITEhM3EjcTEhM3ExITNxM3EzcSAAYHlZQTNxI3EzcTEhMSExITEhMSEzcSNxM3ExITEhMSExITEhMSExISNxMSEzcTEhMSExITNxM3EhITNxMSEzcTNxM3EgAGCJSUEzcSOBI3ExITEhMSExITEhM3EzcSNxMSExITEhMSExITEhMSEzcSExI3ExITEhMSEzcTNxMSEjgSEhM3EzcTNxMADQUAAAAAAAAAAAAAAAAAAA==
 
@@ -907,9 +908,9 @@ card:
           tap_action:
             action: call-service
             service: remote.send_command
-            service_data:
-              entity_id: '[[[ return variables.remote ]]]'
-              device: '[[[ return variables.media ]]]'
+            data:
+              entity_id: "[[[ return variables.remote ]]]"
+              device: "[[[ return variables.media ]]]"
               command: >-
                 b64:JgAYAZCUEzYUNxI3ExITEhMSExITEhM3EjcTNxMSExITEhMSExITNxMSEjcTEhM3ExITEhMSExITNhMSEzcTEhM3EzcTNxMABgaVlBM3EzcSNxMSExITEhMSExITNxM2EzcTEhMSExITEhMSEzcTEhI3ExITNxMSExITEhMSEzcSEhM3ExITNxM3EzcTAAYGlZQSNxM3EzcTEhQRExITEhMSEzcSNxM3ExITEhMSExITEhI3ExITNxMSEzcTEhMSEhMSEhM3ExITNxMSEzcTNxI3EwAGB5WTEzcTNxM3ExITEhMSExISEhM3EzcTNxMSExITEhMSEhITNxMSEzcTEhM3ExITEhMRExITNxMSEzcTEhM3EzYUNhMADQUAAAAAAAAAAAAAAAAAAA==
 
@@ -927,9 +928,9 @@ card:
           tap_action:
             action: call-service
             service: remote.send_command
-            service_data:
-              entity_id: '[[[ return variables.remote ]]]'
-              device: '[[[ return variables.media ]]]'
+            data:
+              entity_id: "[[[ return variables.remote ]]]"
+              device: "[[[ return variables.media ]]]"
               command: >-
                 b64:JgBeAY+WEDkRORE5ERQRFBEUERQQFRA5ETkROREUERQRFBEUEBUQFBE5ETkRFBE5ERQRFBAVEDkRFBEUETkRFBE5ETgSOBEABgyPlhE5ETkRORAUERQRFBEUERQRORE5ETgRFBEUERQRFBEUERQRORE5EBUQOREUERQRFBE5ERQRFBE5EBUQORE5ETkRAAYIk5YROBE5ETkRFBEUERQRFBEUETgRORE5ERQRFBEUERQRFBEUETgROREUETkRFBEUERQRORAVEBUQOREUETkRORE5EQAGCJOWETgRORE5ERQRFBEUERQRFBE4ETkROREUERQRFBEUERQRFBA5ETkRFBE5ERQRFBEUEDkTEhMSEzcTEhM3EzcSNxMABgaWkxM3EzcTNxMSExITEhMSEhMSNxM3EzcTEhMSExISExITEhMSNxM3ExITNxMSEhMSExI3ExITEhM3ExITNxM3EjcTAA0FAAAAAAAAAAA=
 
@@ -948,9 +949,9 @@ card:
           tap_action:
             action: call-service
             service: remote.send_command
-            service_data:
-              entity_id: '[[[ return variables.remote ]]]'
-              device: '[[[ return variables.media ]]]'
+            data:
+              entity_id: "[[[ return variables.remote ]]]"
+              device: "[[[ return variables.media ]]]"
               command: >-
                 b64:JgCkAZGTEzcTNxM3ExITEhMSEhMSEhM3EzcTNxMSExITEhITEhITNxM3EzcTNxM3EjcTEhMSExITEhMSExITEhMSEzcSNxMABgaWlBI3EzcTNxMSExITEhMSEhMSNxM3EzcTEhMSExITEhMSEjcTNxM3EzcTNxM2ExITEhMSExITEhMSExITEhM3EzYTAAYHlZQTNxI3EzcTEhMSExITEhMSEzcTNxI3ExITExISExITEhM3EzcSNxM3EzcTNxMSExITEhITEhMSEhMSExITNxM3EwAGBpWUEzcTNxM3EhMSEhMSExITEhM3EzcTNxITEhITEhMSExITNxM3EzcTNxI3EzcTEhMSExITEhMSExISExITEjcTNxMABgqRlBM3EzcTNxMSEhMSExISExITNxM3EzcTEhITEhMSEhMSEzcTNxM3EzcSOBI3ExITEhMSExITEhMSExITEhI3EzcTAAYGlZQTNxM3EzcTEhMSEhMSExISEzcTNxM3ExITEhMSEhMSExI3EzcTNxM3EzcSNxMSExITEhMSExITEhMSExITNxI3EwANBQAA
 
@@ -968,9 +969,9 @@ card:
           tap_action:
             action: call-service
             service: remote.send_command
-            service_data:
-              entity_id: '[[[ return variables.remote ]]]'
-              device: '[[[ return variables.media ]]]'
+            data:
+              entity_id: "[[[ return variables.remote ]]]"
+              device: "[[[ return variables.media ]]]"
               command: >-
                 b64:JgBeAY+TEzYTNxI3ExITERMSExITEhM2EzcSNxMSExISEhMSExITERMSExITNhM3EzYTEhM2EzcTNhM2ExITEhMSEzYTEhMABf2VkxI3EzYTNxMSEhITEhMSExEUNhM2EzcTERMSExITEhISExITEhMSEjcTNhM3ExISNxM2EzcTNhMSExITERM3ExISAAX+lJMTNxM2EzYUERMSExITERMSEzYTNxM2ExITEhMSEhITEhMSExETEhM3EjcTNhMSEzcSNxM2EzcTEhISExITNhMSEwAF/ZWTEzYTNxI3ExISEhMSExITEhI3EzYTNxMRExITEhMSEhITEhMSExETNxM2EzcTERM3EzYTNxI3ExITERMSEzcSEhMABf2VkxM2EzYTNxMSEhITEhMSExETNxM2EzcSEhMSExITEhISExITEhMREzcTNhM3EhITNxM2EzcSNxMSExETEhM3EhITAA0FAAAAAAAAAAA=
 
@@ -989,9 +990,9 @@ card:
           tap_action:
             action: call-service
             service: remote.send_command
-            service_data:
-              entity_id: '[[[ return variables.remote ]]]'
-              device: '[[[ return variables.media ]]]'
+            data:
+              entity_id: "[[[ return variables.remote ]]]"
+              device: "[[[ return variables.media ]]]"
               command: >-
                 b64:JgAYAY6TEzcTNhM3EhITEhMSExISEhM3EjcTNhMSExITEhISExITNhMSEzcSEhMSEzYTEhMSExISNxMSEzYTNxISEzcTNhMABf6UkxM2EzcSNxMSEhMSEhMSExISNxM2EzcTEhISExITEhMSEjcTEhI3ExITEhI3ExISEhMSEzYTEhM3EjcTEhM2EzcSAAX/k5MTNxI3EzYTEhMSExISEhMSEzYTNxI3ExITEhISExITEhI3ExISNxMSExISNxMSEhITEhM2ExITNhM3ExISNxM2EwAF/pOTEzcTNhM3EhITEhMSEhITEhM2EzcTNhMSExISEhMSExISNxMSEzYTEhMSEjcTEhISExITNhMSEzcSNxMSEjcTNxIADQUAAAAAAAAAAAAAAAAAAA==
 
@@ -1010,9 +1011,9 @@ card:
           tap_action:
             action: call-service
             service: remote.send_command
-            service_data:
-              entity_id: '[[[ return variables.remote ]]]'
-              device: '[[[ return variables.media ]]]'
+            data:
+              entity_id: "[[[ return variables.remote ]]]"
+              device: "[[[ return variables.media ]]]"
               command: >-
                 b64:JgDSAI+TEzYTNxI3ExITERMSExITEhI3EzYTNxMSEhITEhMSExETEhM3EjcTEhMRExITNxISEzcTEhISEzcTNhM3EhITNxIABf6VkhM3EzYTNxMSEhITEhMSExETNxM2EzcTERMSExITEhISExITNhM3ExISEhMSEzcSEhM3EhITEhM3EjcTNhMSEzYTAAX+lJQSNxM2EzcSEhMSExITERMSEzcSNxM2ExITEhMSEhITEhMSEzYTNxISExITEhM2ExITNhMSExISNxM3EjcTEhI3EwANBQAAAAA=
 
@@ -1031,9 +1032,9 @@ card:
           tap_action:
             action: call-service
             service: remote.send_command
-            service_data:
-              entity_id: '[[[ return variables.remote ]]]'
-              device: '[[[ return variables.media ]]]'
+            data:
+              entity_id: "[[[ return variables.remote ]]]"
+              device: "[[[ return variables.media ]]]"
               command: >-
                 b64:JgAYAY+TEzYTNxM2ExITEhMSEhITEhM2FDYTNhMSExITERMSExITNhMSEzYTEhMSExITNhMSExITNhMSEzYTNxM2ExITNhMABf6TlBM3EzYTNxISEhMSExISEhMSOBI3EjcTEhITEhMSEhITEjgRExI4EhISExITEjcSExITEjcTEhI3EzcTNhMSEzYTAAX+k5QTNxI3EzcSEhITEhMSEhITEjgSNxM2ExITEhMSEhITEhM3ExETNxMRExITEhM2ExITEhM2ExITNhM3EzYTEhM2EwAF/pSTEzcSNxM2ExISExMSEhISExI3EzcTNhMSEhMTERITEhMSNxITEjcTEhMSEhMSNxMSEhITNxMSEjcTNhM3ExISNxMADQUAAAAAAAAAAAAAAAAAAA==
 
@@ -1052,9 +1053,9 @@ card:
           tap_action:
             action: call-service
             service: remote.send_command
-            service_data:
-              entity_id: '[[[ return variables.remote ]]]'
-              device: '[[[ return variables.media ]]]'
+            data:
+              entity_id: "[[[ return variables.remote ]]]"
+              device: "[[[ return variables.media ]]]"
               command: >-
                 b64:JgAYAZCTEzYTNxM2ExITERMSExITEhM2EzYTNxMSExETEhMSExISNxM2EzcTEhISExITNhMSExITEhISEzcTNhM2ExITNxIABf+UkxM2EzcSNxMSExISEhMSExITNhM3EjcTEhMSEhITEhMSEzYTNxM2ExITEhISEzcTEhISExITEhI3EzcSNxMbCjYTAAX/k5QSNxM2EzcTEhISExITEhISEzcTNhM3EhMSEhMSExISEhM3EzYTNxISExITEhM2ExITEhMSEhITNxI3EzcSEhM3EgAF/pSUEjcTNhM3ExISEhMSExISEhM3EzYTNxISExITEhMSEhITNxI3EzcSEhMSExISNxMSExISEhMSEzYTNxM2ExITNhMADQUAAAAAAAAAAAAAAAAAAA==
 
@@ -1073,9 +1074,9 @@ card:
           tap_action:
             action: call-service
             service: remote.send_command
-            service_data:
-              entity_id: '[[[ return variables.remote ]]]'
-              device: '[[[ return variables.media ]]]'
+            data:
+              entity_id: "[[[ return variables.remote ]]]"
+              device: "[[[ return variables.media ]]]"
               command: >-
                 b64:JgAYAZCTEzYTNxM2ExITERMSExITEhM2EzYTNxMSExETEhMSExITERM3ExETNxMSExETNxMREzcTEhM2ExITNhM3ExETNxMABf2VkxM2EzcTNhMSExITERMSExITNhM2FDYTEhMRExITEhMSExETNxMREzcTEhMREzcTERM3ExITNhMSEzYTNxMREzcTAAX9lZMTNhM2EzcTEhMRExITEhMSEzYTNhM3ExISEhMSExITERMSEzYUERM3ExETEhM3ExETNxMREzcTEhM2EzYTEhM3EwAF/ZWTEzYTNhM3ExITERMSExITEhI3EzcSNxMSExETEhMSExETEhM3ExETNxMRExITNxMREzcTEhI3ExITNhM2ExITNxMADQUAAAAAAAAAAAAAAAAAAA==
 
@@ -1094,9 +1095,9 @@ card:
           tap_action:
             action: call-service
             service: remote.send_command
-            service_data:
-              entity_id: '[[[ return variables.remote ]]]'
-              device: '[[[ return variables.media ]]]'
+            data:
+              entity_id: "[[[ return variables.remote ]]]"
+              device: "[[[ return variables.media ]]]"
               command: >-
                 b64:JgAYAY+TEzYTNxM2ExITEhMRExITEhM2EzcSNxMSExISEhMSExITEhISExITNhMSExITNhMSEzYTNxM2ExITNhM3ExISNxMABf2VkxM2EzcTNhMSExETEhMSExISNxM2EzcTEhISExITEhMRExITEhMSEjcTEhMREzcTEhI3EzYTNxMSEjcTNhMSEzcSAAX+lJQSNxM2EzcTERMSExITEhISEzcTNhM3EhITEhMSExETEhMSExISEhM3ExITERM3EhITNxM2EzYTEhM3EjcVEBM3EgAF/ZWTEzYTNxI3ExISEhMSExITEhI3EzYTNxMSEhITEhMSEhITEhMSExISNxMSEhITNxMSEjcTNhM3ExISNxM2ExITNhMADQUAAAAAAAAAAAAAAAAAAA==
 
@@ -1461,4 +1462,3 @@ card_mod:
     ha-card {
       display: flex;
       justify-content: center;
-    }
