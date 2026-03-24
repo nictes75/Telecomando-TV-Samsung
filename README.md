@@ -12,4 +12,4 @@ e che in home assistant sia stato installo tramite HACS i seguenti componenti:
 Nelle primissime righe sotto la voce "variables:"
 si devono inserire le proprie entità
 
-[DOWNLOAD](https://github.com/nictes75/Telecomando-TV-Samsung/blob/main/telecomandoSamsung.yaml) 
+[CODICE](https://github.com/nictes75/Telecomando-TV-Samsung/blob/main/telecomandoSamsung.yaml) 
