@@ -4,8 +4,8 @@ card:
   cards:
   - type: custom:button-card
     variables: 
-      remote: remote.broadlink_remote
-      media: media_player.tv_salotto
+      remote: remote.broadlink_remote      # <----   SOSTITUIRE CON L'ENTITA' REMOTE BROADLINK
+      media: media_player.tv_salotto       # <----   SOSTITUIRE CON L'ENTITA' TV DA CONTROLLARE
     styles:
       card:
         - background-color: rgba(0,0,0,0.0)
