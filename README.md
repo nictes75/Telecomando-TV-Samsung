@@ -10,6 +10,6 @@ e che in home assistant siano installati (tramite HACS) i seguenti componenti:
 - [CUSTOM CARD](https://github.com/thomasloven/lovelace-card-mod) 
 
 Nelle primissime righe sotto la voce "variables:"
-si devono inserire le proprie entità
+si deve inserire la proprie entità
 
 [CODICE](https://github.com/nictes75/Telecomando-TV-Samsung/blob/main/telecomandoSamsung.yaml) 
